@@ -178,6 +178,9 @@ const Kyokushinkaikan = () => {
         />
       </div>
 
+      <p>E somente em 1969 que se organiza em Tóquio o primeiro All Japan Open Karate Tournament. Esse torneio e vencido por Yamazaki Terutomo, enquanto Soeno Yoshiji (futuro fundador do Shidokan) se classifica em segundo lugar e Hasegawa Kazuyuki em terceiro. No ano seguinte, Hasegawa é o primeiro, Yamazaki o segundo e Soeno o terceiro. Depois, os vencedores desse torneio serão: Sato Katsuaki (1971), Miura Miyuki (1972), Royama Hatsuo (1973), Sato Katsuaki (1974), Sato Katsuaki (1975), Sato Toshikazu (1976), Azuma Takashi (1977), Ninomiya Joko (1978), Nakamura Makoto (1979), Sanpei Keiji (1980), Sanpei Keiji (1981), Sanpei Keiji (1982), Onishi Yasuto (1983), Kurosawa (1984), Matsui Akiyoshi (1985), Matsui Akiyoshi (1986), Yasuhiko Kuwajima (1988), Yamaki Kenji (1989), Akira Matsuda (1990), Yoshihiro Tamura (1992), Kazumi Hajime (1993), Yamaki Kenji (1994), Kazumi Hajime (1996), etc.</p>
+      <p>Em 1972, Sosai Oyama ocupa novamente a crônica internacional. Nesse ano, uma equipe japonesa (independente da IKO e da Kyokushinkaikan) participa de maneira desastrosa de uma competição organizada em Paris. Sosai Oyama insiste no caráter duvidoso desse confronto, denuncia as regras de “não contato” em vigor nessa competição e lembra a total ausência de representatividade da equipe japonesa presente na França.</p>
+      <p>Em 1975, a I.K.O. organiza em Tóquio seu primeiro World Open Karate Tournament, vencido por Katsuaki Sato. Hoje a organização Kyokushinkaikan esta presente em mais de 130 países. Todos os anos, em cada um desses países, desenvolvem-se as competições regionais e nacionais que preparam os competidores para o torneio mundial de Tóquio, a cada 4 anos. “Aparentemente todo mundo quer ver o Karate nos Jogos Olímpicos. Com certeza, para o Karate esportivo seria muito bom. Mas o problema é como entrar. Há tantos estilos diferentes. Se aceitarem a modalidade, seria preciso que fosse em 4 categorias: peso pluma, médio, pesado e categoria aberta. Mas tudo isso não é Budô e para o verdadeiro budoka não tem nenhuma importância”. Katsuaki.</p>    
           </section>
 
           <section id="historia" className="space-y-4">
@@ -213,7 +216,6 @@ const Kyokushinkaikan = () => {
 
           </section>
 
-          {/* Seção: Fundadores */}
           <section id="fundadores" className="space-y-4">
             <h2 className="text-2xl font-semibold mb-2">Fundadores</h2>
             <p>Masutatsu Oyama é o fundador do estilo, conhecido mundialmente por suas demonstrações de força e técnica impecável. Seu legado vive através dos instrutores e praticantes do Kyokushinkaikan.</p>
