@@ -221,16 +221,50 @@ const Kyokushinkaikan = () => {
             <h3 className="text-3xl font-bold mb-4">OS ALUNOS DE SOSAI OYAMA</h3>
 
             <p>Sosai Masutatsu Oyama teve um certo numero de alunos que, por razões diversas, separaram-se da corrente original do Kyokushinkaikan para fundar suas próprias organizações. Entre eles: Ashihara Hideyuki (fundador do New International Karate Ashihara-Kaikan), Azuma Takashi (fundador do Karate-Dô Daido-Juku), Kurosaki Kenji (pioneiro do Kick Boxing japonês), Ninomiya Joko (fundador do Karate Enshin-kai), Oyama Shigeru (fundador do World Oyama Karate Organization), Sato Katsuaki (Campeão do 1º Campeonato Mundial Kyokushinkai em 1975 e fundador do Karate Sato-Juku), Nakamura Tadashi (fundador do World Karate Seido-Juku), Soeno Yoshiji (fundador do World Karate Association – The Shidokan), Kazuyoshi Ishii (fundador da World Seidokaikan Karate Organization e criador do evento de maior popularidade no Japão – K-1). Na Europa, Steve Arneil (Inglaterra, o primeiro estrangeiro a conseguir êxito na prova dos cem combates – fundador da International Kyokushin Karate Federation), Jhon Bluming (pioneiro do Kyokushinkai na Holanda e o primeiro 6º Dan estrangeiro concedido por Oyama – fundador do Kyokushin Budokai), Jan Kallenbach (atualmente responsável pelo Taikiken na Holanda) e Alain Setrouk (pioneiro do Kyokushinkai na França, fundador do Kyokushin-Boxing). No Brasil assim como no restante do mundo tivemos alguns alunos diretos de Sosai Masutatsu Oyama, que fundaram suas próprias organizações: Shihan Eisho Nakaza (fundador do estilo Nakaza Juku), e outros que foram discípulos de S. Isobe (Branch Chief of Brazil): Eduardo Hatakeyama (fundador do estilo Kyoei Kan), Kojem Nagata (fundador do estilo Nagata Ryu), Ademir da Costa (fundador da Seiwakai), e muitos outros.</p>
-<p>Outros alunos diretos formam os mais recentes grupos:</p>
-<p>O Campeão Mundial Kenji Yamaki, fundador do o Yamaki Ryu; Yukio Nishida fundador da Sebukai Karate, Hiroki Kurosawa (Campeão Japonês) fundador do Kurosawa Dojo, Hatsuo Oyama fundador da Kyokushin-Kan, Ryuko Take fundador da World Kyokuhinkaikan, Midori Kenji fundador da Shin Kyokushinkai, Tsuyoshi Hiroshige fundador da Kyokushin Ken, Peter Chong fundador da Kyokushin Ryu, Daihyo Ryuko Take fundador da World Kyokushinkaikan e muitos outros que ainda fundarão diversos estilos.</p>
-          
-           <img
+            <p>Outros alunos diretos formam os mais recentes grupos:</p>
+            <p>O Campeão Mundial Kenji Yamaki, fundador do o Yamaki Ryu; Yukio Nishida fundador da Sebukai Karate, Hiroki Kurosawa (Campeão Japonês) fundador do Kurosawa Dojo, Hatsuo Oyama fundador da Kyokushin-Kan, Ryuko Take fundador da World Kyokuhinkaikan, Midori Kenji fundador da Shin Kyokushinkai, Tsuyoshi Hiroshige fundador da Kyokushin Ken, Peter Chong fundador da Kyokushin Ryu, Daihyo Ryuko Take fundador da World Kyokushinkaikan e muitos outros que ainda fundarão diversos estilos.</p>
+
+            <img
               src="https://i.imgur.com/7q6Ntya.jpeg"
               alt="História Kyokushinkaikan"
               className="mx-auto cursor-pointer w-104 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
               onClick={() => handleImageClick("https://i.imgur.com/7q6Ntya.jpeg")}
             />
 
+            <h3 className="text-3xl font-bold mb-4">OS LIVROS DE SOSAI MASUTATSU OYAMA</h3>
+            <p>Sosai Masutatsu Oyama escreveu inúmeros livros que ajudaram a divulgar o Kyokushinkaikan no mundo inteiro. Os pensamentos, filosofias assim como as técnicas do Karate Kyokushinkaikan foi amplamente divulgado nestes livros e ajudaram a cultuar todo o misticismo em torno deste estilo.</p>
+            <p>Sosai Masutatsu Oyama fez com que muitas pessoas de diferentes países do mundo, onde não havia o Kyokushinkaikan viajassem até o Japão para conhecê-lo. Ou até mesmo Sosai Masutatsu Oyama passasse temporadas ensinando o Kyokushinkaikan, por contas todas pagas pelo contratante entre eles empresários, reis e príncipes. Assim o Kyokushinkaikan ganhou fama internacional e puderam ser praticados por inúmeras pessoas.</p>
+            <p>Muita gente ainda não conhece estes livros escritos por Sosai Masutatsu Oyama, mas em breve o Shihan José Koei Nagata estará disponibilizando estes livros digitalmente, entre os mais famosos “WHAT IS KARATE”, “THIS IS KARATE” e “ADVANCED KARATE”.</p>
+            <p>O Shihan José Koei Nagata digitalizou o Livro “KARATE VITAL” (em português) e as pessoas interessadas podem entrar em contato por e-mail: nagatajk@gmail.com</p>
+
+            <img
+              src="https://i.imgur.com/Pct6Fz2.jpeg"
+              alt="História Kyokushinkaikan"
+              className="mx-auto cursor-pointer w-104 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() => handleImageClick("https://i.imgur.com/Pct6Fz2.jpeg")}
+            />
+
+            <h3 className="text-3xl font-bold mb-4">VIDEOS</h3>
+            <h3 className="text-3xl font-bold mb-4">FILME – FIGHTER IN THE WIN – OYAMA O LUTADOR LENDÁRIO</h3>
+            <p>Se você deseja adquirir o DVD OYAMA O LUTADOR LENDÁRIO</p>
+            <p>FIGHTER IN THE WIND – entre em contato: nagatajk@gmail.com e obtenha maiores informações.</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <YoutubeEmbed
+                embedId="bqQ8Bqq9UAs"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <YoutubeEmbed
+                embedId="lVnkhIojunA"
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <YoutubeEmbed
+                embedId="PPu31D0WqXg"
+              />
+            </div>
 
           </section>
 
