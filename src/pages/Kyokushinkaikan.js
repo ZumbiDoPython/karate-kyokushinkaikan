@@ -167,7 +167,8 @@ const Kyokushinkaikan = () => {
             <p>O recinto lotou e cerca de 5 mil pessoas viram-se impedidas de entrar, na porta, por falta de espaço. Entretanto, notificaram-nos que o Ginásio Budo-kan não nos iria ser alugado. Corri para saber o motivo e ouvi de um jovem empregado, que nosso pedido havia sido recusado por acharem que o Karate Kyokushinkaikan não era um Karate legítimo. Perguntei então que justificativa havia para isso e o serviçal me disse que era o numero de adeptos de uma escola de Karate que determinava sua legitimidade.</p>
             <p>Acrescentou que considerava determinada escola verdadeiramente legítima e ficou muito embaraçado quando lhe fiz notar que o maior número de público que aquela escola era capaz de reunir em Torneios e Campeonatos era cerca de 3 mil pessoas, enquanto o Karate Kyokushinkaikan atraia mais de 10 mil pessoas. Percebendo que o número de publico não ia justificar a recusa do Budo-kan, o interlocutor me disse que não podia nos alugar a sala porque durante nossos Torneios derramava-se sangue. Mas sangue era também derramado nas competições de Boxe que o Budo-kan nunca havia hesitado em permitir nas suas dependências. Mais tarde, verifiquei que um poderoso dirigente de outra associação de Karate estava por trás desse incidente. Alguns anos antes, havia nos oferecido uma grande ajuda financeira se nossa organização se filiasse a tal associação, mas eu recusara… ”</p>
 
-            <h3>PRIMEIRA PUBLICACÃO – PRIMEIROS ENCONTROS</h3>
+            <h3 className="text-3xl font-bold mb-4">RIMEIRA PUBLICACÃO – PRIMEIROS ENCONTROS</h3>
+
 
             <p>Em 1958, Sosai Oyama publica seu primeiro livro: “What is Karate?”. O sucesso fulgurante dessa obra o levará a publicar mais tarde “This is Karate” (1965) e “Karate, The World of the Ultimate” (1984). Também em 1958, Edward Bobby Lowe cria a ramificação havaiana da Kyokushin-kai e no ano seguinte organiza em Honolulu o primeiro torneio oficial de Karate Kyokushin, o First Hawai Karate Tournament. Nessa ocasião, Sosai Oyama efetua pessoalmente uma demonstração de Kata e quebramento. Em 1960, o segundo torneio havaiano já conta com a participação de 16 países. Em 1962, é organizado no Madison Square Garden de Nova York o primeiro North America Open Karate Tournament, vencido por Gary Alexander.</p>
             <p>Em 1964, a organização Kyokushinkaikan ocupa espaço na crônica internacional ao aceitar um desafio lançado por lutadores tailandeses. A escola de Sosai Oyama é a única a aceitar e delega 3 de seus representantes para ir a Bangkok. Três lutadores viajaram até a Tailândia para desafiar os Tailandeses, os combates terminaram em 2×1 para os Japoneses, Tadashi Nakamura e Akio Fujihira (conhecido como Noboru Osawa) venceram. Nessa mesma noite, o único perdedor foi Kenji Kurosaki, que futuramente recebeu o título de “Rachaderman” após ter realizado mais de 120 lutas na Tailândia, tornando-se o percussor do Kickboxing no Japão, formando inclusive uns dos melhores lutadores da época como Toshio Fujiwara. Kenji Kurosaki descende de família de Samurais, fundou seu próprio Dojo chamado “Mejiro GYM”, e por ter divergências com Osamu Noguchi pelo título de criador do Kickboxing Japonês, resolveu criar seu próprio estilo conhecido com “Shin Kakuto Jutsu” (Nova Arte de Combate).</p>
@@ -181,21 +182,7 @@ const Kyokushinkaikan = () => {
             <p>E somente em 1969 que se organiza em Tóquio o primeiro All Japan Open Karate Tournament. Esse torneio e vencido por Yamazaki Terutomo, enquanto Soeno Yoshiji (futuro fundador do Shidokan) se classifica em segundo lugar e Hasegawa Kazuyuki em terceiro. No ano seguinte, Hasegawa é o primeiro, Yamazaki o segundo e Soeno o terceiro. Depois, os vencedores desse torneio serão: Sato Katsuaki (1971), Miura Miyuki (1972), Royama Hatsuo (1973), Sato Katsuaki (1974), Sato Katsuaki (1975), Sato Toshikazu (1976), Azuma Takashi (1977), Ninomiya Joko (1978), Nakamura Makoto (1979), Sanpei Keiji (1980), Sanpei Keiji (1981), Sanpei Keiji (1982), Onishi Yasuto (1983), Kurosawa (1984), Matsui Akiyoshi (1985), Matsui Akiyoshi (1986), Yasuhiko Kuwajima (1988), Yamaki Kenji (1989), Akira Matsuda (1990), Yoshihiro Tamura (1992), Kazumi Hajime (1993), Yamaki Kenji (1994), Kazumi Hajime (1996), etc.</p>
             <p>Em 1972, Sosai Oyama ocupa novamente a crônica internacional. Nesse ano, uma equipe japonesa (independente da IKO e da Kyokushinkaikan) participa de maneira desastrosa de uma competição organizada em Paris. Sosai Oyama insiste no caráter duvidoso desse confronto, denuncia as regras de “não contato” em vigor nessa competição e lembra a total ausência de representatividade da equipe japonesa presente na França.</p>
             <p>Em 1975, a I.K.O. organiza em Tóquio seu primeiro World Open Karate Tournament, vencido por Katsuaki Sato. Hoje a organização Kyokushinkaikan esta presente em mais de 130 países. Todos os anos, em cada um desses países, desenvolvem-se as competições regionais e nacionais que preparam os competidores para o torneio mundial de Tóquio, a cada 4 anos. “Aparentemente todo mundo quer ver o Karate nos Jogos Olímpicos. Com certeza, para o Karate esportivo seria muito bom. Mas o problema é como entrar. Há tantos estilos diferentes. Se aceitarem a modalidade, seria preciso que fosse em 4 categorias: peso pluma, médio, pesado e categoria aberta. Mas tudo isso não é Budô e para o verdadeiro budoka não tem nenhuma importância”. Katsuaki.</p>
-          </section>
-
-          <section id="historia" className="space-y-4">
-            <h1 className="text-3xl font-bold mb-4">História do Kyokushinkaikan</h1>
-            <p>
-              O Kyokushinkaikan foi fundado por Masutatsu Oyama, conhecido por sua dedicação e força no karatê de contato total.
-              Desde sua criação, o estilo se expandiu pelo mundo, formando uma grande comunidade de praticantes.
-            </p>
-
-            <img
-              src="https://i.imgur.com/4JqAODo.jpg"
-              alt="História Kyokushinkaikan"
-              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-              onClick={() => handleImageClick("https://i.imgur.com/4JqAODo.jpg")}
-            />
+          
             <h3>A PROVA DOS CEM COMBATES (HYAKUNIN KUMITE) </h3>
             <p>Depois de suas estadias em Okinawa e nas ilhas do Havaí, Sosai Oyama decide reviver, no Karate Kyokushinkaikan, uma prova antiga, praticada desde muito tempo nas escolas de Kendo e Judo: a prova dos cem combates. Existe a história celebre de que Sosai Oyama, na época de seus melhores dias, efetuou a prova dos cem kumite durante 3 dias seguidos, ou seja, fez cem combates por dia durante 3 dias. Nessa ocasião seu dojô já era famoso pelo valor de seus lutadores e o próprio Sosai Oyama teria saído seriamente ferido de uma das provas, tendo entretanto vencido todas elas. Esta é a prova máxima de perseverança e espírito do OSU!</p>
             <p>A Organização Kyokushinkaikan construiu a sua força não somente com a habilidade em combate e a coragem do seu fundador, o Sosai Masutatsu Oyama, mas também com a força dos seus praticantes. Assim, Sosai Oyama introduziu um teste único e exclusivo chamado de “Hyakunin Kumite”, que significa “combater contra 100 Homens”. Este teste é considerado como o último teste no Kyokushinkaikan Karate. Quando um karateka chega ao grau de Shodan (Faixa Preta), é confrontado com dez rounds de kumite duro. Mas o teste final do espírito do Osu encontra-se na prova dos “100 Combates”, onde enfrentará cem oponentes consecutivos em rounds que duram um minuto cada.</p>
@@ -230,6 +217,23 @@ const Kyokushinkaikan = () => {
                 embedId="TJC5IOPrkIg&ab"
               />
             </div>
+          
+          </section>
+
+          <section id="historia" className="space-y-4">
+            <h1 className="text-3xl font-bold mb-4">História do Kyokushinkaikan</h1>
+            <p>
+              O Kyokushinkaikan foi fundado por Masutatsu Oyama, conhecido por sua dedicação e força no karatê de contato total.
+              Desde sua criação, o estilo se expandiu pelo mundo, formando uma grande comunidade de praticantes.
+            </p>
+
+            <img
+              src="https://i.imgur.com/4JqAODo.jpg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() => handleImageClick("https://i.imgur.com/4JqAODo.jpg")}
+            />
+            
           </section>
 
           {/* Seção: Filosofia */}
