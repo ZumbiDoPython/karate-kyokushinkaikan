@@ -181,7 +181,7 @@ const Kyokushinkaikan = () => {
             <p>E somente em 1969 que se organiza em Tóquio o primeiro All Japan Open Karate Tournament. Esse torneio e vencido por Yamazaki Terutomo, enquanto Soeno Yoshiji (futuro fundador do Shidokan) se classifica em segundo lugar e Hasegawa Kazuyuki em terceiro. No ano seguinte, Hasegawa é o primeiro, Yamazaki o segundo e Soeno o terceiro. Depois, os vencedores desse torneio serão: Sato Katsuaki (1971), Miura Miyuki (1972), Royama Hatsuo (1973), Sato Katsuaki (1974), Sato Katsuaki (1975), Sato Toshikazu (1976), Azuma Takashi (1977), Ninomiya Joko (1978), Nakamura Makoto (1979), Sanpei Keiji (1980), Sanpei Keiji (1981), Sanpei Keiji (1982), Onishi Yasuto (1983), Kurosawa (1984), Matsui Akiyoshi (1985), Matsui Akiyoshi (1986), Yasuhiko Kuwajima (1988), Yamaki Kenji (1989), Akira Matsuda (1990), Yoshihiro Tamura (1992), Kazumi Hajime (1993), Yamaki Kenji (1994), Kazumi Hajime (1996), etc.</p>
             <p>Em 1972, Sosai Oyama ocupa novamente a crônica internacional. Nesse ano, uma equipe japonesa (independente da IKO e da Kyokushinkaikan) participa de maneira desastrosa de uma competição organizada em Paris. Sosai Oyama insiste no caráter duvidoso desse confronto, denuncia as regras de “não contato” em vigor nessa competição e lembra a total ausência de representatividade da equipe japonesa presente na França.</p>
             <p>Em 1975, a I.K.O. organiza em Tóquio seu primeiro World Open Karate Tournament, vencido por Katsuaki Sato. Hoje a organização Kyokushinkaikan esta presente em mais de 130 países. Todos os anos, em cada um desses países, desenvolvem-se as competições regionais e nacionais que preparam os competidores para o torneio mundial de Tóquio, a cada 4 anos. “Aparentemente todo mundo quer ver o Karate nos Jogos Olímpicos. Com certeza, para o Karate esportivo seria muito bom. Mas o problema é como entrar. Há tantos estilos diferentes. Se aceitarem a modalidade, seria preciso que fosse em 4 categorias: peso pluma, médio, pesado e categoria aberta. Mas tudo isso não é Budô e para o verdadeiro budoka não tem nenhuma importância”. Katsuaki.</p>
-          
+
             <h3 className="text-3xl font-bold mb-4">A PROVA DOS CEM COMBATES (HYAKUNIN KUMITE)</h3>
 
             <p>Depois de suas estadias em Okinawa e nas ilhas do Havaí, Sosai Oyama decide reviver, no Karate Kyokushinkaikan, uma prova antiga, praticada desde muito tempo nas escolas de Kendo e Judo: a prova dos cem combates. Existe a história celebre de que Sosai Oyama, na época de seus melhores dias, efetuou a prova dos cem kumite durante 3 dias seguidos, ou seja, fez cem combates por dia durante 3 dias. Nessa ocasião seu dojô já era famoso pelo valor de seus lutadores e o próprio Sosai Oyama teria saído seriamente ferido de uma das provas, tendo entretanto vencido todas elas. Esta é a prova máxima de perseverança e espírito do OSU!</p>
@@ -206,7 +206,7 @@ const Kyokushinkaikan = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <YoutubeEmbed
-                embedId="I5ITw4UjmHU&ab"
+                embedId="I5ITw4UjmHU"
               />
             </div>
 
@@ -214,10 +214,24 @@ const Kyokushinkaikan = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <YoutubeEmbed
-                embedId="TJC5IOPrkIg&ab"
+                embedId="TJC5IOPrkIg"
               />
             </div>
+
+            <h3 className="text-3xl font-bold mb-4">OS ALUNOS DE SOSAI OYAMA</h3>
+
+            <p>Sosai Masutatsu Oyama teve um certo numero de alunos que, por razões diversas, separaram-se da corrente original do Kyokushinkaikan para fundar suas próprias organizações. Entre eles: Ashihara Hideyuki (fundador do New International Karate Ashihara-Kaikan), Azuma Takashi (fundador do Karate-Dô Daido-Juku), Kurosaki Kenji (pioneiro do Kick Boxing japonês), Ninomiya Joko (fundador do Karate Enshin-kai), Oyama Shigeru (fundador do World Oyama Karate Organization), Sato Katsuaki (Campeão do 1º Campeonato Mundial Kyokushinkai em 1975 e fundador do Karate Sato-Juku), Nakamura Tadashi (fundador do World Karate Seido-Juku), Soeno Yoshiji (fundador do World Karate Association – The Shidokan), Kazuyoshi Ishii (fundador da World Seidokaikan Karate Organization e criador do evento de maior popularidade no Japão – K-1). Na Europa, Steve Arneil (Inglaterra, o primeiro estrangeiro a conseguir êxito na prova dos cem combates – fundador da International Kyokushin Karate Federation), Jhon Bluming (pioneiro do Kyokushinkai na Holanda e o primeiro 6º Dan estrangeiro concedido por Oyama – fundador do Kyokushin Budokai), Jan Kallenbach (atualmente responsável pelo Taikiken na Holanda) e Alain Setrouk (pioneiro do Kyokushinkai na França, fundador do Kyokushin-Boxing). No Brasil assim como no restante do mundo tivemos alguns alunos diretos de Sosai Masutatsu Oyama, que fundaram suas próprias organizações: Shihan Eisho Nakaza (fundador do estilo Nakaza Juku), e outros que foram discípulos de S. Isobe (Branch Chief of Brazil): Eduardo Hatakeyama (fundador do estilo Kyoei Kan), Kojem Nagata (fundador do estilo Nagata Ryu), Ademir da Costa (fundador da Seiwakai), e muitos outros.</p>
+<p>Outros alunos diretos formam os mais recentes grupos:</p>
+<p>O Campeão Mundial Kenji Yamaki, fundador do o Yamaki Ryu; Yukio Nishida fundador da Sebukai Karate, Hiroki Kurosawa (Campeão Japonês) fundador do Kurosawa Dojo, Hatsuo Oyama fundador da Kyokushin-Kan, Ryuko Take fundador da World Kyokuhinkaikan, Midori Kenji fundador da Shin Kyokushinkai, Tsuyoshi Hiroshige fundador da Kyokushin Ken, Peter Chong fundador da Kyokushin Ryu, Daihyo Ryuko Take fundador da World Kyokushinkaikan e muitos outros que ainda fundarão diversos estilos.</p>
           
+           <img
+              src="https://i.imgur.com/7q6Ntya.jpeg"
+              alt="História Kyokushinkaikan"
+              className="mx-auto cursor-pointer w-104 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() => handleImageClick("https://i.imgur.com/7q6Ntya.jpeg")}
+            />
+
+
           </section>
 
           <section id="historia" className="space-y-4">
