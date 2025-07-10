@@ -943,7 +943,254 @@ const Kyokushinkaikan = () => {
                 handleImageClick("https://i.imgur.com/4JqAODo.jpg")
               }
             />
+            <h2 className="text-3xl font-bold mb-4">
+              <em>
+                A HISTÓRIA DO KYOKUSHINKAIKAN NO BRASIL SHIHAN EISHO NAKAZA
+                Escrito por José Koei Nagata, em 07 de Maio de 2016 em
+                Sorocaba/SP
+              </em>
+            </h2>
+            <p>
+              Pouca gente conhece, mas a história da implantação do
+              Kyokushinkaikan Karate no Brasil está relacionada não somente a
+              uma única pessoa e sim a outros Mestres que ajudaram a difundir o
+              estilo. Um dos mestres à qual tive o privilégio de conhecer e ter
+              me formado na faixa preta é o SHIHAN EISHO NAKAZA.
+            </p>
+            <img
+              src="https://i.imgur.com/K4wKtJK.jpeg"
+              alt="Shihan Jose Koei Nagata"
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/K4wKtJK.jpeg")
+              }
+            />
+
+            <h2 className="text-3xl font-bold mb-4">Homenagem</h2>
+
+            <p>
+              Após árduo treinamento e conquistas, não poderia deixar de
+              mencionar este ícone do Kyokushinkaikan Karate, que foi
+              perseguido, não teve como se defender e ter uma honraria prestada.
+              Por isso em nome da história do Kyokushinkaikan Karate do Brasil,
+              e pelos discípulos diretos e indiretos, e pela justiça, homenageio
+              este grande Shihan e percursor de meu trabalho aqui estabelecido.
+              Osu !
+            </p>
           </section>
+          <img
+            src="https://i.imgur.com/HS6uKEp.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/HS6uKEp.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/Gt2Tdxl.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/Gt2Tdxl.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/f3YfOqK.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/f3YfOqK.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/WqmWA39.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/WqmWA39.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/bgevfbm.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/bgevfbm.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/1EJWaKj.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/1EJWaKj.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/guW43xI.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/guW43xI.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/SrqgTBi.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/SrqgTBi.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/0SxPDT5.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/0SxPDT5.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/2vXUPmO.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/2vXUPmO.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/6NAw3fr.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/6NAw3fr.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/vB1omWH.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/vB1omWH.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/zKkiaVP.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/zKkiaVP.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/mAmEcbE.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/mAmEcbE.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/n8fCeON.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/n8fCeON.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/sN21RWI.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/sN21RWI.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/VAjZyQA.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/VAjZyQA.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/xhfFtMX.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/xhfFtMX.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/42YX9M9.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/42YX9M9.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/CGsYtY3.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/CGsYtY3.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/PBDkWQw.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/PBDkWQw.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/ue4Um12.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/ue4Um12.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/FRqHA8K.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/FRqHA8K.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/XZxHaAC.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/XZxHaAC.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/pVlejTD.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/pVlejTD.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/TKYRK0q.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/TKYRK0q.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/VVqzO9G.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/VVqzO9G.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/kBUn94w.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/kBUn94w.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/GnvBOiM.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/GnvBOiM.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/x9qTnfx.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/x9qTnfx.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/VOtqfux.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/VOtqfux.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/cXcLMGo.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/cXcLMGo.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/GOvGXrc.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/GOvGXrc.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/qlt3WGj.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/qlt3WGj.jpeg")}
+          />
+          <img
+            src="https://i.imgur.com/BEYrZr2.jpeg"
+            alt=""
+            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+            onClick={() => handleImageClick("https://i.imgur.com/BEYrZr2.jpeg")}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <YoutubeEmbed embedId="T19f95LqjEE" />
+          </div>
           <section id="historia" className="space-y-4">
             <h1 className="text-3xl font-bold mb-4">
               História do Kyokushinkaikan
