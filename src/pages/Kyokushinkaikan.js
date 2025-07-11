@@ -935,271 +935,807 @@ const Kyokushinkaikan = () => {
             <p>Diversos</p>
             <p>WKK – Brasil</p>
 
-            <img
-              src="https://i.imgur.com/apRXa3D.jpeg"
-              alt="Shihan Jose Koei Nagata"
-              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-              onClick={() =>
-                handleImageClick("https://i.imgur.com/4JqAODo.jpg")
-              }
-            />
-            <h2 className="text-3xl font-bold mb-4">
-              <em>
+            <section id="historia" className="space-y-4">
+              <h1 className="text-3xl font-bold mb-4">
+                História do Kyokushinkaikan
+              </h1>
+              <p>
+                O Kyokushinkaikan foi fundado por Masutatsu Oyama, conhecido por
+                sua dedicação e força no karatê de contato total. Desde sua
+                criação, o estilo se expandiu pelo mundo, formando uma grande
+                comunidade de praticantes.
+              </p>
+              <img
+                src="https://i.imgur.com/apRXa3D.jpeg"
+                alt="Shihan Jose Koei Nagata"
+                className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+                onClick={() =>
+                  handleImageClick("https://i.imgur.com/4JqAODo.jpg")
+                }
+              />
+              <h2 className="text-3xl font-bold mb-4">
                 A HISTÓRIA DO KYOKUSHINKAIKAN NO BRASIL SHIHAN EISHO NAKAZA
-                Escrito por José Koei Nagata, em 07 de Maio de 2016 em
-                Sorocaba/SP
-              </em>
-            </h2>
-            <p>
-              Pouca gente conhece, mas a história da implantação do
-              Kyokushinkaikan Karate no Brasil está relacionada não somente a
-              uma única pessoa e sim a outros Mestres que ajudaram a difundir o
-              estilo. Um dos mestres à qual tive o privilégio de conhecer e ter
-              me formado na faixa preta é o SHIHAN EISHO NAKAZA.
-            </p>
+              </h2>
+
+              <p>
+                <strong>
+                  Escrito por José Koei Nagata, em 07 de Maio de 2016 em
+                  Sorocaba/SP
+                </strong>
+              </p>
+              <p>
+                Pouca gente conhece, mas a história da implantação do
+                Kyokushinkaikan Karate no Brasil está relacionada não somente a
+                uma única pessoa e sim a outros Mestres que ajudaram a difundir
+                o estilo. Um dos mestres à qual tive o privilégio de conhecer e
+                ter me formado na faixa preta é o SHIHAN EISHO NAKAZA.
+              </p>
+              <img
+                src="https://i.imgur.com/K4wKtJK.jpeg"
+                alt="Shihan Jose Koei Nagata"
+                className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+                onClick={() =>
+                  handleImageClick("https://i.imgur.com/K4wKtJK.jpeg")
+                }
+              />
+
+              <h2 className="text-3xl font-bold mb-4">Homenagem</h2>
+
+              <p>
+                Após árduo treinamento e conquistas, não poderia deixar de
+                mencionar este ícone do Kyokushinkaikan Karate, que foi
+                perseguido, não teve como se defender e ter uma honraria
+                prestada. Por isso em nome da história do Kyokushinkaikan Karate
+                do Brasil, e pelos discípulos diretos e indiretos, e pela
+                justiça, homenageio este grande Shihan e percursor de meu
+                trabalho aqui estabelecido. Osu !
+              </p>
+            </section>
             <img
-              src="https://i.imgur.com/K4wKtJK.jpeg"
-              alt="Shihan Jose Koei Nagata"
+              src="https://i.imgur.com/HS6uKEp.jpeg"
+              alt=""
               className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
               onClick={() =>
-                handleImageClick("https://i.imgur.com/K4wKtJK.jpeg")
+                handleImageClick("https://i.imgur.com/HS6uKEp.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/Gt2Tdxl.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/Gt2Tdxl.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/f3YfOqK.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/f3YfOqK.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/WqmWA39.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/WqmWA39.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/bgevfbm.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/bgevfbm.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/1EJWaKj.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/1EJWaKj.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/guW43xI.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/guW43xI.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/SrqgTBi.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/SrqgTBi.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/0SxPDT5.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/0SxPDT5.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/2vXUPmO.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/2vXUPmO.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/6NAw3fr.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/6NAw3fr.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/vB1omWH.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/vB1omWH.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/zKkiaVP.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/zKkiaVP.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/mAmEcbE.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/mAmEcbE.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/n8fCeON.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/n8fCeON.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/sN21RWI.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/sN21RWI.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/VAjZyQA.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/VAjZyQA.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/xhfFtMX.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/xhfFtMX.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/42YX9M9.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/42YX9M9.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/CGsYtY3.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/CGsYtY3.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/PBDkWQw.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/PBDkWQw.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/ue4Um12.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/ue4Um12.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/FRqHA8K.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/FRqHA8K.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/XZxHaAC.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/XZxHaAC.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/pVlejTD.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/pVlejTD.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/TKYRK0q.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/TKYRK0q.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/VVqzO9G.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/VVqzO9G.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/kBUn94w.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/kBUn94w.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/GnvBOiM.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/GnvBOiM.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/x9qTnfx.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/x9qTnfx.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/VOtqfux.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/VOtqfux.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/cXcLMGo.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/cXcLMGo.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/GOvGXrc.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/GOvGXrc.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/qlt3WGj.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/qlt3WGj.jpeg")
+              }
+            />
+            <img
+              src="https://i.imgur.com/BEYrZr2.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/BEYrZr2.jpeg")
+              }
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <YoutubeEmbed embedId="T19f95LqjEE" />
+            </div>
+
+            <h2 className="text-3xl font-bold mb-4">SHIHAN KOJEM NAGATA</h2>
+
+            <p>
+              <strong>Nascimento 26/06/1938 / Falecimento 13/06/2006</strong>
+            </p>
+            <em>
+              Escrito por José Koei Nagata, em 24 de Julho de 2016 em
+              Sorocaba/SP
+            </em>
+            <p>
+              Kojem Nagata nasceu na cidade de Santos/SP- Brasil, filho de
+              imigrantes Japoneses (Okinawanos), sendo seu pai Koei Nagata e sua
+              mãe Kame Nagata. Teve um infância pobre e sofrida, onde o pai Koei
+              Nagtata, trabalhava como estivador no porto de Santos e sua mãe
+              Kame Nagata, vendia frutas e verduras de porta em porta. Aos 06
+              anos a família mudou-se para Sorocaba /SP.
+            </p>
+
+            <img
+              src="https://i.imgur.com/UYkiQps.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/UYkiQps.jpeg")
+              }
+            />
+            <p>
+              Teve uma adolescência trabalhadora como todo imigrante, e começou
+              a encantar-se com as artes marciais vindo a praticar o Judô
+              Kodokan onde se formou Faixa Preta, Boxe e somente aos 42 anos, em
+              1977 descobriu o Karate Kyokushinkaikan. Numa demonstração
+              realizada na ACM de Sorocaba, onde viu o espantoso poder do Karate
+              Kyokushinkaikan, onde Shihan Mizukoshi fez tameshiwari
+              (quebramentos), Kihon e Kata.
+            </p>
+            <img
+              src="https://i.imgur.com/acx1Q7e.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/acx1Q7e.jpeg")
               }
             />
 
-            <h2 className="text-3xl font-bold mb-4">Homenagem</h2>
+            <p>
+              Os primeiros contatos com o Karate Kyokushinkaikan foi com o
+              Shihan Mayuki Mizukoshi 4º Dan, recém chegado do Japão e designado
+              para comandar a filial na cidade. Shihan Mayuki Mizukoshi fez
+              demonstração de Karate Kyokushinkaikan para divulgar a nova
+              modalidade na cidade e isso o impressionou bastante pelo vigor de
+              golpes de mãos e pés, além dos quebramentos.
+            </p>
+            <img
+              src="https://i.imgur.com/thAckbQ.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/thAckbQ.jpeg")
+              }
+            />
+            <p>
+              Shihan Mayuki Mizukoshi ensinou até então o “senhor” Kojem Nagata
+              nos caminhos do Kyokushinkaikan Karate, porque Kojem Nagata, já
+              tinha uma idade avançada, mas isso não o impediu de aprender o
+              Karate Japonês. Com ele conseguiu e desenvolveu plenamente a “A
+              Arte das Mãos Vazias”, chegando até a Faixa Marrom em 1979. Após a
+              conquista da Faixa Marrom, Shihan Mizukoshi determina a Kojem
+              Nagata a incumbência de ministrar as aulas de Karate
+              Kyokushinkaikan aos Sábados, pois Shihan Mizukoshi tinha outras
+              tarefas alheias. Senpai Kojem Nagata, assim começa a ter confiança
+              ante a Shihan Mayuki Mizukoshi.
+            </p>
+            <img
+              src="https://i.imgur.com/dxcDzn2.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/dxcDzn2.jpeg")
+              }
+            />
 
             <p>
-              Após árduo treinamento e conquistas, não poderia deixar de
-              mencionar este ícone do Kyokushinkaikan Karate, que foi
-              perseguido, não teve como se defender e ter uma honraria prestada.
-              Por isso em nome da história do Kyokushinkaikan Karate do Brasil,
-              e pelos discípulos diretos e indiretos, e pela justiça, homenageio
-              este grande Shihan e percursor de meu trabalho aqui estabelecido.
-              Osu !
+              Nesta época o Senpai (ajudante de instrutor) Kojem Nagata, já era
+              o braço direito de Shihan Mizukoshi, inclusive o acompanhava em
+              todos os treinamentos e reuniões, campeonatos, etc.
             </p>
-          </section>
-          <img
-            src="https://i.imgur.com/HS6uKEp.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/HS6uKEp.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/Gt2Tdxl.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/Gt2Tdxl.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/f3YfOqK.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/f3YfOqK.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/WqmWA39.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/WqmWA39.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/bgevfbm.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/bgevfbm.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/1EJWaKj.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/1EJWaKj.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/guW43xI.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/guW43xI.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/SrqgTBi.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/SrqgTBi.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/0SxPDT5.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/0SxPDT5.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/2vXUPmO.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/2vXUPmO.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/6NAw3fr.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/6NAw3fr.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/vB1omWH.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/vB1omWH.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/zKkiaVP.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/zKkiaVP.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/mAmEcbE.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/mAmEcbE.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/n8fCeON.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/n8fCeON.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/sN21RWI.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/sN21RWI.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/VAjZyQA.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/VAjZyQA.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/xhfFtMX.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/xhfFtMX.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/42YX9M9.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/42YX9M9.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/CGsYtY3.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/CGsYtY3.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/PBDkWQw.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/PBDkWQw.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/ue4Um12.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/ue4Um12.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/FRqHA8K.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/FRqHA8K.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/XZxHaAC.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/XZxHaAC.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/pVlejTD.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/pVlejTD.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/TKYRK0q.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/TKYRK0q.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/VVqzO9G.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/VVqzO9G.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/kBUn94w.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/kBUn94w.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/GnvBOiM.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/GnvBOiM.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/x9qTnfx.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/x9qTnfx.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/VOtqfux.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/VOtqfux.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/cXcLMGo.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/cXcLMGo.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/GOvGXrc.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/GOvGXrc.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/qlt3WGj.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/qlt3WGj.jpeg")}
-          />
-          <img
-            src="https://i.imgur.com/BEYrZr2.jpeg"
-            alt=""
-            className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-            onClick={() => handleImageClick("https://i.imgur.com/BEYrZr2.jpeg")}
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <YoutubeEmbed embedId="T19f95LqjEE" />
-          </div>
-          <section id="historia" className="space-y-4">
-            <h1 className="text-3xl font-bold mb-4">
-              História do Kyokushinkaikan
-            </h1>
             <p>
-              O Kyokushinkaikan foi fundado por Masutatsu Oyama, conhecido por
-              sua dedicação e força no karatê de contato total. Desde sua
-              criação, o estilo se expandiu pelo mundo, formando uma grande
-              comunidade de praticantes.
+              Quando Shihan Mayuki Mizukoshi decidiu ampliar o Karate
+              Kyokushinkaikan, passou para um local maior consultou-o. Sem
+              hesitar Senpai Kojem Nagata concordou em ser o avalista numa
+              locação de salão, onde a filial teve que mudar de endereço e não
+              mediu esforços na difusão do Karate Kyokushinkaikan, isso em 1981.
+            </p>
+            <img
+              src="https://i.imgur.com/1Inppqh.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/1Inppqh.jpeg")
+              }
+            />
+            <p>
+              Na inauguração na nova Academia de Karate Oyama Kyokushinkaikan,
+              em 1981, houve uma competição de resistência física. Todos estavam
+              enfileirados e a competição consistia em fazer agachamentos, e
+              Shihan Mizukoshi falou que somente iria premiar quem conseguisse
+              acima de 1.000 agachamentos. Ele era um dos primeiros da fila e
+              aos poucos foram caindo e saindo da fila aqueles que não
+              aguentavam. Após terem completados os 1.000 agachamentos, ele não
+              reparou que ao final da fila, ao fundo da academia tinha outro
+              competidor que estava no páreo da disputa, mesmo tendo completado
+              1.100 agachamentos ficou com a medalha de prata, sendo o outro
+              aluno conseguido 1.110. Neste mesmo dia, ele iria conseguir mais
+              uma medalha de prata na posição de flexão de braço, onde ganhava
+              quem conseguia manter-se por mais tempo.
+            </p>
+            <img
+              src="https://i.imgur.com/JZt1It0.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/JZt1It0.jpeg")
+              }
+            />
+            <p>
+              Seu filho José Koei Nagata, na época faixa azul, ganhou a medalha
+              de ouro na categoria Tobi Yoko Geri, saltando 1.20 metros de
+              altura.
+            </p>
+
+            <p>
+              No Campeonato Brasileiro de 1981, numa demonstração de Karate
+              Kyokushinkaikan, Shihan Mayuki Mizukoshi ao tentar quebrar 05
+              barras de gelo com Shuto (faca da mão), consegue realizar o
+              quebramento, mas acaba trincado o osso do braço.
+            </p>
+            <img
+              src="https://i.imgur.com/2wj6ko9.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/2wj6ko9.jpeg")
+              }
+            />
+            <p>
+              Ao final de 1981 Senpai Kojem Nagata, prestou o Exame de Faixa
+              Preta, sendo o examinador Seiji e este não permitiu que ele
+              passasse.
+            </p>
+
+            <p>
+              Porque queria que o outro faixa marrom na época passasse e
+              assumisse a Academia de Karate Oyama de Sorocaba. Assim, Senpai
+              Agenor Oliva de Moraes, Faixa Preta 1º Dan com 70 anos de idade
+              realizou o Exame de Faixa Preta e conseguiu passar.
+            </p>
+            <img
+              src="https://i.imgur.com/08mxV6V.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/08mxV6V.jpeg")
+              }
+            />
+            <p>
+              Assim Sensei Agenor Oliva de Moraes, assume o comando da Academia
+              de Karate Oyama Kyokushinkaikan de Sorocaba. Como Sensei Agenor
+              era um senhor de 70 anos de idade já não conseguiu ter a emoção e
+              dinamismo que um praticante de Kyokushinkaikan necessitaria. Então
+              perdeu-se muitos alunos, porque sua aula era monótona e sem
+              dinamismo. Também cortou aos aulas de sábado onde Senpai Kojem
+              Nagata, ministrava aula. Mudou a fechadura da porta, e
+              posteriormente mudou-se para um salão menor e afastado do centro.
+            </p>
+            <img
+              src="https://i.imgur.com/nD5VgDE.jpeg"
+              alt=""
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/nD5VgDE.jpeg")
+              }
+            />
+            <p>
+              Neste meio tempo, Senpai Kojem Nagata e outros graduados na época,
+              ficaram sem treinar, e as vezes se reuniam num clube, onde
+              relembravam as técnicas.
+            </p>
+            <p>
+              Cansado com os andamentos do Kyokushin em Sorocaba/SP foi
+              conversar com Seiji, porém sem solução.
+            </p>
+            <p>
+              Então, Senpai Kojem Nagata decide procurar pelo Shihan Eisho
+              Nakaza (faixa preta 4º Dan de Kyokushinkaikan, formado pelo Grande
+              Mestre Masutatsu Oyama), onde teria que vir a treinar em Santo
+              André/SP. Após muitas viagens a Santo André/SP, Senpai Kojem
+              Nagata treina arduamente e consegue conquistar a Faixa Preta 1º
+              Dan.
+            </p>
+
+            <img
+              src="https://i.imgur.com/JYH4Ere.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/JYH4Ere.jpeg")
+              }
+            />
+
+            <p>
+              Então em 30 de Julho de 1982, em Sorocaba/SP, abre a Academia de
+              Karate Oyama Kyokushinkaikan, vinculado ao Shihan Eisho Nakaza. À
+              partir daí começa a divulgar o Karate Kyokushinkaikan, tendo
+              muitas filiais em Sorocaba, Itapetininga e Boituva.
+            </p>
+            <p>
+              Acompanhava sempre Shihan Eisho Nakaza em Torneios, à qual era
+              árbitro central e lateral, e muitas vezes viajou a diversos
+              estados brasileiros divulgando o Karate Kyokushinkaikan. Sempre
+              dinâmico e prestativo, auxiliou no que pôde para o crescimento do
+              Karate Kyokushinkaikan.
+            </p>
+            <p>
+              Neste meio tempo conseguiu o 2º e 3º Dan e também formou-se em
+              Bacharel em Direito e em Massoterapia .
+            </p>
+            <img
+              src="https://i.imgur.com/Vo8EuvH.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/Vo8EuvH.jpeg")
+              }
+            />
+            <p>
+              Em 1984 Shihan Eisho Nakaza teve que voltar ao Japão, e deixou o
+              legado ao Sensei Kojem Nagata e ao Sensei Manuel Gomes da Silva a
+              incumbência de continuar a crescer e fortificar o grupo no Brasil.
+            </p>
+            <img
+              src="https://i.imgur.com/bAruNWV.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/bAruNWV.jpeg")
+              }
+            />
+            <p>
+              Com a ajuda de seu filho José Koei Nagata (formado em Educação
+              Física), começou a dinamizar e expandir o Karate Kyokushinkaikan
+              em todo o Brasil após a fundação da Confederação Brasileira de
+              Kyokushinkaikan Karate, dando respaldo técnico, físico e jurídico
+              aos filiados.
+            </p>
+            <p>
+              Sensei Kojem Nagata começa a trilhar o seu caminho no Karate
+              Kyokushinkaikan. Com a ausência do Shihan Eisho Nakaza, mas em
+              conjunto com o Michio Misumi, Manuel Gomes, Sebastião Vila Nova,
+              Moriyama, Ueno, Venceslau, deram conta que unidos são tão forte
+              como qualquer outro grupo de Kyokushin e começaram a realizar
+              diversos Torneios de Karate Full Contact em diferentes estados
+              brasileiros.
+            </p>
+            <p>
+              Em sua academia em Sorocaba/SP sempre estava supervisionando e
+              lecionando, sendo suas aulas bem dinâmicas e pesadas.
+            </p>
+            <img
+              src="https://i.imgur.com/jb9CmMH.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/jb9CmMH.jpeg")
+              }
+            />
+            <p>
+              Sua alegria em transmitir os ensinamentos, cultivava os alunos e
+              pela idade, demonstrava grandes qualidades técnicas dentro do
+              Kyokushinkaikan Karate.
+            </p>
+            <p>
+              Shihan Kojem Nagata foi o precursor em mostrar à diversas
+              Federações de Karate Tradicionais o estilo Kyokushinkaikan, assim
+              como realizar eventos abertos a diversos estilos de Karate de
+              Contato.
+            </p>
+            <p>
+              Com esse dinamismo fez muitas amizades em diferentes federações de
+              artes marciais e sempre esteva aberto a todos que o procuravam.
+            </p>
+            <p>
+              Em 1988, estava engajado em outra tarefa (massoterapia) e deixou
+              seu legado ao seu filho José Koei Nagata, que continuou sua saga
+              dentro do Kyokushinkaikan.
+            </p>
+            <img
+              src="https://i.imgur.com/mHSqzHO.jpeg"
+              alt=""
+              className="mx-auto cursor-pointer w-90 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/mHSqzHO.jpeg")
+              }
+            />
+            <p>
+              Em 13 de Junho de 2006 veio a falecer. Pelo seu trabalho dentro do
+              Kyokushinkaikan Karate, prestamos a devida homenagem ao Shihan
+              Kojem Nagata.
+            </p>
+
+            <h2 className="text-3xl font-bold mb-4">SHIHAN TSUNIOSHI TANAKA</h2>
+
+            <em>Escrito por José Koei Nagata em 01 de Janeiro de 2021</em>
+            <img
+              src="https://i.imgur.com/CNIGmCQ.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/CNIGmCQ.jpeg")
+              }
+            />
+            <p>
+              Em 1967 Sosai Masutasu Oyama enviou o Faixa Preta Sensei Shoichiro
+              Ogura para o Brasil no intuito de divulgar e crescer o Karate
+              Kyokushinkaikan na América do Sul. Sensei Shoichiro Ogura veio a
+              convite do representante da Kyokushinkaikan Brasil, permanecendo
+              por 6 meses e depois retornou ao Japão.
+            </p>
+            <p>
+              Sensei Shoichiro Ogura passou detalhes técnicos do estilo
+              Kyokushinkaikan e ensinou com afinco o estilo criado pelo Sosai
+              Masutatsu Oyama, fazendo florescer aqui no Brasil o estilo do
+              Karate Oyama.
+            </p>
+            <p>
+              Sua missão era introduzir o estilo Kyokushinkaikan no Brasil,
+              dinamizando todo o trabalho em conjunto com o representante
+              brasileiro o Sensei Tsunioshi Tanaka. Desta forma o
+              KYokushinkaikan floresceu graças ao trabelho do Sensei Shoichiro
+              Ogura e do Sensei Tsunioshi Tanaka a qual deu continuidade nos
+              ensinamentos e divulgação do Karate Kyokushinkaikan.
+            </p>
+            <p>
+              Após permanecer por 6 meses de intensos treinamentos, Sensei
+              Shoichiro Ogura retorna ao Japão com a missão cumprida deixando o
+              legado ao Sensei Tsunioshi Tanaka.
+            </p>
+            <p>
+              Sensei Tsunioshi Tanaka era um jovem entusiasmado pelo Karate. E
+              começou a treinar o Karate Goju Ryu com o Shikan Akamine e depois
+              montou a Associação Paulista de Karatê-Dô no intuito de promover
+              esta arte milenar aqui na cidade de São Paulo.
+            </p>
+            <p>
+              Em 1965 conheceu o livro do Sosai Masutatsu Oyama, o famoso “What
+              is Karate”. Através deste livro se interessou em aprender o estilo
+              Kyokushinkaikan Karate.
+            </p>
+            <p>
+              Sosai Matsutasu Oyama através deste livro, lançou mundialmente o
+              seu estilo de Karate e estimulou muitas pessoas a querer conhecer.
+              Foi assim que o Sensei Tsunioshi Tanaka resolve a escrever uma
+              carta à matriz do Japão, solicitando informações de como filiar e
+              poder ensinar este estilo no Brasil.
+            </p>
+            <p>
+              Sosai Masutatsu Oyama então autoriza a Sensei Tsunioshi Tanaka a
+              divulgar o Karate Kyokushinkaikan no Brasil, mesmo ele não sabendo
+              por completo o sistema criado pelo Sosai Masutatsu Oyama. Mas isso
+              não ocorreu somente no Brasil e sim em diversas partes do mundo,
+              onde Sosai Masutatsu Oyama deu autorização para iniciar um
+              trabalho e posteriormente esses introdutores foram realizar
+              estágio na matriz mundial, ou o Sosai Oyama enviava instrutores
+              para auxiliar na introdução do Kyokushinkaikan Karate.
+            </p>
+
+            <img
+              src="https://i.imgur.com/WXwPXjz.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/WXwPXjz.jpeg")
+              }
+            />
+            <p>
+              Sensei Tsunioshi Tanaka empolgado com a autorização da matriz
+              mundial, treina vigorosamente e difunde o Kyokushinkaikan no
+              Brasil. Pelo fato de ser um faixa preta do estilo Goju Ryu,
+              possibilita a ensinar o estilo Kyokushinkaikan baseado nos
+              ensinamentos que aprendeu, visto que há similaridade destes
+              estilos, porém a aplicação é totalmente diferente.
+            </p>
+            <p>
+              Assim sendo o Sensei Tsunioshi Tanaka é o introdutor do
+              Kyokushinkaikan no Brasil em meados de 1965.
+            </p>
+            <p>
+              Em 1967 a convite do Sensei Tsunioshi Tanaka à matriz do Japão,
+              Sosai Masutatsu Oyama envia ao Brasil o Sensei Shoichiro Ogura
+              Faixa Preta aluno direto do Sosai.
+            </p>
+            <p>
+              Sensei Shoichiro Ogura teve a incumbência de fazer todo um
+              trabalho de base para assim poder transmitir todos os ensinamentos
+              do Sosai Oyama. Introduziu o Kihon Geiko na posição Sanchin Dachi,
+              Idogeiko, Kata e Kumite, todos os dias de segunda a domingo, sem
+              descanso.
+            </p>
+            <p>
+              Porque necessitava fazer um trabalho sólido e poder retornar ao
+              Japão. E assim o fez com dedicação de corpo e alma nos
+              ensinamentos ao povo brasileiro.
+            </p>
+            <p>
+              Após o retorno do Sensei Shoichiro Ogura ao Japão, o Sensei
+              Tsunioshi Tanaka teve a incumbência de manter o espírito do
+              Kyokushinkaikan em evidência e assim divulgou o estilo a diversos
+              lugares. Inclusive chegou a realizar demonstração na TV no
+              programa do Sílvio Santos.
+            </p>
+            <img
+              src="https://i.imgur.com/adSe6V9.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/adSe6V9.jpeg")
+              }
+            />
+            <p>
+              Em 1970 Sensei Tsunioshi Tanaka viaja ao Japão na matriz mundial
+              So Hombu Dojo em Ikebukuro, o quartel general da Kyokushinkaikan
+              onde estagia por 03 meses como Uchi Dechi (aluno interno) e lá
+              aprende e vivencia o poderoso estilo criado pelo Sosai Masutatsu
+              Oyama.
+            </p>
+            <p>
+              Na oportunidade Sensei Tsunioshi Yanaka recebe das mãos do Sosai
+              Masutatsu Oyama a graduação de Faixa Preta Nidan e recebe a
+              incumbência de dinamizar o Kyokushinkaikan não somente no Brasil
+              como na América do Sul.
+            </p>
+            <img
+              src="https://i.imgur.com/r12mdfr.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/r12mdfr.jpeg")
+              }
+            />
+            <p>
+              Desta forma Sensei Tsunioshi Tanaka levou o Kyokushinkaikan Karate
+              a diversos lugares, divulgando este estilo. Formou inúmeros faixas
+              pretas que contribuíram para o crescimento da modalidade
+              desportiva marcial.
+            </p>
+            <p>
+              Em 1971 Sosai Masutatsu Oyama vem ao Brasil acompanhado do Shihan
+              Shigeru Oyama e do Shihan Tadashi Nakamura para uma reunião no
+              Brasil e a formulação da Organização Sulamericana de
+              Kyokushinkaikan. A Organização Sulamericana de Kyokushinkaikan
+              Karate era presidida pelo Sensei Tsuniyoshi Tanaka e contava com
+              os seguintes países: Brasil, Argentina e Guyana.
             </p>
 
             <img
@@ -1210,6 +1746,40 @@ const Kyokushinkaikan = () => {
                 handleImageClick("https://i.imgur.com/4JqAODo.jpg")
               }
             />
+            <h2 className="text-2xl font-semibold mb-2">Caminho Certeiro</h2>
+            <p>
+              Karate-Dô significa: Kara (vazio), Te (mão), Do (caminho), ou
+              seja, caminho das mãos vazias. A este verdadeiro caminho a qual
+              visamos buscar, encontram-se inúmeros obstáculos a serem
+              transponíveis pelo indivíduo. O Do (caminho) a qual buscamos é
+              CONHECER E DOMINAR A SI MESMO (EGO). O passo para chegar a este
+              caminho está cheio de empecilhos ora por falta de confiança em si,
+              ou pelo meio exterior ser mais forte (quando o Medo vem à tona),
+              outras por negligência a nós mesmos e aos hábitos da sociedade,
+              Uns desses empecilhos podemos citar: pessimismo, medo, sexo,
+              drogas, alcoolismo, tabagismo, exibicionismo e muitos outros que
+              corrompem o ser humano. Uns dos fatores que o ajudam a encontrar
+              Meditação, positivismo, hábitos salutares para si (não vulgares),
+              confiança, respeito à natureza e aos seus semelhantes, humildade,
+              sabedoria, etc.
+            </p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
           </section>
           {/* Seção: Filosofia */}
           <section id="filosofia" className="space-y-4">
@@ -1227,8 +1797,6 @@ const Kyokushinkaikan = () => {
                 handleImageClick("https://i.imgur.com/4JqAODo.jpg")
               }
             />
-
-            <p></p>
           </section>
           <section id="fundadores" className="space-y-4">
             <h2 className="text-2xl font-semibold mb-2">Fundadores</h2>
