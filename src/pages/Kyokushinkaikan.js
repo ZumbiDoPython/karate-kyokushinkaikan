@@ -1763,6 +1763,526 @@ const Kyokushinkaikan = () => {
               confiança, respeito à natureza e aos seus semelhantes, humildade,
               sabedoria, etc.
             </p>
+
+            <h2 className="text-3xl font-bold mb-4">Shihan Manuel Gomes </h2>
+
+            <em>Escrito por José Koei Nagata em 01 de Janeiro de 2021</em>
+
+            <img
+              src="https://i.imgur.com/FtLrsSN.png"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/FtLrsSN.png")
+              }
+            />
+            <p>
+              Shihan Manuel Gomes da Silva nasceu no interior do Alagoas no dia
+              01 de Julho de 1950. Filho de Ernesto Gomes da Silva e Dona Maria
+              de Lurdes, onde sua mãe professora primária e dona de casa sempre
+              foi grande exemplo de idoneidade. Viveu com sua família em uma
+              casa bastante simples na fazenda Campo Novo, em um povoado chamado
+              Várzea do Pico em Alagoas. Desde muito novo e, sendo o mais velho
+              dentre os cinco irmãos, ajudou seu pai na lavoura da propriedade
+              da família.
+            </p>
+            <p>
+              Quando Manuel completou 8 anos de idade seu pai foi morar em uma
+              fazenda no estado de Sergipe. O Nordeste é uma região muito seca e
+              nos tempos de estiagem era uma das piores coisas que existem na
+              Terra. Os sofrimentos das pessoas e animais com sede e fome é
+              desesperador. Manuel viveu nesse cenário de pobreza, fome e sede
+              até os 25 anos e não teve oportunidade de completar os estudos.
+            </p>
+            <p>
+              Em 1975 veio para São Paulo a fim de tentar uma vida melhor e
+              ajudar os seus familiares. Conseguiu emprego numa metalúrgica e
+              através de um amigo operário conheceu o Karatê no começo do ano de
+              1977.
+            </p>
+            <p>
+              Pela primeira vez assistiu a um treino do Shihan Eisho Nakaza e
+              achou interessante todos aqueles movimentos enérgicos e gritos, já
+              que nunca havia conhecido nenhum tipo de artes marciais. Neste dia
+              viu o Shihan Eisho Nakaza fazer uma abertura total das pernas
+              (espacate) e ficou impressionado, até imaginou se algum dia
+              poderia fazer igual.
+            </p>
+            <p>
+              Mesmo com receio começou a treinar em março de 1977 na Academia de
+              Karate Kyokushinkaikan, na Rua Suíça – Parque das Nações em Santo
+              André/SP comandada pelo Shihan Eisho Nakaza. Sempre procurou se
+              espelhar no Shihan Nakaza, que além uma excelente pessoa era um
+              excelente professor e atleta. Shihan Nakaza tinha uma técnica
+              apurada, sendo forte, ágil, corajoso e gostava de lutar, porém
+              sempre controlando sua força.
+            </p>
+            <img
+              src="https://i.imgur.com/NZyTwDa.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/NZyTwDa.jpeg")
+              }
+            />
+            <p>
+              Por testemunhar todos estes atributos, o novato Manuel o admirava.
+              Ao final deste mesmo ano participou de seu primeiro campeonato
+              realizado pelo Shihan e foi desclassificado na primeira por fazer
+              uma falta. No entanto, sem se abalar, participou dos campeonatos
+              de 1978 a 1981. Em 1982 não participou, pois estava lesionado. Em
+              1983 deu a volta por cima e conseguiu almejar a classificação de
+              3º colocado, assim como 1984 no Campeonato Brasileiro. Já em 1985
+              e 1986 ficou em 4º colocação em Minas Gerais. Lembrando que os
+              Campeonatos eram por eliminatória e sem divisão de peso, ou seja,
+              absoluto.
+            </p>
+            <p>
+              A rotina de treinos era árdua e a realizava todos os dias após o
+              serviço. Todos os exames de faixa eram difíceis, mas o de Faixa
+              Preta era a sua meta. Em 1984 conseguiu almejar a tão sonhada
+              Faixa Preta, após passar por duras provas como quebrar 03 tábuas
+              com soco (Seiken) e realizar 15 lutas consecutivas (Kumite), sendo
+              aprovado pelo Shihan Eisho Nakaza.
+            </p>
+            <p>
+              Manuel era um aluno dedicado e sempre estava pronto para luta,
+              assim sendo participava de inúmeros campeonatos. Shihan Eisho
+              Nakaza o levou a participar de eventos em outros estados como em
+              Mato Grosso do Sul e Minas Gerais.
+            </p>
+            <p>
+              Em 1985 Shihan Eisho Nakaza por problemas familiares teve que
+              retornar ao Japão e confiou ao Sensei Manuel Gomes à incumbência
+              de herdar a academia e a responsabilidade de continuar os
+              ensinamentos desta arte marcial. Pelos seus 10 anos de treino e
+              dedicação Shihan Nakaza homologa a ele a Faixa Preta 3º Dan, pois
+              conhecia sua competência, responsabilidade e imensa dedicação à
+              arte marcial do Karate.
+            </p>
+            <p>
+              Após o retorno do Shihan Eisho Nakaza ao Japão o Sensei Manuel
+              Gomes da Silva, aliando forças com os outros faixas pretas dão
+              continuidade ao trabalho, realizando eventos, demonstrações e
+              Torneios.
+            </p>
+            <p>
+              Vendo o crescimento de seus eventos, culminou em fundar a
+              Associação Brasileira de Karate de Contato em 1991 em conjunto com
+              Michio Misumi e José Koei Nagata, sendo esta a primeira a
+              homologar eventos de Karate de Contato oficiais.
+            </p>
+            <p>
+              Em 1994 funda a Confederação Brasileira de Kakutô Karate para dar
+              oportunidades e regulamentação a diversos estilos de Karate de
+              Contato, viajando e ampliando seus horizontes no Karate e nos
+              Torneios pelo Brasil.
+            </p>
+            <img
+              src="https://i.imgur.com/CBEBkgm.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/CBEBkgm.jpeg")
+              }
+            />
+            <p>
+              Em 2004 viaja aos Estados Unidos para treinar com o Saiko Shihan
+              Shigero Oyama e lá consegue obter a Faixa Preta 4º Dan.
+            </p>
+            <p>
+              Viajou em companhia de José Koei Nagata a Argentina e ao Uruguai
+              divulgando o Karate e laços de amizades com diferentes estilos de
+              Karate de Contato.
+            </p>
+            <p>
+              Shihan Manuel já ministrou aulas em algumas academias da região de
+              Santo André/SP, onde ficou por 14 anos no Clube Panelinha, 04 anos
+              em uma academia de São Mateus/SP e 24 anos na academia do Clube
+              Primeiro de Maio em Santo André/SP.
+            </p>
+            <p>
+              Segundo as palavras do Shihan Manuel: “No Kyokushinkaikan, não se
+              aprende apenas a luta, mas também o respeito, a honestidade, a
+              disciplina e o autocontrole. Com o objetivo de equilibro entre o
+              corpo e a mente, o Kyokushinkaikan adota uma filosofia de rigor
+              consigo mesmo, amar a Pátria e o próximo.” A partir desses
+              fundamentos e com grande orgulho, sabedoria e disciplina, que
+              herdou do Shihan Eisho Nakaza, a qual o considera um sinônimo do
+              espírito do Kyokushinkaikan.
+            </p>
+            <p>
+              O Shihan Manuel realizou 18 Campeonatos Interestaduais, 7
+              Campeonatos Paulistas e 5 Campeonatos Brasileiros, através da
+              Federação Paulista e Brasileira de Kakutô Karate.
+            </p>
+            <p>
+              De 1975 a 2003, teve uma listagem de mais de 700 alunos, formou
+              trinta e cinco professores faixas preta, sendo quatro 2º Dan e
+              vinte e um 1º Dan.
+            </p>
+            <p>
+              Destes trinta e cinco faixas pretas, muitas abriram suas próprias
+              academias sendo oficializadas pela Confederação Brasileira de
+              Kyokushinkaikan Karate. Shihan Manuel formou estes faixas pretas
+              que ajudaram a dinamizar o Karate Kyokushinkaikan em Coaraci/BA
+              com Jerffson Nascif, São Sebastião/SP com Cosme, Mauá/SP com
+              Custódio e em Cesário Lange/SP com Venceslau.
+            </p>
+            <img
+              src="https://i.imgur.com/4JqAODo.jpg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/4JqAODo.jpg")
+              }
+            />
+            <p>
+              Shihan Manuel sempre visitava e treinava junto com Shihan Nagata,
+              onde passava técnicas, informações e vivencias dentro do Karate.
+              Ambos sempre viajaram juntos e realizaram diversas obras em prol
+              do Karate Kyokushinkaikan.
+            </p>
+            <p>
+              Shihan Manuel também se formou em Curso de Massagem oriental –
+              Seitai e chegou a exercer essa profissão por algum tempo,
+              inclusive auxiliando seus alunos em tratamentos para diversas
+              patologias.
+            </p>
+            <p>
+              Estimulado pelo Shihan Nagata, Shihan Manuel Gomes teve força para
+              voltar a estudar e em 2016 conseguiu se formar em Educação Física
+              na FEFISA honrando com orgulho os ensinamentos de seus mentores.
+            </p>
+            <p>
+              A realização da formação em Educação Física abriu a sua mente para
+              outras possibilidades, e ele começou a escrever um livro de Karate
+              Kyokushinkaikan, onde contava suas histórias e técnicas ante a
+              esta Arte Marcial. Porém não foi concluído esta obra literária.
+            </p>
+            <p>
+              Infelizmente em 2018 veio o falecer, porém seu legado ainda
+              continua, sendo o mais próspero o seu aluno da Bahia o Sensei
+              Jerffson Nascif que homologou a Federação Baiana de Karate
+              Kyokushinkaikan.
+            </p>
+            <img
+              src="https://i.imgur.com/4JqAODo.jpg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/4JqAODo.jpg")
+              }
+            />
+            <p>
+              “O Karatê deveria ser praticado por todas as pessoas pelo estilo
+              de vida que, acima de tudo, é o que representa. As pessoas que
+              pouco, ou nada, conhecem sobre o verdadeiro objetivo das artes
+              marciais e associam imediatamente esta atividade como algo
+              reservado para pessoas violentas, capazes de ferir o primeiro que
+              lhes cruzar o caminho, ou então para gente de limitado nível
+              cultural ou social deve de alguma forma, superar algum tipo de
+              complexo de inferioridade. Todos que pensam desta maneira estão
+              equivocados, pois o Karatê é uma maneira de aperfeiçoamento
+              físico, combate ao stress, paz social e respeito ao próximo”.
+            </p>
+            <img
+              src="https://i.imgur.com/KtjM7JT.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/KtjM7JT.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/5pOFEAc.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/5pOFEAc.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/lWUhXW4.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/lWUhXW4.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/vudbp0T.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/vudbp0T.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/WuGoC3G.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/WuGoC3G.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/6srinHu.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/6srinHu.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/I3GrNyN.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/I3GrNyN.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/T1MdZR4.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/T1MdZR4.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/SHzl28F.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/SHzl28F.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/g8y5RqV.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/g8y5RqV.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/MKqyBUb.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/MKqyBUb.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/ZoK9UZA.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/ZoK9UZA.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/uBRBazK.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/uBRBazK.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/a5dW8xc.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/a5dW8xc.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/imxD9TX.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/imxD9TX.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/eU7YSB2.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/eU7YSB2.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/JBEWTwz.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/JBEWTwz.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/lGAzJCd.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/lGAzJCd.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/wWV4YX1.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/wWV4YX1.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/fnykBsI.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/fnykBsI.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/i27dl5X.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/i27dl5X.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/BjqA2nJ.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/BjqA2nJ.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/lMQd1z8.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/lMQd1z8.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/JxW0voN.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/JxW0voN.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/yuHvBWr.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/yuHvBWr.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/ebZPOmi.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/ebZPOmi.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/yiaVqdb.png"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/yiaVqdb.png")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/8OUbXRI.png"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/8OUbXRI.png")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/9hGTtsX.png"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/9hGTtsX.png")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/ZbbveFB.png"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/ZbbveFB.png")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/20n2DbF.png"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/20n2DbF.png")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/LyzAhE6.png"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/LyzAhE6.png")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/9rrTFX6.png"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/9rrTFX6.png")
+              }
+            />
+
             <p></p>
             <p></p>
             <p></p>
