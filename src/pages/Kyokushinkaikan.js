@@ -2283,6 +2283,215 @@ const Kyokushinkaikan = () => {
               }
             />
 
+            <h2 className="text-3xl font-bold mb-4">SHIHAN MAYUKI MIZUKOSHI</h2>
+
+            <em>
+              Escrito por José Koei Nagata, em 26 de Junho de 2016 em
+              Sorocaba/SP
+            </em>
+
+            <p>
+              Mayuki Mizukoshi foi Uchi Dechi na Hombu Dojo – Matriz do Japão e
+              foi companheiro de Shihan Eisho Nakaza. Após árduo treinamento,
+              consegue a graduação Faixa Preta 3° Dan e é designado a difundir e
+              auxiliar o Kyokushinkaikan no Brasil.
+            </p>
+            <img
+              src="https://i.imgur.com/zhTvvgR.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/zhTvvgR.jpeg")
+              }
+            />
+            <p>
+              Então em 20/03/1977 desembarca no Brasil e após um período de
+              adaptação em São Paulo, é designado a difundir o Karate
+              Kyokushinkaikan em Sorocaba/SP.
+            </p>
+            <p>
+              Começa os trabalhos na ACM de Sorocaba e depois posteriormente
+              muda-se para a sede do Judô Bandeirantes Rua Professor Toledo
+              1045. As aulas ocorriam às terças e quintas das 19h00 às 21h00 e
+              aos sábados das 15h00 às 16h30.
+            </p>
+            <img
+              src="https://i.imgur.com/W9oIdWQ.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/W9oIdWQ.jpeg")
+              }
+            />
+            <p>Em março de 1979, Mayuki Mizukoshi recebe o 4° Dan do Japão.</p>
+            <p>
+              Sempre atuante, viajou a várias cidades do Brasil e do exterior
+              para auxiliar a difusão do Karate Kyokushinkaikan.
+            </p>
+            <img
+              src="https://i.imgur.com/4euNSTV.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/4euNSTV.jpeg")
+              }
+            />
+            <p>
+              Dominava pouco o português, mas conseguia se comunicar com gestos
+              e pequenas palavras. Sempre disposto a ensinar, ficava
+              meticulosamente corrigindo tecnicamente.
+            </p>
+            <p>
+              Em Sorocaba até 1981 formou 11 faixas marrons entre eles Kojem
+              Nagata.
+            </p>
+            <img
+              src="https://i.imgur.com/2hj29Ek.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/2hj29Ek.jpeg")
+              }
+            />
+            <p>
+              Shihan Mayuki Mizukoshi era muito técnico e tinha ótima qualidades
+              na execução de chutes. Conhecia também a técnica de Kobudô, com
+              manejo da arma “Sai”.
+            </p>
+            <img
+              src="https://i.imgur.com/oD43A9g.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/oD43A9g.jpeg")
+              }
+            />
+            <p>
+              Era um professor carismático a atencioso, a qual Kojem Nagata
+              sempre o acompanhava. Inclusive foi ele quem conseguiu a locação e
+              reforma do salão da Rua 07 de Setembro, quando se transferiu do
+              salão do Judô Bandeirantes.
+            </p>
+            <p>
+              Shihan Mayuki Mizukoshi também difundiu o Karate Kyokushinkaikan
+              na cidade de Campinas/SP e lá formou um único faixa marrom, que
+              infelizmente não veio a dar continuidade nos treinamentos.
+            </p>
+            <img
+              src="https://i.imgur.com/EOgg8Oi.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/EOgg8Oi.jpeg")
+              }
+            />
+            <p>
+              Em 12 de Setembro de 1981 no Campeonato Sulamericano de Kyokushin,
+              ocorrido em São Paulo, Shihan Mayuki Mizukoshi faz uma
+              demonstração de Tameshiwari (quebramento) de 05 barras de gelo com
+              Shuto. Num pequeno erro de ângulo, consegue ter êxito no
+              quebramento, mas não percebe uma lesão no antebraço.
+            </p>
+            <img
+              src="https://i.imgur.com/ylaVUlr.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/ylaVUlr.jpeg")
+              }
+            />
+            <p>
+              Após o tameshiware fez uma demonstração de Kata com “Sai” (punhal
+              em forma de tridente), e na execução do “Sai”, ele escapa de sua
+              mão e o deixa cair ao solo. Nesta hora ele percebe que havia
+              trincado o osso do braço (Ulna).
+            </p>
+            <p>
+              Shihan Mayuki Mizukoshi decide voltar ao Japão, mas antes treinou
+              e fez o Sr. Agenor Oliva de Moraes, passar para a Faixa Preta 1°
+              Dan.
+            </p>
+            <img
+              src="https://i.imgur.com/ElZYeyw.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/ElZYeyw.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/9ZR1bnc.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/9ZR1bnc.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/dsU2T46.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/dsU2T46.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/AAfuKKe.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/AAfuKKe.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/uydYyDX.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/uydYyDX.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/nNC2eN3.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/nNC2eN3.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/CTYYNwM.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/CTYYNwM.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/0i92dBc.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/0i92dBc.jpeg")
+              }
+            />
+
+            <img
+              src="https://i.imgur.com/GfsUhtE.jpeg"
+              alt="História Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/GfsUhtE.jpeg")
+              }
+            />
+
             <p></p>
             <p></p>
             <p></p>
@@ -2334,6 +2543,598 @@ const Kyokushinkaikan = () => {
                 handleImageClick("https://i.imgur.com/l3LGF4O.jpg")
               }
             />
+
+            <p>
+              <strong>CAMINHO CERTEIRO</strong>
+            </p>
+            <p>
+              Karate-Dô significa: Kara (vazio), Te (mão), Do (caminho), ou
+              seja, caminho das mãos vazias. A este verdadeiro caminho a qual
+              visamos buscar, encontram-se inúmeros obstáculos a serem
+              transponíveis pelo indivíduo. O Do (caminho) a qual buscamos é
+              CONHECER E DOMINAR A SI MESMO (EGO). O passo para chegar a este
+              caminho está cheio de empecilhos ora por falta de confiança em si,
+              ou pelo meio exterior ser mais forte (quando o Medo vem à tona),
+              outras por negligência a nós mesmos e aos hábitos da sociedade,
+              Uns desses empecilhos podemos citar: pessimismo, medo, sexo,
+              drogas, alcoolismo, tabagismo, exibicionismo e muitos outros que
+              corrompem o ser humano. Uns dos fatores que o ajudam a encontrar
+              Meditação, positivismo, hábitos salutares para si (não vulgares),
+              confiança, respeito à natureza e aos seus semelhantes, humildade,
+              sabedoria, etc.
+            </p>
+            <p>
+              O Karate-Dô visa encaminhar o indivíduo à direção certeira, mas
+              muitos o ignoram pensando que são fúteis. Os movimentos de golpes
+              de Karate-Dô nos ajudam a compreender os nossos movimentos, ao
+              nosso corpo e a nós mesmos. A cada movimentação perfeita de golpes
+              significa que e a nós mesmos. A cada movimentação perfeita de
+              golpes significa que a nossa mente está conseguindo dominar o
+              nosso corpo para que haja o equilíbrio físico e mental. Devemos
+              lembrar sempre que a Mente deve dominar corpo e não o corpo (ou
+              meios exteriores) dominar a Mente.
+            </p>
+            <p>
+              Deus nos deu o Dom da Sabedoria, usar ou não a este Dom depende
+              exclusivamente de nós. O ser Humano possui o Dom da Sabedoria, à
+              medida que treinamos o Karate-Dô, nos questionamos, a saber, para
+              que serve determinado movimento, porque é assim e não do outro
+              jeito. Devemos sempre analisar os nossos atos e questioná-lo a
+              estar certo ou errado, ao mesmo tempo para que serve. Às vezes
+              executamos determinados golpes ou movimento sem ao menos ter a
+              noção mínima do seu objetivo.
+            </p>
+            <p>
+              O Karate-Dô é tão complexo, que somente indivíduos de extrema
+              forte vontade e capacitado é capaz entendê-lo em toda à sua
+              essência, se levar anos para a busca dessa essência. O Karate-Dô
+              não é somente socos e pontapés, luta (combate) como a maioria
+              conhece-o. A prática “externa” faz com que conheçamos a “interna”
+              e a “interna” explica o porquê da “externa”. Muitos dizem Mestres
+              de Artes Marciais, por serem bons de Luta, mas isso não que dizer
+              que seja um verdadeiro Mestre Marcial. Nós sempre questionamos o
+              lado externo ao invés do interno. Para ser Mestre ou um professor
+              qualificado é necessário ser completo tanto em plano físico como
+              mental.
+            </p>
+            <p>
+              A luta (combate) em si faz parte do Karate-Dô, aonde iremos por em
+              prática os golpes e o nosso preparo físico. Ë também na luta que
+              ganhamos confiança e conseguimos dominar o Medo (um fator
+              essencial para o desenvolvimento). Na época dos lendários
+              samurais, este só era considerado de alto nível quando superava a
+              si próprio, libertando-se do MEDO DA MORTE, porque, somente assim,
+              poderia empenhar-se num combate exatamente por não temer perdê-la
+              (a vida). A Filosofia ZEN, no Karate ensina ao praticante o
+              sentido da modéstia, da idéia de justiça e de igualdade, portanto
+              o espírito do BUDÔ, conseqüentemente o Karate é sinônimo de
+              modéstia.
+            </p>
+            <p>
+              No Karate não existe antecipação, jamais se poderá alcançar uma
+              técnica perfeita sem antes estar embutido nesta idéia. Para ser
+              digno de um Mestre é necessário ter altos conhecimentos técnicos,
+              físicos e mentais. Se ignorarmos a parte técnica, estaremos
+              anulados a parte física e conseqüentemente a mental. Pois somente
+              um indivíduo de altas qualidades mentais consegue executar um
+              movimento com extrema técnica. Isto quer dizer que sua Mente opera
+              o seu corpo com perfeição. Se ignorarmos a parte física, estaremos
+              anulado a parte técnica e a Mental, pois não teremos
+              condicionamento físico adequado para executá-las e ao mesmo tempo
+              permanecer em determinadas posições ou repetir grandes quantidades
+              de golpes, ou mesmo manter a posição para a Meditação.
+            </p>
+            <p>
+              Se ignorarmos a parte Mental, estaremos eliminando a parte técnica
+              e física e o mais importante do Karate-Dô. Pois aí estaremos
+              executando movimentos “Vazios”, sem alma. Não teremos uma
+              mentalidade forte e em pouco tempo desistiremos da prática do
+              Karate-Dô. Pois espírito do Karate-Dô leva a desafiar a si mesmo.
+              Mas sem ele até poderemos desafiar, mas não a conseguiremos
+              vencer. A prática do ZEN visa dar ao praticante de Karate-Dô e de
+              outras artes um sentido de Honra, de autoconfiança, de Lealdade e
+              Obediência.
+            </p>
+            <p>
+              O antigo Samurai aliava a sua técnica de luta a seriedade de um
+              filósofo e a insensibilidade de um homem impassível, cheio de
+              confiança. O samurai preconizava uma vida de rusticidade,
+              cavalheirismo, desprezo pela Dor ou sentimento, respeito pelos
+              Mestres, bondade pelo inferior e auxílio generoso às mulheres, às
+              crianças e aos velhos.
+            </p>
+            <p>
+              <strong>
+                “POR MAIS QUE NA BATALHA SE VENÇA UM OU MAIS INIMIGOS, A VITÓRIA
+                SOBRE SI MESMO É A MAIOR DE TODAS AS VITÓRIAS”.
+              </strong>
+            </p>
+            <p>
+              <strong>DIFERENTES CAMINHOS</strong>
+            </p>
+            <p>
+              O Karate é um complexo e emaranhado sistema, a qual nós temos que
+              desvendar e conhecer a real verdadeira sobre este. Muitos o
+              ignoram, e ao invés de tomar o caminho certo, por via das dúvidas
+              percorrem o caminho errado. O Karate é um todo e não uma parte,
+              por isso deve ser treinado todas as suas fases (Kihon, Idogeiko,
+              Kata, Kumite, Sambom Kumite, Meditação, etc.). Cada parte tem um
+              significado, a qual contribui para a formação do caráter do aluno
+              praticante. Mas muito os desvirtuam estas partes treinando aquilo
+              que lhe só é útil. Muitos ignoram e treina basicamente o Kumite,
+              visando apenas à luta em si. Mas se seguirmos a este único caminho
+              estaremos nos desvirtuando de sua imagem real que é o Karate-Dô.
+              Pois sem fundamentos filosóficos a luta passa a ser as agressão
+              brutal entre dois indivíduos. Para aqueles que não compreendem o
+              Kumite, a sua formação passa a ser de simples emprego de
+              conhecimentos de técnicas (para o seu auto aperfeiçoamento); para
+              uma fase onde mostramos as nossas brutalidades, ignorância e sede
+              de briga.
+            </p>
+            <p>
+              O Kumite visa o emprego na prática das técnicas aprendidas, o
+              raciocínio rápido, condicionamento físico, concentração físico
+              espiritual, agilidade, coordenação, e a perda do Medo, ou seja,
+              você supera a si mesmo ante ao adversário. Mas, para um aluno mal
+              informado onde julga que o Kumite é simplesmente onde aprendemos a
+              brigar e a derrotar nossos adversários. Uma vez dominado o Medo, o
+              indivíduo se torna arrogante e exibicionista, longe de ser um
+              homem civilizado, culto e humilde. Gichin Funakoshi (Pai de Karate
+              Moderno) já condenava fazer campeonatos de Shiai Kumite, por esta
+              imagem errônea se propagar entre os praticantes e o público em
+              geral. O Kumite em si é importante, mas para o desenvolvimento
+              deste é necessário um aspecto filosófico e psicológico para que
+              tal erro não desvirtue a imagem do verdadeiro Karateca, pois o
+              VERDADEIRO KARATECA LUTA PARA SE APERFEIÇOAR E NÃO APERFEIÇOA PARA
+              LUTAR.
+            </p>
+            <p>
+              <strong>GARRA</strong>
+            </p>
+            <p>
+              Ao participar dos treinamentos de Karate, seu pensamento
+              (espírito) deve estar voltado para este. Nunca devemos treinar com
+              o espírito voltado para outras coisas, se assim o fizer o seu
+              treinamento estará caminhando para outro sentido. Executar
+              movimentos somente por fazer, não se incorporando a ele, estará
+              fazendo movimentos “VAZIOS” ou sem compreensão para tal
+              finalidade. Movimentos “VAZIOS” são inerentes à prática do Karate.
+              Se quiser fazer movimentos, procure uma Academia de Ginástica ou
+              Similar. Movimentos “VAZIOS” nos mostra o quanto o indivíduo
+              incompreende o verdadeiro sentido do Karate, na sua busca de um
+              estado perfeito e harmonioso. Aos movimentos devemos incorporar;
+              força, velocidade, impacto, espírito, Kiai, movimento do quadril,
+              etc, O Kiai, além de liberar energia, alivia o Stress do dia a
+              dia, trabalha a musculatura abdominal interna e faz com que você
+              concentra ao treino, não desviando seu pensamento.
+            </p>
+            <p>
+              Se você treinar ao movimentos sem força e velocidade,
+              comumentemente acostumará e sempre treinará assim. Não
+              desenvolvendo os seus limites, pois mesmo antes de atingi-los irá
+              interrompê-los.
+            </p>
+            <p>
+              Se treinar com Força e Velocidade, comumentemente acostumará a
+              treinar forte, sendo assim desenvolverá e ultrapassará os seus
+              limites e em momentos difíceis este treinamento lhe será válido,
+              pois o demonstrará em forma de GARRA e PERSEVERANÇA. Pois se
+              ultrapassou os seus limites, saberá de suas altas potencialidade
+              de concentração de energia no seu corpo e em momentos mais árduos
+              de sua vida, saberá sobressair vitoriosamente.
+            </p>
+            <p>
+              Neste teste, provavelmente poderemos determinar a descomunal força
+              interna que existe em você, condicionada pela sua força mental
+              (não se abatendo com os problemas ou meios exteriores).
+            </p>
+            <p>
+              GARRA – Forte interesse, disposição e persistência na execução de
+              qualquer ato, entusiasmo, vigor, vibração.
+            </p>
+            <p>
+              <strong>O DESAPEGO</strong>
+            </p>
+            <p>
+              Desapegar é liberta-se da dependência psicológica e emocional que
+              atas a fatos e objetos presentes em nossa vida diária. É preciso
+              que entendamos que desapegar não é sinônimo de desistir ou
+              abandonar. Não há mérito nenhum em desistirmos de alguma coisa em
+              função das dificuldades e decepções que temos ao lidar com elas. O
+              valor está em nos libertarmos de valores é hábitos que não tenham
+              mais significação construtivas para nossas existências. E nem
+              sempre é fácil nos desapegarmos de coisas que antes nos davam
+              prazer e satisfações, para substituí-las por outras que sejam mais
+              construtivas e harmoniosas para nosso desenvolvimento pessoal e
+              para a realização das metas a que nos propusemos como nossa meta
+              de vida. Livrarmo-nos de ambições e apegos inúteis é um ato de
+              liberdade que nos dá a oportunidade de maiores realizações dentro
+              das atividades que sejam construtivas para nosso auto –
+              aperfeiçoamento. Desistência não significa desapego.
+            </p>
+            <p>
+              A pessoa que desiste, o faz por não conseguir entender
+              satisfatoriamente a uma necessidade, ou por ter problemas e
+              dificuldades em lidar com elas. A pessoa que desistiu não se
+              desapegou. No íntimo ainda mantém o desejo de realizar certas
+              coisas, mas não encontra dentro de si a determinação e a
+              disciplina necessária para concretizá-la. Limita-se a submeter as
+              suas inclinações e aos acontecimentos a seu redor que a arrastem a
+              um vida infeliz e sem objetivo. Esse tipo de pessoa (mais comum do
+              que pensa) sofre por sua incapacidade de fazer o que deve ser
+              feito e por seu esmorecimento no cumprimento que é o seu dever. Se
+              não criar em si mesmo a auto disciplina e o censo do dever,
+              acabará por perder o respeito por si mesmo e passará a se
+              desprezar, descambando para o terreno do vício e da preguiça
+              terminando por destruir a sua própria vida.
+            </p>
+            <p>
+              <strong>JUSTIFICAÇÕES DA VIDA</strong>
+            </p>
+            <p>
+              À medida que vamos passando por diversas experiências durante
+              nossa vida, adquirimos alguns conhecimentos e alguma experiência.
+              Porém devido às nossas angústias e desejos, raramente vemos o que
+              sabemos com os olhos honestos. Diante das decisões que nosso modo
+              de vida impõe muitas vezes, estamos consciente do que temos a
+              fazer, mas, decidimos fazer o oposto; se o oposto nos parece mais
+              fácil. E depois de então termos cumprido com nossas obrigações ou
+              de não termos feito o que era preciso, pedimos desculpas ou, o que
+              é pior, nos justificamos! Nossa mente é nossa inimiga e nos
+              apresenta opiniões e julgamentos para justificar o fato de agirmos
+              inadequadamente. Praticamente não existe vício ou falhas de
+              personalidade que não possam ser vastamente justificados por uma
+              mente doentia e egocêntrica. Algumas vezes , quando nos dispomos a
+              fazer um esforço real no sentido de nosso auto – aperfeiçoamento ,
+              acabamos por aumentar nossas inseguranças sugerindo a nós mesmos
+              que o que estamos fazendo não é o direito. Algumas pessoas chegam
+              ao ponto de se criticarem tanto que acabam retornando ao ponto de
+              partida e negando a se enfrentarem. Desse estado de coisas
+              resultam duas posições antagônicas: a primeira é o fato de ainda
+              ignorarmos certas coisas e a outra é o fato de conhecermos certas
+              coisas, mas temos certa incapacidade de admiti-las como fazendo
+              parte da realidade que vivemos. Mesmo quando estamos vendo com
+              clareza uma determinada situação, temos a tendência de
+              interpretá-la em nosso próprio benefício e acabamos por tentar
+              enganar a nós mesmos. Quando iniciamos algum esforço sistemático
+              no sentido de modificarmos algum padrão de comportamento que
+              sabemos estar em conflito com as nossas necessidades evolutivas.
+              Muitas vezes somos tentados a esquecer o que sabemos e a ficarmos
+              preguiçosos, voltando à mente a outros assuntos. A principal causa
+              para esse modo de agir incoerente é o MEDO. O medo é a falta
+              resultante de força interior. Esse medo toma conta de nossa mente
+              de modo sutil, interferindo em nossa capacidade de avaliar as
+              coisas com clareza. O medo é uma das mais poderosas armas do EGO
+              para se proteger. Porque quando ocorrem sentimentos de Medo ou
+              fraqueza, desistimos de enfrentar nossas próprias realidades ou a
+              nós mesmos. Dessa forma mascaramos nossos verdadeiros sentimentos
+              e pensamentos, de maneira a perder a autenticidade de nosso modo
+              de pensar. E quando perdemos a autenticidade de nosso modo de
+              pensar, agir, de olhar, de sentir, de falar, nada nos é autêntico.
+              Essa hipocrisia mórbida acaba por nos envolver de tal forma que
+              passamos a esconder completamente o que sentimos por nós mesmos e
+              pelos outros, evitando a conscientização do fato de que estamos
+              tão longe da verdadeira compreensão. Se alguém tiver a ousadia de
+              sugerir que nossos EGOS estão assumindo o controle e que estamos
+              desperdiçando nossas vidas, certamente encontraríamos inúmeras
+              justificações e desculpas para a defesa de nossas atitudes. Mas,
+              se num gesto de amadurecimento, através da prática da Yoda, da
+              Meditação ou de qualquer outro método efetivo para despertar da
+              consciência nos atrevermos a nos observar com atenção e
+              sinceridade.
+            </p>
+            <p>
+              A percepção deste estado de coisas embora salutar, nem sempre nos
+              leva às ações modificadoras. Tal fato ocorre porque nos sentimos
+              esmagados pelas possíveis transformações que antevemos sobre
+              nossas vidas se realmente tivermos a coragem de lançar fora as
+              máscaras e assumir nossa posição real diante de nossas vidas.
+              Teremos tanto a mudança que achamos mais fácil enfileirar a negar
+              constantemente a necessidade de mudança – do que mudar.
+            </p>
+            <p>
+              <strong>O CAMINHO VEM A NÓS</strong>
+            </p>
+            <p>
+              Certamente você já ouviu um dístico popular que diz assim: “Quando
+              Maomé não vai à montanha, a montanha vem a Maomé”. Quando começar
+              a ocorrer em seu interior à mudança fundamental que os místicos
+              costumam denominar de Senda espiritual, você perceberá a
+              dificuldade de retornar a seu modo de vida anterior, mesmo que o
+              deseje. Se você ainda não atingiu os primeiros efeitos dessa nova
+              mudança fundamental não a perceberá mais , à medida que os atinja
+              , ocorre uma mudança do caminho espiritual. Perceberá então que a
+              mudança fundamental é aqui e agora – seja o que for que você
+              esteja fazendo. Se não nos capacitamos a promover a revolução
+              interior necessária para a mudança fundamental, mas temos
+              alimentado essa perspectiva em nosso íntimo – o caminho virá a
+              nós. Mesmo que você não se esforce para perceber que o sorvedouro
+              do desejo e do apego lhe são destrutivo, suas próprias
+              frustrações, mágoas e desapontamentos conduzirão a certa moderação
+              e ajudarão a um novo ângulo no posicionamento diante da vida.
+            </p>
+            <p>
+              <strong>PRIMEIROS OBSTÁCULOS</strong>
+            </p>
+            <p>
+              Todos que se dedicam a mudança fundamental esbarram, no início
+              desta busca com obstáculos que a seus olhos parecem grandes
+              proporções. À medida que sua transformação interior atinja
+              estágios mais elevados, você perceberá que estes obstáculos eram
+              gerados por sua própria mente para tentar forçar sua desistência
+              que a ela (Mente) não interessa na sua evolução espiritual. Você
+              não deve desistir, não importa quais sejam os esforços de auto –
+              aperfeiçoamentos a que tenha que se dedicar e não importam as
+              proporções dos obstáculos que tenham que enfrentar. Se você
+              desistir de enfrentar esses obstáculos agora, terá que
+              enfrentá-los mais tarde – não poderá fugir deles, não poderá
+              esquivar-se deles, não poderá justificar-se por não ter
+              enfrentado.
+            </p>
+            <p>
+              <strong>VIVA AGORA!</strong>
+            </p>
+            <p>
+              Agora você mesmo tem tudo para agarrar sua vida com as próprias
+              mãos e fazer dela o que quiser. A decisão será sempre à sua – se
+              hesitar em dar o primeiro passo ou, se caminhar aleatoriamente
+              para frente e para trás com indecisão, estará apenas desperdiçando
+              seu próprio tempo. Lembre-se: O TEMPO NÃO PASSA O QUE PASSA É A
+              SUA VIDA. Você precisa agora mesmo a encarar sua vida com
+              honestidade. As pessoas estão sempre tentando proteger seus EGOS
+              (auto imagem?) e esse é o hábito mais fácil de ser abandonado. O
+              ideal seria que houvesse uma maneira de realizarmos a
+              transformação interior sem que houvesse a possibilidade de
+              ferir-mos o EGO, sem análise, sem raciocínio (outra vez a mente),
+              sem mastigações mentais e sem que sentíssemos o impulso auto
+              destrutivo de preservar. Lamentavelmente não é possível realizar a
+              transformação fundamental sem que removamos as nódoas e as manchas
+              que nos impedem de ter uma percepção límpida e real. Se você tiver
+              uma vasilha cheia de água turva, notará que a menos que remova a
+              sujeira que existe dentro dela, não importa que quantidade de água
+              limpe lance sobre a turva, essa continuará sempre turva.
+            </p>
+            <p>
+              <strong>OLHAR DE COMPAIXÃO</strong>
+            </p>
+            <p>
+              As pessoas que convivem com alguns dos grandes místicos indianos
+              (Rama Maharishi, Ramakrishna, Yogananda, etc…) notaram que todos
+              eles tinham em comum um olhar de compaixão, porque percebem mais
+              do que ninguém como as pessoas à sua volta estão desesperadas e
+              exalta pelo constante apego e pelas angustiantes tentativas de
+              agarrar todas as coisas que a vida lhes oferecem.
+            </p>
+            <p>
+              <strong>O URSO E O APEGO</strong>
+            </p>
+            <p>
+              Certamente você já ouviu dizer que os ursos destroem suas vítimas
+              menores às patadas e dentadas, e seus adversários maiores
+              agarrando-os, fincando-lhes as unhas nas costas deles e
+              esmagando-os contra seu próprio corpo. Certa vez li a história de
+              um lenhador do Canadá que foi surpreendido em seu acampamento por
+              um imenso urso pardo e não tendo nenhuma arma, arremessou a
+              chaleira de água quente que pretendia preparar o seu café. O
+              interessante desta história; e que ao sentir a queimadura da água
+              quente o urso que estava acostumado a agarrar suas vítimas, ao
+              invés de arremessá-la longe se agarrou desesperadamente. Quanto
+              mais lhe ardiam as queimaduras, mais ele agarrava à chaleira. As
+              pessoas são exatamente assim! Sabemos que os apegos nos magoam e
+              acabam por nos destruir, mas, cada vez mais nos agarramos a nossos
+              egos. A maioria das pessoas não possui muita determinação em suas
+              próprias vidas, não sabendo muito bem o que esperam dela e tendo
+              apenas mesquinhas ambições pessoais, ânsia de satisfazer os
+              próprios desejos, certo desespero para viver uma vida confortável,
+              uma ânsia de ser feliz a qualquer custo – tudo isso temperado com
+              muita excitação e sensualidade.
+            </p>
+            <p>
+              SOMOS CONSUMIDOS POR NOSSOS DESEJOS DA MESMA FORMA QUE A MARIPOSA
+              É CONSUMIDA PELA CHAMAÉ CONSUMIDA PELA CHAMA QUE A ATRAI. Você não
+              percebe que suas ansiedades e apegos são incapazes de lhe
+              proporcionar uma satisfação permanente, apenas lhe criam mais dor
+              e dependência. É um círculo vicioso: o apego gera a DOR e a DOR
+              faz com que nos agarremos mais ainda a nossos apegos (porque temos
+              a ilusão de que eles nos dêem consolo).
+            </p>
+
+            <p>
+              <strong>O CHACHORRO DESDENTADO</strong>
+            </p>
+            <p>
+              No Tibete viveu o famoso monge Melaria possuidor de grandes
+              poderes e grande sabedoria. Tão grande foram seus feitos, que até
+              em línguas ocidentais podemos encontrar muitas obras a seu
+              respeito. Certa vez Melaria foi visitado por um viajante que,
+              espantado com seus grandes conhecimentos espirituais e pelo seu
+              poder de levitação, interrogou-o sobre qual o principal obstáculo
+              que impedia o homem de atingir a transformação fundamental.
+              Laconicamente Milarepa atirou um osso a um cachorro desdentado que
+              estava ali próximo e foi embora. O visitante não entendeu o gesto
+              de Milarepa, porque não observou com atenção a reação do cachorro
+              desdentado. O cachorro começou a roer o osso, mais como não tinha
+              dentes, suas gengivas se feriram e sangraram. Sentindo o gosto do
+              seu próprio sangue, começou a achar o osso suculento e saboroso, e
+              passou a roer ainda mais vorazmente. Assim são as pessoas, apegam
+              desesperadamente as coisa que agradam ao EGO e não percebem que
+              esse EGO as destrói. E o que é pior, é que mesmo sabendo que
+              existem atividades mais saudáveis do que os apegos, você continua
+              a se mover nesse círculo vicioso e a deixar-se dominar pelo EGO.
+            </p>
+            <p>
+              <strong>
+                CONHECIMENTO VEM DO SEU INSTRUTOR,SABEDORIA VEM DO SEU INTERIOR
+              </strong>
+            </p>
+            <p>
+              Procure memorizar esse adágio, porque ele o lembrará de algumas
+              grandes verdades. Em primeiro lugar ele o ensina que nenhum homem
+              pode levá-lo mais perto da verdade. Mesmo que você conheça alguém
+              incrível, uma pessoa correta, sábia, honesta e bem intencionada,
+              ela não poderá levá-lo mais próximo da verdade. Ninguém ensina
+              nada a ninguém. Nunca existe aquele que ensina, existe aquele que
+              aprende. Procure recordar-se do seu tempo de escola; seu professor
+              (ou professora) estava dando aula. Digamos uma classe de trinta
+              alunos. Embora tivesse ensinando uma determinada matéria, mais da
+              metade dos alunos certamente não estaria prestando atenção, da
+              outra metade alguns simplesmente não conseguiram concentrar-se no
+              que estava sendo ensinado ou não estaria se esforçando para
+              entender, o restante estaria interessado em aprender e prestava
+              bastante atenção ao que estaria sendo ensinado. Mesmo entre esses
+              haveria alguns que não conseguiam entender por mais dedicado que
+              fosse e por mais que se esforçassem por aprender. Isso tudo
+              acontece porque o ato de aprender depende exclusivamente de nós e
+              não daqueles que tentam ensinar-nos. A capacidade de aprender
+              depende exclusivamente de nós mesmos e de mais ninguém.
+              Evidentemente se unirmos uma autêntica vontade de aprender a um
+              ensino didaticamente correto, ministrado por um professor
+              competente, seremos capazes de aprender muito mais do que
+              tentássemos apenas pelos próprios esforços. Mesmo o melhor
+              professor e a melhor didática, não conseguem transmitir
+              ensinamentos a quem não esteja disposto a aprender. Um
+              conhecimento poderá ser transmitido de muitas formas desde que,
+              estejamos disposto a aceitá-las, mas a sabedoria só chega a nós a
+              partir de nossa vivência pessoal. Essa é a razão dos conselhos
+              serem inúteis. Os conselhos são inúteis, porque não substituem a
+              vivência pessoal. Aquilo que você aprende pela experiência você
+              nunca esquece, mas o conhecimento que você adquire a partir dos
+              outros , aprenderam , dispersam-se como as areias ao vento. Dentro
+              de você está a Suprema Sabedoria. Cabe a si mesmo a tarefa de
+              descobri-la e torná-la manifesta em seus atos. Ninguém poderá
+              substituí-lo nesta tarefa mesmo que o tente desesperadamente.
+            </p>
+            <p>
+              <strong>A LENDA DOS DEVAS</strong>
+            </p>
+            <p>
+              Na Índia uma antiga lenda narra à seguinte história: No princípio
+              dos tempos de Brahma (o Deus criador da Trindade Hindu) reunir seu
+              devas, entidades semi divinas, e propôs-lhes o seguinte problemas:
+              disse o Brahma: – O homem está se tornando cada vez mais
+              inteligente e é de se temer que algum dia atinja tal estado de
+              desenvolvimento Mental que seja capaz de desvendar a grande
+              verdade do Universo; para que isto não aconteça quero que escolham
+              um lugar seguro em que possamos ocultá-lo, para que ele jamais o
+              encontre. Um dos devas sugeriu que a verdade suprema fosse
+              enterrado bem no fundo da Terra, mas Brahma não aceitou a idéia,
+              alegando que o homem desenvolveria uma tecnologia que seria capaz
+              de atingir qualquer ponto na Terra. Outro deva aconselhou que a
+              verdade suprema fosse oculta nas profundezas do oceano. Mas Brahma
+              lhe disse que o homem evoluiria tanto que faria embarcações
+              capazes de devastar os mais profundos mares. O terceiro devas fez
+              ver que o ideal seria esconder a Suprema Verdade na lua, pois
+              assim estaria bem longe do alcance do homem, mas mais uma vez
+              Brahma respondeu que o conhecimento técnico do homem seria tal que
+              fabricaria naves espaciais capazes de atingir facilmente o
+              satélite da lua. Outro devas considerou então já que o homem seria
+              tão capaz mentalmente que geraria máquinas poderosas capazes de
+              levá-los até a lua, então o único recurso seria esconder a Verdade
+              Suprema entre as estrelas nos confins do Universo. Mas Brama
+              concluiu que a evolução do homem lhe permitiria ir até os confins
+              do Universo e que só haveria um lugar suficientemente seguro para
+              esconder do próprio homem. E escondeu-adentro do próprio homem.
+            </p>
+            <p>
+              <strong>SEU PRÓPRIO CENTRO</strong>
+            </p>
+            <p>
+              Sem dúvida Brama teve grande Sabedoria em esconder a Sabedoria
+              Suprema dentro do próprio homem; não porque seja difícil
+              encontrá-la, simplesmente porque o homem a procuraria em todos os
+              lugares exceto dentro de si mesmo. Tudo que há de fundamental
+              dentro da Espiritualidade e da Sabedoria está dentro de nosso
+              coração. Não precisamos perguntar a ninguém sobre o que é certo ou
+              errado, sabemos a resposta a essa e a outras perguntas se nos
+              voltarmos para nosso interior. Quando concentramos nossa atenção
+              no centro de nós mesmos, encontramos nosso Mestre. A esse centro
+              espiritual, as diferentes culturas chamam de muitos nomes, mas
+              adotamos o termo “EU” para simbolizar a natureza real do nosso ser
+              . Em contrapartida, quando nos referimos ao estado de percepção
+              ilusória que faz com que nos vejamos como uma personalidade
+              separada do todo que nos cerca a denominamos “EGO”.
+            </p>
+            <p>
+              <strong>OS OBJETIVOS DO HOMEM</strong>
+            </p>
+            <p>
+              Conta-se que em certa época viveu um homem que tinha grandes
+              objetivos na cabeça, mas que não via a oportunidade para colocá-lo
+              em ação. Quando era garoto esse homem pensava:
+            </p>
+            <p>
+              – Vou fazer uma grande obra que deixará marcada minha passagem por
+              este mundo, mas agora tenho que trabalhar para ajudar meus pais e
+              não tenho tempo, quando entrar no ginásio eu o farei.
+            </p>
+            <p>
+              Aí ele entrou no Ginásio, mas os estudos se complicaram e ele
+              pensou: – Agora não tenho tempo porque tenho muita matéria para
+              estudar, mas quando entrar para a faculdade o mundo virá o que sou
+              capaz.
+            </p>
+            <p>
+              Os anos se passaram e ele entrou na Faculdade, mas as atividades
+              acadêmicas, as dependências em certas matérias, o convívio com os
+              colegas fizeram-no pensar: – Bom, ainda não deu, mas assim que me
+              formar tomarei todas as providências necessárias para a realização
+              de meus objetivos.
+            </p>
+            <p>
+              Ele se formou, mas viu envolvido no torvelinho da vida, casou-se
+              com uma colega de faculdade e teve de arranjar um bom emprego.
+              Pensou: – Logo que consiga comprar minha casa já terei disponível
+              para a grande tarefa a que me propus.
+            </p>
+            <p>
+              Mas, mal acabou de comprar a sua casa, surgiram os filhos e os
+              problemas típicos da vida familiar, o tratamento dentário da
+              esposa, contas a pagar aumento do custo de vida, salários que
+              nunca sobem o proporcional à inflação, etc. E ele pensou:
+            </p>
+            <p>
+              Não tem jeito mesmo, vou ter que por de lado meus objetivos até
+              que as crianças cresçam, enquanto isto estarei adquirindo
+              experiências e mais tarde poderei realizá-los plenamente.
+            </p>
+            <p>
+              Mas depois que as crianças se tronaram adultos vieram às noras e
+              os genros, os netos, aumentaram as atividades em família e o tempo
+              disponível se tornou ainda mais exíguo.
+            </p>
+            <p>E o homem mais uma vez pensou:</p>
+            <p>
+              – É, parece que ainda não é desta vez, mas quando me aposentar
+              terá todo o tempo do disponível para fazer tudo o que desejar.
+            </p>
+            <p>Mas, mal se aposentou aquele homem morreu…</p>
+            <p>
+              <strong>FILOSOFIA DO SUCESSO – by Napoleon Hill</strong>
+            </p>
+            <p>
+              Se você pensa que é um derrotado, você se tornará um derrotado, Se
+              não pensar, quero a qualquer custo, Não conseguirá nada. Mesmo que
+              você queira vencer, mas pensa que não vai conseguir. A vitória não
+              sorrira para você.
+            </p>
+            <p>
+              Se você fizer as coisa pela metade você será um fracassado. Nós
+              descobrimos neste mundo, que o sucesso começa pela intenção da
+              gente, E tudo se determina pelo nosso espírito.
+            </p>
+            <p>
+              Se você pensa que é um malogrado você se torna como tal. Se você
+              almeja uma posição mais elevada Deve antes de obter a vitória
+              Dotar-se da convicção de que conseguirá infalivelmente.
+            </p>
+            <p>
+              A luta pela vida, nem sempre é vantajosa aos fortes, nem aos
+              espertos. Mais cedo ou mais tarde Quem cativa a vitória é aquele
+              que crê plenamente:
+            </p>
+            <p>
+              <strong>“EU CONSEGUIREI”</strong>
+            </p>
           </section>
           {/* Seção: Galeria */}
           <section id="galeria" className="space-y-4">
