@@ -2526,24 +2526,6 @@ const Kyokushinkaikan = () => {
                 handleImageClick("https://i.imgur.com/4JqAODo.jpg")
               }
             />
-          </section>
-          <section id="fundadores" className="space-y-4">
-            <h2 className="text-2xl font-semibold mb-2">Fundadores</h2>
-            <p>
-              Masutatsu Oyama é o fundador do estilo, conhecido mundialmente por
-              suas demonstrações de força e técnica impecável. Seu legado vive
-              através dos instrutores e praticantes do Kyokushinkaikan.
-            </p>
-
-            <img
-              src="https://i.imgur.com/l3LGF4O.jpg"
-              alt="Fundadores Kyokushinkaikan"
-              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
-              onClick={() =>
-                handleImageClick("https://i.imgur.com/l3LGF4O.jpg")
-              }
-            />
-
             <p>
               <strong>CAMINHO CERTEIRO</strong>
             </p>
@@ -3135,6 +3117,644 @@ const Kyokushinkaikan = () => {
             <p>
               <strong>“EU CONSEGUIREI”</strong>
             </p>
+            <h2 className="text-3xl font-bold mb-4">
+              CÓDIGO DE HONRA DOS SAMURAIS – BUSHIDO
+            </h2>
+            <img
+              src="https://i.imgur.com/uwUYZrE.jpeg"
+              alt="Imagem"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/uwUYZrE.jpeg")
+              }
+            />
+            <p>
+              Kara (vazio), Te (mão) Do (caminho). Do é a filosofia e o
+              misticismo que impregnou e deu o refinamento a todos estes
+              sistemas e disciplinas. O DO é o aporte que o ZEN BUDISMO oferece
+              a todos os praticantes de Ken-do, Karate-Dô, Aiki-do, etc., junto
+              com o ZAKEN (meditação Zen budista); enfim trata-se do caminho que
+              leva o homem a reencontrar sua própria essência, percorrendo o
+              caminho que é conhecido com o nome de BUDO, ou seja, o caminho da
+              iluminação. É onde as artes de conflito adquirem uma predominância
+              mística, religiosa e quase sobrenatural.
+            </p>
+            <p>
+              A essência de todas estas artes está impressa num Código de Honra,
+              que conhecemos hoje sob o nome de BUSHIDO (literalmente caminho do
+              Cavaleiro Militar). Este Código que deu a razão de ser de geração
+              e gerações de Mestres e discípulos e mais tarde tornou-se pilar
+              dos ensinamentos dos nobres guerreiros japoneses.
+            </p>
+            <h2 className="text-3xl font-bold mb-4">
+              CÓDIGO DE HONRA DOS SAMURAIS – BUSHIDO
+            </h2>
+            <p>Não tenho Pais, Faço do Céu e da Terra meus Pais.</p>
+            <p>Não tenho Lar, Faço do * Saika Tandem meu Lar.</p>
+            <p>Não tenho Poder Divino, Faço da Honestidade meu Poder.</p>
+            <p>
+              Não tenho condutas, Faço da Humildade minha maneira de
+              relacionamento. –
+            </p>
+            <p>
+              Não tenho Poder Mágico, Faço da minha Personalidade minha magia.
+            </p>
+            <p>
+              Não tenho vida nem morte, Faço da eternidade a minha vida e a
+              minha morte.
+            </p>
+            <p>Não tenho Corpo, Faço da Coragem meu corpo.</p>
+            <p>Não tenho Olhos, Faço do Relâmpago meus olhos.</p>
+            <p>Não tenho Ouvidos, Faço da sensibilidade meus ouvidos.</p>
+            <p>Não tenho Membros, Faço da vivacidade meus membros.</p>
+            <p>Não tenho Leis, Faço da auto proteção minha lei.</p>
+            <p>Não tenho Projetos, Faço da Oportunidade meus planos.</p>
+            <p>
+              Não tenho estratégia, Faço da Liberdade de matar e de recussitar
+              minha estratégia.
+            </p>
+            <p>
+              Não sou um Prodígio, Faço do Respeito à verdadeira Doutrina meu
+              milagre.
+            </p>
+            <p>
+              Não tenho Dogmas Rígidos, Faço da Adaptabilidade a todas as coisas
+              o meu Princípio.
+            </p>
+            <p>Não tenho Forma, Faço da Astúcia minha forma.</p>
+            <p>Não tenho Milagres, Faço da Justiça meus milagres.</p>
+            <p>Não tenho Táticas, Faço da rapidez minha tática.</p>
+            <p>Não tenho amigos, Faço da Mente meu amigo.</p>
+            <p>Não tenho Inimigos, Faço da Imprudência meu inimigo.</p>
+            <p>
+              Não tenho Armadura, Faço da minha sinceridade e retidão minha
+              armadura.
+            </p>
+            <p>
+              Não tenho castelo fortificado para me defender, Faço da minha
+              sabedoria meu castelo.
+            </p>
+            <p>
+              Não tenho espada, faço da minha calma e silêncio espiritual minha
+              espada.
+            </p>
+            <p>
+              <strong>* SAIKA TANDEM:</strong> ponto de equilíbrio do corpo
+              humano, localizado 4 dedos abaixo do umbigo.
+            </p>
+            <p>
+              <strong>BU-SHI-DO </strong>significa literalmente
+              Militar-Cavaleiro-Caminho, os princípios que os guerreiros devem
+              observar, tanto em sua diária como em sua profissão; em uma
+              palavra, são os preceitos do Cavalheirismo a Nobre Obrigação da
+              Classe guerreira. Bushido, pois, é o Código de Princípios Morais
+              que os cavaleiros deviam ou aprendiam a observar.
+            </p>
+            <p>
+              Não é um Código escrito; quando muito consta de umas poucas
+              palavras que correram de boca em boca ou saíram da pena de algum
+              grande guerreiro ou sábio. Com muita freqüência é um Código não
+              enunciado e nem escrito, que possui em troca, a poderosa sanção de
+              fatos verdadeiros, de uma lei escrita nas fibras do coração. Foi
+              estabelecido não por obra de um cérebro criador, ou sobre a vida
+              de um só personagem, por renomado que fosse. Foi o produto
+              orgânico de décadas e séculos de experiência militar. No Japão
+              como na Europa, quando se inaugurou oficialmente o Feudalismo, a
+              classe profissional dos guerreiros adquiriu uma posição
+              proeminente. Estes guerreiros eram conhecidos como o nome de
+              “SAMURAI” que significa literalmente, guarda ou acompanhante, de
+              um caráter semelhante a dos Soldituri cuja existência na Aquitânia
+              menciona César, ou Condes, que segundo Tácito, seguia os chefes
+              germânicos de seu tempo; ou tomado um exemplo ainda posterior, os
+              militares imediatos de que se lê na história da Europa Medieval.
+            </p>
+            <p>
+              <strong>FONTES DO BUSHIDO </strong>– Estas cinco relações morais
+              se correspondem como cinco virtudes Cardinais que são:
+            </p>
+            <p>
+              1 – Benevolência, que inclui: Espírito público, Piedade filial,
+              etc.
+            </p>
+            <p>
+              2 – Retidão, que compreende: Valor, fraternidade, integridade,
+              pureza, etc.
+            </p>
+            <p>
+              3 – Correção, que engloba: Respeito, caução, humildade,
+              deferência, etc.
+            </p>
+            <p>
+              4 – Conhecimento, que inclui: Conhecimento do Homem, da Natureza e
+              do destino.
+            </p>
+            <p>
+              5 – Boa Fé, que compreende: Verdade, sensibilidade, sinceridade,
+              honestidade.
+            </p>
+            <p>
+              O BUSHIDO tratou ligeiramente do puro conhecimento. Não se buscava
+              como fim substancial, mas como um meio parta a aquisição da
+              SABEDORIA.
+            </p>
+            <p>
+              O homem que se detém no puro conhecimento sem chegar a seu fim
+              maior, era considerado não mais que uma máquina útil capaz de
+              fabricar máximas e poemas a ordem. Assim o conhecimento se
+              identifica com sua aplicação prática na vida, a esta doutrina
+              Socrática encontra seu mais constante expositor no filósofo chinês
+              Wang Yanng Ming que jamais cansou de repetir,
+            </p>
+            <p>“ Saber e Fazer não são mais que uma coisa”.</p>
+            <p>
+              <strong>RETIDÃO E JUSTIÇA</strong> – Este é o mais poderoso
+              preceito no Código do Samurai. Não há mais repugnante para um
+              Samurai que os atos dissimulados ou as empresas tortuosas. Retidão
+              é a faculdade de decidir certa linha de conduta, de acordo com a
+              razão, sem titubear. Morrer quando é justo morrer, matar quando é
+              justo matar.
+            </p>
+            <p>
+              Disse outro Bushi, “Retidão é o esqueleto que presta firmeza e
+              mantém a estrutura. Assim como sem os ossos a cabeça não pode
+              descansar sobre os ombros, nem as mãos mover-se nem pés
+              sustentar-se, também sem retidão, nem talento nem estudo pode-se
+              converter um ser humano num Samurai. Mêncio chama a Benevolência o
+              espírito do homem, e a retidão seu caminho. “Quando lamentável,
+              exclama, é esquecer o caminho e não seguí-lo, perder o Espírito e
+              não saber buscá-lo! ”A Retidão é o caminho estreito que o homem
+              deve tomar para recobrar o paraíso perdido.
+            </p>
+            <p>
+              <strong>O VALOR, A AUDÁCIA E O SOFRIMENTO</strong> – Confúcio
+              define o valor por seu contrário, ao dizer: “Conhecer o que é
+              justo, e não executá-lo, denota falha de valor. O verdadeiro valor
+              consiste em viver quando é justo viver, e morrer quando é justo
+              morrer.”
+            </p>
+            <img
+              src="https://i.imgur.com/dXP8rgi.jpeg"
+              alt="Imagem"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/dXP8rgi.jpeg")
+              }
+            />
+            <p>
+              Os filhos dos Samurais eram desde muito pequenos educados nas
+              disciplinas mais rígidas; levantavam-se antes do sol; dirigiam-se
+              à casa dos Mestres com os pés descalços e no mais frio inverno,
+              passavam as noites sem dormir, lendo livros em voz alta, visitavam
+              sozinhos durante a noite os lugares de execução, etc.
+            </p>
+            <p>
+              O aspecto espiritual do valor se manifesta na compostura, a
+              tranqüila presença do espírito.
+            </p>
+            <p>
+              A tranqüilidade é o valor em repouso; é manifestação estática do
+              valor, assim como os atos audaciosos são uma manifestação
+              dinâmica.
+            </p>
+            <p>
+              Um homem verdadeiramente valoroso está sempre sereno; jamais é
+              tomado de surpresa, nada perturba a equanimidade de seu espírito.
+            </p>
+            <p>
+              No auge da batalha permanece frio; no meio catástrofes mantém seu
+              espírito em repouso, os terremotos não o abalam e ri na
+              tempestade.
+            </p>
+            <p>
+              Verdadeiramente grande é quem em presença imediata de um perigo de
+              morte, conserva o domínio sobre si mesmo, quem não compor um poema
+              estando ameaçado de um grande perigo ou cantarolar uma canção
+              frente à morte; levar a termo uma dessas ações sem que trema a
+              perna ou a voz, se considera como prova infalível de uma natureza
+              forte, que longe de saturar-se tem sempre lugar para algo mais”.
+            </p>
+            <p>
+              Ota Dokan, o grande fundador do Castelo de Tóquio, foi atravessado
+              por uma lança; seu assassino, conhecendo as tendências poéticas de
+              sua vítima acompanhou o golpe com este verso:
+            </p>
+            <p>
+              Ah! Quão certo é, que em momentos como este, nosso coração chora a
+              fragilidade da vida” e, no mesmo instante, o herói experiente, sem
+              acovardar-se pela ferida mortal, respondeu:
+            </p>
+            <p>
+              “Se é que em horas de Paz não aprendemos a olhar a vida com
+              indiferença”. Coisas que são sérias para os mortais podem ser
+              consideradas como um jogo para um valente. Daí que as antigas
+              guerras não fosse coisa rara, que as partes beligerantes fizessem
+              um torneio de poemas ou iniciassem uma discussão retórica. Um
+              combate não era somente um assunto de força bruta; era também uma
+              luta intelectual. ”Deveis estar orgulhosos de nossos inimigos,
+              porque então o triunfo de vosso”. O valor e a Honra pedem que não
+              sejamos inimigos na guerra, senão de quem mereça ser nosso amigo
+              na Paz.
+            </p>
+            <p>
+              <strong>A BENEVOLÊNCIA</strong> – “O sentimento de compaixão, o
+              amor, a magnanimidade, o afeto aos demais, a simpatia, foram
+              considerados sempre as virtudes supremas, os mais altos atributos
+              da alma humana”.
+            </p>
+            <p>
+              “A retidão levada ao extremo se petrifica em rigidez; a
+              benevolência praticada sem medida se funde em debilidade”.
+            </p>
+            <p>
+              Os mais bravos são os mais termos. A ternura de um Bushi se
+              encontra simbolicamente representada na flor de cerejeira; ela
+              constantemente lhe lembrava que o homem é como uma flor sobre a
+              terra nasce de uma semente, cresce, entrega seu perfume e sua cor
+              para converter-se em fruto, guardando em si muitas sementes.
+            </p>
+            <p>
+              <strong>A CORTESIA</strong> – Em uma forma superior, a cortesia
+              quase se confunde com o Amor, supondo que se há de fazer uma
+              coisa, sem dúvida que haverá uma maneira melhor que a outra para
+              fazê-la e, que a melhor maneira, será a mais econômica e a mais
+              bela. A verdadeira graça significa então economia de movimento.
+            </p>
+            <p>As belas maneiras significam poder em repouso.</p>
+            <p>
+              Os Mestres do Kyudo (caminho do arco e flecha) ensinam que para
+              que a flecha acerte o alvo, existe somente um ponto e, para errar,
+              infinitos pontos.... Aqui também se observa esse princípio de
+              economia e ordem natural, que nos sugere a procura desse caminho
+              que une todas as coisas.
+            </p>
+            <img
+              src="https://i.imgur.com/3mWWiMC.jpeg"
+              alt="Imagem"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/3mWWiMC.jpeg")
+              }
+            />
+            <p>
+              <strong>A HONRA</strong> – O sentimento de Honra implica uma
+              consciência clara de dignidade e de merecimento pessoal”.
+              Ofender-se por provocação considerava-se mesquinho e ridículo e
+              como uma forma de caráter fraco. Um ensinamento diz: A verdadeira
+              paciência consiste em suportar as coisas que nos parecem
+              insuportáveis”. A Honra, considerada como a justa valorização dos
+              demais, e este princípio do Bushido, elevado a sua máxima
+              expressão filosófica transmutam-se em compreensão e amor. Daí,
+              nasce talvez este outro ensinamento que diz: “Se o adversário é
+              inferior a ti, por que brigar?{" "}
+            </p>
+            <p>Se o adversário é superior a ti, por que brigar?</p>
+            <p>
+              Se o adversário é igual a ti, compreenderá o que tu compreendes e
+              não haverá luta.”
+            </p>
+            <p>
+              Este é dos princípios da não violência que durante muito tempo
+              alimentou o autêntico espírito das Artes Marciais. A Honra não é
+              orgulho, senão consciência real do que se possui. Fala-se que em
+              um tempo, vivia um jovem guerreiro, que ao jogar diariamente com a
+              vida e a morte, devido à sua profissão chegou a questionar-se.
+            </p>
+            <p>
+              Desejava saber o que era o CÉU e o INFERNO. Quando seu coração já
+              não podia mais suportar este mistério, dirigiu-se a uma montanha
+              em busca de um sacerdote ancião, para que o iluminasse com seus
+              ensinamentos. Ao encontrá-lo. Saudou-o reverentemente e lhe disse:
+              Oh! Venerável senhor, desejaria que me instruísse sobre ò que é o
+              CÉU e o INFERNO. Ao que o Mestre respondeu: Esta pergunta é mais
+              própria de um camponês que de um guerreiro como tu, a não ser que
+              sejas um camponês disfarçado. “Como dizes? Replicou o jovem
+              samurai. Digo que nem pareces um guerreiro, não somente pela sua
+              infantil pergunta, senão também pelas roupas que levas.”
+            </p>
+            <p>
+              A tudo isto, o acidental discípulo já estava vermelho de ira por
+              semelhante insulto e o sacerdote continuou. “Tua falta de controle
+              afirma minha suposição” E já não suportando mais, o Samurai
+              despoja a sua espada e sua ira. Nesse momento, com um gesto
+              enérgico o monge lhe diz:” Observa, isto é o INFERNO”, o jovem
+              sentiu-se como que atravessado por uma flecha de vergonha,
+              baixando a cabeça e guardando cerimonialmente a espada falou:
+              “Perdão senhor, agora compreendo teu ensinamento” ao que o Mestre
+              respondeu:” Observa, isto é o CÉU.” A honra é o domínio e
+              fortaleza interna. ”Ainda que me desnudes e insultes, que
+              importa?.... Não poderás manchar minha ALMA com teu ultraje.
+            </p>
+            <img
+              src="https://i.imgur.com/x1n4wFJ.jpeg"
+              alt="Imagem"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/x1n4wFJ.jpeg")
+              }
+            />
+            <p>
+              <strong>DOMÍNIO DE SI MESMO</strong> – “Não dá sinais de alegria,
+              nem tristeza”, era a frase comum dos Samurais, para designar uma
+              pessoa de caráter enérgico. Um jovem guerreiro escreveu: “Sentes o
+              fundo de tua alma comovido por pensamentos ternos? é momento em
+              que germinam as sementes. Não o perturbes com palavras, deixa que
+              trabalhe só, na calma e em segredo”. “Encerrar com palavras
+              articuladas, os pensamentos e sentimentos mais íntimos, era
+              considerados como um sinal infalível de que esse pensamento e
+              sentimento não era assim tão profundos, nem muito sinceros”. Diz
+              um provérbio popular: “Não vale mais que um centavo, aquele que
+              abrindo a boca o conteúdo de seu coração. A linguagem é com
+              freqüência, a arte de disfarçar pensamentos. Para a mentalidade
+              dos Bushi, o domínio sobre os nossos pensamentos e emoções é o
+              único juiz que pode determinar em que momentos, perdida a Honra, a
+              morte converte-se em descanso, em asilo seguro, contra a desonra.
+              O equilíbrio interior nos leva a buscar a morte não como pode
+              fazer um louco, nem escapar dela como faria um covarde, senão
+              esperá-la em qualquer momento. “Sofrer e fazer frente a todas as
+              calamidades e adversidades com paciência e com consciência pura”.
+              “Quando o Céu está a ponto de conferir um grande trabalho a
+              alguém, primeiro exercita seu espírito no sofrimento, seus nervos
+              na preocupação e seus ossos na fadiga: expõe seu corpo à fome e o
+              sujeita a extrema pobreza e o faz fracassar em suas empresas. Por
+              estes caminhos todos, estimula o espírito, endurece o corpo e
+              remedia toda sua deficiência”.
+            </p>
+            <img
+              src="https://i.imgur.com/mrZVvwv.jpeg"
+              alt="Imagem"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/mrZVvwv.jpeg")
+              }
+            />
+            <p>
+              <strong>A ESPADA, A ALMA DO SAMURAI </strong>– Desde muito cedo, o
+              Samurai aprendia Esgrima. Aos cinco anos, se vestia como todo
+              traje de Samurai e, se colocava sobre um trabalho de GO (supõe-se
+              que represente campo de batalha) e, iniciava-se nos mistérios da
+              profissão militar, atravessando em seu cinturão uma espada de
+              madeira; em seguida, a espada era substituída por outra de madeira
+              dourada e, depois de alguns anos passava a usar a outra,
+              verdadeira, porém, sem fio. Aos 15 anos, passavam a ter espadas
+              com grande corte. Durante o dia, eram guardadas no lugar mais
+              visível da casa. À noite, vela o descanso de seu amo, junto à
+              almofada, ao alcance de sua mão. A veneração que recebiam as
+              espadas converteu-se em adoração e em objeto de culto. A espada é
+              o símbolo dos poderes da alma, o poder criador e destruidor,
+              representados em cada um de seus fios. Simboliza a manifestação
+              dual da natureza, a polarização do Universo, se associa ao Sol e a
+              Sabedoria, que corta os nós da dúvida e do temor. A Bainha
+              representa o Corpo Físico, que serve de templo protetor. O
+              conjunto é o seus períodos de atividades e repouso. Ao desnudar o
+              aço, é a alma que atua com rapidez como raio e com mestria,
+              seguindo nas danças o movimento dos astros e, quando recolhia, só
+              deve ser guardada, envolvida em seda ou couro. Um lema antigo
+              sempre lembrava ao Samurai o seguinte: “Não me desnudes sem
+              motivo. Não me guardes sem honra”;
+            </p>
+            <p>
+              <strong>KYOKUSHINKAIKAN E A ESPADA</strong>
+            </p>
+            <img
+              src="https://i.imgur.com/jl3bmaO.jpeg"
+              alt="Imagem"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/jl3bmaO.jpeg")
+              }
+            />
+            <p>
+              A espada Japonesa é uma excelente comparação com o Kyokushinkaikan
+              Karate. Não é somente uma arma perigosa, uma arma desenhada para
+              matar eficazmente, mas também é uma bela obra de arte. É assim
+              deveria ser um praticante de Kyokushinkaikan Karate. Uma pessoa
+              tem a escolha de utilizar a arte para se desenvolver numa peça de
+              beleza ou numa arma totalmente destrutiva e insensível. Torna-se
+              numa pessoa civilizada e atenta. A arte ensina como se viver e
+              como morrer; como dosar vida e como tirá-la. O coração deveria
+              mostrar a beleza artística da espada. A vida é uma luta constante;
+              vive-se com a pureza e com a intensidade de uma espada,
+              deliberadamente e com espírito infalível do seu corte.
+            </p>
+            <p>
+              <strong>O CÓDIGO MORAL – BUSHIDO</strong>
+            </p>
+            <p>
+              <strong>HONRA (MEIYO)</strong>
+            </p>
+            <p>
+              É a qualidade essencial. Ninguém pode pretender ser Budoka
+              (guerreiro no sentido nobre da expressão) se não tiver uma postura
+              honorífica. É da honra que partem todas as outras qualidades. É um
+              código moral e um ideal, de maneira a ter sempre um comportamento
+              digno e respeitável.
+            </p>
+            <p>
+              <strong>FIDELIDADE (CHIJITSU)</strong>
+            </p>
+            <p>
+              Não pode existir honra sem fidelidade e a lealdade em relação a
+              certos ideais e para quem os partilha. Ela simboliza a necessidade
+              de cumprir as promessas.
+            </p>
+            <p>
+              <strong>SINCERIDADE (SEUITSU)</strong>
+            </p>
+            <p>
+              A fidelidade necessita de sinceridade nas palavras e nos atos. A
+              mentira arrasta a desconfiança que é a origem de todas as
+              separações. No Kyokushinkaikan, a saudação é a expressão dessa
+              sinceridade, é o sinal daquele que não se esconde os seus
+              sentimentos, pensamentos, daquele que sabe ser autêntico.
+            </p>
+            <p>
+              <strong>CORAGEM (YUUKI ou YUUKAN)</strong>
+            </p>
+            <p>
+              A força da alma que permite enfrentar o sofrimento chama-se
+              Coragem. É essa Coragem que nos leva a fazer respeitar o que aos
+              nossos olhos nos parece justo, e que apesar de medo e receio nos
+              permite enfrentar os obstáculos.
+            </p>
+            <p>
+              <strong>BONDADE (SHINTETSU)</strong>
+            </p>
+            <p>
+              A bondade é um sinal de coragem e que mostra um grande sentido de
+              humanidade. Ela leva-nos a ser atento para com o próximo e ao que
+              nos rodeia, a ser respeitoso para com a vida.
+            </p>
+            <p>
+              <strong>HUMILDADE (KEN)</strong>
+            </p>
+            <p>
+              Saber ser humilde isento de orgulho e vaidade, sem fingir, são
+              garantias da modéstia.
+            </p>
+            <p>
+              <strong>VERTICALIDADE (TADASHI ou SEI)</strong>
+            </p>
+            <p>
+              Seguir a linha do dever e nunca mais se desviar. Lealdade,
+              honestidade e sinceridade são os pilares dessa verticalidade.
+            </p>
+            <p>
+              <strong>RESPEITO (SONCHOO)</strong>
+            </p>
+            <p>
+              A verticalidade dá origem ao respeito para com o próximo. A
+              gentileza é a expressão desse respeito para com o próximo
+              quaisquer que sejam as suas qualidades, fraqueza ou posição
+              social. Saber tratar as pessoas e as coisas com decência e
+              respeitar o sagrado é o primeiro dever de um Budoka.
+            </p>
+            <p>
+              <strong>CONTROLE (SEIGYO)</strong>
+            </p>
+            <p>
+              Qualidade essencial para todo o faixa preta representa a
+              possibilidade de dominar os nossos sentimentos, impulsos e
+              controlar o nosso instinto. É um dos principais objetivos da
+              prática do Kyokushinkaikan Karate porque condiciona toda a nossa
+              eficácia.
+            </p>
+            <h2 className="text-3xl font-bold mb-4"> O Kiai</h2>
+            <p>
+              O Kiai geralmente definido como um estranho poder adquirido por
+              algumas pessoas envolvidas por forças místicas inexplicáveis.
+              Contam – se histórias de homens que pode paralisar ou parar um
+              adversário com Kiai apenas . Talvez . Mas vamos considerar aqui o
+              aspecto do uso do Kiai.
+            </p>
+            <p>
+              Na verdade, o Kiai é o uso consciente de uma técnica que todos
+              nós, uma vez ou outra, já usamos inconscientemente. Por exemplo:
+              sempre que você contrai os músculos do abdome para levantar um
+              peso e então omite um grunhido no momento de maior esforço, está
+              praticando uma forma rudimentar do Kiai.
+            </p>
+            <p>
+              Treinando o Kiai, você estará aprendendo a usar de modo mais
+              eficiente seu potencial de energia. O Kiai pode ser utilizado na
+              defesa pessoal e no Karate esporte e pode ajudá-lo a desempenhar
+              melhor e com menor esforço suas atividades normais.
+            </p>
+            <p>
+              Aqui está explicação simplificação sobre o Kiai. Primeiramente há
+              uma “preparação para a ação”, que é física e mental, e então uma
+              “concentração de poder” que ocorre também no plano físico e
+              mental. As duas fases do Kiai são o retesamento e o impulso. A
+              fase do retesamento consiste da contração do músculos abdominais e
+              inspiração profunda. Assim como o cérebro é o quartel general das
+              atividades mentais, o abdome é o quartel general das atividades
+              físicas. A contração dos músculos abdominais prepara o corpo para
+              um surto de energia. A inspiração profunda enriquece a corrente
+              sangüínea do oxigênio indispensável para o organismo que vai
+              despender essa energia adicional.
+            </p>
+            <p>
+              Fisiologicamente, os efeitos de “preparação” para a ação excitam
+              as glândulas que estimulam o coração e preparam todo o sistema
+              nervoso para um serviço especial. A segunda fase é o impulso.
+              Nesta fase, a ação essencial é levada a termo (a ação de levantar,
+              atirar, empurrar, ou desferir um soco ou um pontapé) enquanto o ar
+              é expirado bruscamente, A explicação pode ser acompanhada por um
+              grito, silenciosamente ( somente o som natural da expiração é
+              ouvido) ou por um som modificado como ‘huh’ familiar das canções
+              de trabalho. A expulsão controlada e brusca do ar confere maior
+              força à ação. O som produzido, tem dois efeitos psicológicos.
+              Assusta e desconcerta o adversário e aumenta a sua vantagem.
+            </p>
+            <p>
+              Você pode demonstrar a si mesmo os efeitos de cada parte do
+              processo do Kiai. Fique de pé, imóvel, e de repente dê um grito.
+              Você sentirá uma concentração involuntária dos seus músculos
+              abdominais e uma onda de energia atravessando o corpo. Aplique o
+              mesmo princípio, conscientemente, ao desferir um soco ou um
+              pontapé. Primeiro, tente o soco ou o pontapé sem o Kiai e repita a
+              mesma ação empregando o retesamento e o impulso (as duas fases do
+              Kiai). Você imediatamente verá a diferença do seu poder de se
+              concentrar e desferir os golpes com e sem o uso do Kiai.
+            </p>
+            <p>
+              Numa conversa informal com alguém, grite subitamente. O seu grito
+              vai pelo menos assustar, e pode até levar ao pânico alguém que não
+              está preparado para o barulho. O medo de ruído alto e súbito é um
+              dos instintos naturais do homem. Um grito inesperado pode
+              momentaneamente desgovernar por completo o conjunto de reações
+              físicas e mentais normais.
+            </p>
+            <p>
+              Tremores, fraqueza dos músculos. Aceleração das batidas do coração
+              (Taquicardia Precoce) e suores frios podem ocorrer. Estas são
+              reações de Medo e se capaz de induzi-las, mesmo que por um
+              instante, confundirá o adversário e reduzirá sua eficiência. Além
+              disso, você sente coragem quando se comporta de maneira audaz. O
+              grito é um sinal exterior de determinação que ajuda a aparentar
+              autoconfiança.
+            </p>
+            <p>
+              Uma vez que a maior parte das brigas de rua são iniciadas por
+              brigões que são esperam resistência por parte das suas vítimas, o
+              grito que acompanha o nosso programa de defesa será extremamente
+              útil. Não somente você irá defender – se (o que já é uma surpresa)
+              como também o fará de uma maneira ousada que é totalmente
+              inesperada. Nos torneios (e batalhas) toda sorte de gritos, berros
+              e barulhos tem sido usadas para desorientar o adversário e
+              despertar o espírito de luta.
+            </p>
+            <p>
+              Qualquer som pode ser usada como Kiai. Muitas vezes o som KI é
+              usado durante a preparação de um golpe e o som AI durante a
+              execução. Entretanto muitos lutadores de Karate e de outras Artes
+              Marciais usam outros sons: zat, iaá, Tchua, yó, ou qualquer outro
+              som lhe agrade.
+            </p>
+            <p>
+              Você pode praticar tanto o Kiai sonoro como o Kiai mudo. O Kiai
+              sonoro deve acompanhar todos os movimentos importantes durante o
+              treinamento. O Kiai sonoro é excelente para praticar golpes com o
+              pé e pode ser usado em competições. O Kiai mudo, ou um HUH
+              modificado, deve ser usado no trabalho e para praticar golfe,
+              tênis e outros esportes, com excelentes resultados.
+            </p>
+            <p>
+              Com o treinamento, é possível concentrar a energia onde ela é mais
+              necessária, ao invés de espalhá-la pelo corpo. Isto envolve uma
+              interação física e mental que canaliza a energia para regiões
+              definidas do corpo. Você a princípio não será capaz de conseguir
+              isso, mas com o passar do tempo, sua capacidade de concentração
+              aumentará cada vez mais. Todos nós dispomos de enormes reservas de
+              energia que nem mesmos tentamos usar. O medo e a emoção às vezes
+              liberam essas energias (reservas). Uma mão é capaz de levantar um
+              peso imenso que está esmagado seu filho – uma coisa que seria
+              impossível para ela em condições normais. Um homem permanece
+              acordar durante um período impossível de tempo para escapar à
+              morte em uma situação de perigo. Na comoção e choque de um
+              desastre, as pessoas sofrem graves ferimentos dos quais só se
+              percebem muito mais tarde, depois que se acalmam. Esses são
+              exemplos extremos, mas todos nós somos mais capazes do que
+              pensamos, O Kiai e o controle da respiração são técnicas de
+              treinamento que ajudam o estudante a utilizar sua energia de
+              reserva.
+            </p>
+          </section>
+          <section id="fundadores" className="space-y-4">
+            <h2 className="text-2xl font-semibold mb-2">Fundadores</h2>
+            <p>
+              Masutatsu Oyama é o fundador do estilo, conhecido mundialmente por
+              suas demonstrações de força e técnica impecável. Seu legado vive
+              através dos instrutores e praticantes do Kyokushinkaikan.
+            </p>
+
+            <img
+              src="https://i.imgur.com/l3LGF4O.jpg"
+              alt="Fundadores Kyokushinkaikan"
+              className="cursor-pointer w-64 rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105"
+              onClick={() =>
+                handleImageClick("https://i.imgur.com/l3LGF4O.jpg")
+              }
+            />
           </section>
           {/* Seção: Galeria */}
           <section id="galeria" className="space-y-4">
