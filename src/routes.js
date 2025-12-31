@@ -11,6 +11,7 @@ import NagataGym from "./pages/NagataGym";
 import Historia from "./pages/Historia";
 import Mestres from "./pages/Mestres";
 import Filosofia from "./pages/Filosofia";
+import Galeria from "./pages/Galeria";
 
 const AppRoutes = () => {
   return (
@@ -23,6 +24,8 @@ const AppRoutes = () => {
       <Route path="/kickboxing" element={<Kickboxing />} />
       <Route path="/thai-boxing" element={<ThaiBoxing />} />
       <Route path="/nagata-gym" element={<NagataGym />} />
+      <Route path="/kobudo" element={<div><h1>Página Kobudô</h1></div>} />
+      <Route path="/galeria" element={<Galeria />} />
       {/* Submenus */}
       <Route path="/historia" element={<Historia />} />
       <Route path="/mestres" element={<Mestres />} />

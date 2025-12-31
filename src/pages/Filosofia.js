@@ -1,7 +1,7 @@
 import React from "react";
 
-const Kyokushinkaikan = () => {
-  return <h1>Página Kyokushinkaikan</h1>;
+const Filosofia = () => {
+  return <h1>Página Filosofia</h1>;
 };
 
-export default Kyokushinkaikan;
+export default Filosofia;

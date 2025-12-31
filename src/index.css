@@ -15,3 +15,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Estilos para conteúdo do WordPress */
+.wordpress-content {
+  line-height: 1.8;
+}
+
+.wordpress-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.wordpress-content table td,
+.wordpress-content table th {
+  border: 1px solid #d1d5db;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.wordpress-content table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+.wordpress-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.wordpress-content a {
+  transition: color 0.2s;
+}
+
+.wordpress-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade para tabelas */
+@media (max-width: 768px) {
+  .wordpress-content table {
+    font-size: 0.875rem;
+  }
+  
+  .wordpress-content table td,
+  .wordpress-content table th {
+    padding: 0.5rem;
+  }
+}
