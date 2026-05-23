@@ -1,21 +1,27 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Kyokushinkaikan from "./pages/Kyokushinkaikan";
-import Produtos from "./pages/Produtos";
-import Noticias from "./pages/Noticias";
-import Contatos from "./pages/Contatos";
-import Kickboxing from "./pages/Kickboxing";
-import ThaiBoxing from "./pages/ThaiBoxing";
-import NagataGym from "./pages/NagataGym";
-import Historia from "./pages/Historia";
-import Mestres from "./pages/Mestres";
-import Filosofia from "./pages/Filosofia";
-import Galeria from "./pages/Galeria";
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/Home';
+import Kyokushinkaikan from './pages/Kyokushinkaikan';
+import Produtos from './pages/Produtos';
+import Noticias from './pages/Noticias';
+import Contatos from './pages/Contatos';
+import Kickboxing from './pages/Kickboxing';
+import ThaiBoxing from './pages/ThaiBoxing';
+import NagataGym from './pages/NagataGym';
+import Historia from './pages/Historia';
+import Mestres from './pages/Mestres';
+import Filosofia from './pages/Filosofia';
+import Galeria from './pages/Galeria';
+import ProtectedAdminRoute from './components/admin/ProtectedAdminRoute';
+import AdminLayout from './components/admin/AdminLayout';
+import AdminLogin from './pages/admin/AdminLogin';
+import ContentList from './pages/admin/ContentList';
+import ContentEditor from './pages/admin/ContentEditor';
 
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* Site público */}
       <Route path="/" element={<Home />} />
       <Route path="/kyokushinkaikan" element={<Kyokushinkaikan />} />
       <Route path="/produtos" element={<Produtos />} />
@@ -26,10 +32,25 @@ const AppRoutes = () => {
       <Route path="/nagata-gym" element={<NagataGym />} />
       <Route path="/kobudo" element={<div><h1>Página Kobudô</h1></div>} />
       <Route path="/galeria" element={<Galeria />} />
-      {/* Submenus */}
       <Route path="/historia" element={<Historia />} />
       <Route path="/mestres" element={<Mestres />} />
       <Route path="/filosofia" element={<Filosofia />} />
+
+      {/* Admin */}
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route
+        path="/admin"
+        element={
+          <ProtectedAdminRoute>
+            <AdminLayout />
+          </ProtectedAdminRoute>
+        }
+      >
+        <Route index element={<Navigate to="/admin/conteudo" replace />} />
+        <Route path="conteudo" element={<ContentList />} />
+        <Route path="conteudo/nova" element={<ContentEditor />} />
+        <Route path="conteudo/:slug" element={<ContentEditor />} />
+      </Route>
     </Routes>
   );
 };

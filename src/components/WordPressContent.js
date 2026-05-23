@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 /**
  * Componente para renderizar conteúdo HTML do WordPress de forma segura
@@ -6,20 +6,23 @@ import React, { useEffect, useRef } from 'react';
  */
 const WordPressContent = ({ content, className = '' }) => {
   const contentRef = useRef(null);
+  const [lightboxSrc, setLightboxSrc] = useState(null);
 
   useEffect(() => {
-    if (!contentRef.current) return;
+    if (!contentRef.current) return undefined;
+
+    const cleanups = [];
 
     // Processar imagens para centralizar e adicionar classes
     const images = contentRef.current.querySelectorAll('img');
     images.forEach((img) => {
-      img.className = 'mx-auto my-4 rounded shadow-md max-w-full h-auto block';
-      img.style.cursor = 'pointer';
-      
-      // Adicionar evento de clique para ampliar
-      img.addEventListener('click', () => {
-        window.open(img.src, '_blank');
-      });
+      img.className = 'mx-auto my-4 rounded shadow-md max-w-full h-auto block cursor-pointer';
+      const onClick = (e) => {
+        e.preventDefault();
+        setLightboxSrc(img.src);
+      };
+      img.addEventListener('click', onClick);
+      cleanups.push(() => img.removeEventListener('click', onClick));
     });
 
     // Processar vídeos do YouTube
@@ -115,18 +118,54 @@ const WordPressContent = ({ content, className = '' }) => {
       }
     });
 
+    return () => cleanups.forEach((fn) => fn());
   }, [content]);
+
+  useEffect(() => {
+    if (!lightboxSrc) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setLightboxSrc(null);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [lightboxSrc]);
 
   if (!content) {
     return <div className="text-gray-500">Conteúdo não disponível</div>;
   }
 
   return (
-    <div
-      ref={contentRef}
-      className={`wordpress-content ${className} prose prose-lg max-w-none`}
-      dangerouslySetInnerHTML={{ __html: content }}
-    />
+    <>
+      <div
+        ref={contentRef}
+        className={`wordpress-content ${className} prose prose-lg max-w-none`}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+      {lightboxSrc && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
+          onClick={() => setLightboxSrc(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Imagem ampliada"
+        >
+          <button
+            type="button"
+            onClick={() => setLightboxSrc(null)}
+            className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center"
+            aria-label="Fechar"
+          >
+            ×
+          </button>
+          <img
+            src={lightboxSrc}
+            alt="Imagem ampliada"
+            className="max-w-full max-h-[90vh] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+    </>
   );
 };
 

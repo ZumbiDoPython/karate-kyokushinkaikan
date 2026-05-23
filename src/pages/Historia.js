@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
+import InstitutionalPage from '../components/InstitutionalPage';
 
-const Historia = () => {
-  return <h1>Página História</h1>;
-};
+const Historia = () => <InstitutionalPage slug="historia" />;
 
 export default Historia;

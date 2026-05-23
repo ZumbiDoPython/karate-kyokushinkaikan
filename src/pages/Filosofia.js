@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
+import InstitutionalPage from '../components/InstitutionalPage';
 
-const Filosofia = () => {
-  return <h1>Página Filosofia</h1>;
-};
+const Filosofia = () => <InstitutionalPage slug="filosofia" />;
 
 export default Filosofia;
