@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useContentPage } from '../hooks/useContentPage';
 import PageContentRenderer from '../components/PageContentRenderer';
+import Seo from '../components/Seo';
+import { buildOrganizationJsonLd, buildWebsiteJsonLd, DEFAULT_OG_IMAGE } from '../config/seo';
 
 const Home = () => {
-  const { page, loading, error } = useContentPage('home');
+  const { page, loading, error } = useContentPage('home', { publicOnly: true });
+  const seoJsonLd = useMemo(
+    () => [buildOrganizationJsonLd(), buildWebsiteJsonLd()],
+    []
+  );
 
   if (loading) {
     return (
@@ -33,19 +39,42 @@ const Home = () => {
   );
 
   if (page?.sections?.some((s) => s.blocks.length > 0 || s.children.length > 0)) {
-    return <PageContentRenderer page={page} showPageHeader />;
+    return (
+      <>
+        <Seo
+          title={page.title}
+          description={page.subtitle || page.title}
+          path="/"
+          image={page.parallaxImage || DEFAULT_OG_IMAGE}
+          jsonLd={seoJsonLd}
+        />
+        <PageContentRenderer page={page} showPageHeader />
+      </>
+    );
   }
 
   if (page?.title) {
     return (
       <div className="container mx-auto px-4 py-8">
+        <Seo
+          title={page.title}
+          description={page.subtitle || page.title}
+          path="/"
+          image={page.parallaxImage || DEFAULT_OG_IMAGE}
+          jsonLd={seoJsonLd}
+        />
         <h1 className="text-4xl font-bold text-center mb-8">{page.title}</h1>
         {page.subtitle && <p className="text-center text-gray-600">{page.subtitle}</p>}
       </div>
     );
   }
 
-  return defaultContent;
+  return (
+    <>
+      <Seo path="/" jsonLd={seoJsonLd} />
+      {defaultContent}
+    </>
+  );
 };
 
 export default Home;

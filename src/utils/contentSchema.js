@@ -2,7 +2,7 @@
  * Validação do contrato de conteúdo institucional.
  */
 
-import { extractYoutubeId } from '../services/contentNormalizer';
+import { extractYoutubeId, normalizeExternalHref, normalizeImageWidthPercent, normalizeTablePayload, formatTextBlockHtml } from '../services/contentNormalizer';
 
 /** Slug excluído do fluxo institucional / admin de conteúdo */
 export const EXCLUDED_INSTITUTIONAL_SLUGS = ['noticias'];
@@ -14,7 +14,7 @@ export function getSectionDepthLabel(depth) {
   return `Subseção (h${headingLevel})`;
 }
 
-export const ALLOWED_BLOCK_TYPES = ['text', 'image', 'youtube'];
+export const ALLOWED_BLOCK_TYPES = ['text', 'subtitle', 'image', 'youtube', 'link', 'table'];
 
 /**
  * @typedef {Object} ValidationIssue
@@ -63,7 +63,7 @@ function validateBlock(block, path, errors, warnings) {
   if (!ALLOWED_BLOCK_TYPES.includes(type)) {
     errors.push({
       path,
-      message: `Tipo de bloco "${type}" não é permitido. Use: text, image ou youtube.`,
+      message: `Tipo de bloco "${type}" não é permitido. Use: text, subtitle, image, youtube, link ou table.`,
       code: 'block.type',
     });
     return false;
@@ -77,6 +77,17 @@ function validateBlock(block, path, errors, warnings) {
         path,
         message: 'Bloco de texto vazio — não será exibido no site.',
         code: 'block.text.empty',
+      });
+    }
+    return true;
+  }
+
+  if (type === 'subtitle') {
+    if (!String(payload.text || '').trim()) {
+      warnings.push({
+        path,
+        message: 'Subtítulo vazio — não será exibido no site.',
+        code: 'block.subtitle.empty',
       });
     }
     return true;
@@ -105,6 +116,32 @@ function validateBlock(block, path, errors, warnings) {
         code: 'block.youtube.no_id',
       });
       return false;
+    }
+    return true;
+  }
+
+  if (type === 'link') {
+    const label = String(payload.label || payload.text || '').trim();
+    const href = normalizeExternalHref(String(payload.href || payload.url || ''));
+    if (!label || !href) {
+      warnings.push({
+        path,
+        message: 'Link externo sem texto ou URL válida — bloco oculto no site.',
+        code: 'block.link.invalid',
+      });
+      return false;
+    }
+    return true;
+  }
+
+  if (type === 'table') {
+    const table = normalizeTablePayload(payload);
+    if (!table.rows.length) {
+      warnings.push({
+        path,
+        message: 'Tabela sem linhas de dados — só o cabeçalho será exibido.',
+        code: 'block.table.no_rows',
+      });
     }
     return true;
   }
@@ -226,13 +263,24 @@ function sanitizeBlock(block) {
   const payload = b.payload && typeof b.payload === 'object' ? b.payload : {};
 
   if (type === 'text') {
-    const html = String(payload.html || '').trim();
+    const html = formatTextBlockHtml(String(payload.html || ''));
     if (!html) return null;
     return {
       id: b.id ? String(b.id) : undefined,
       type: 'text',
       position: typeof b.position === 'number' ? b.position : 0,
       payload: { html },
+    };
+  }
+
+  if (type === 'subtitle') {
+    const text = String(payload.text || '').trim();
+    if (!text) return null;
+    return {
+      id: b.id ? String(b.id) : undefined,
+      type: 'subtitle',
+      position: typeof b.position === 'number' ? b.position : 0,
+      payload: { text },
     };
   }
 
@@ -247,6 +295,8 @@ function sanitizeBlock(block) {
         src,
         alt: payload.alt ? String(payload.alt) : '',
         caption: payload.caption ? String(payload.caption) : undefined,
+        widthPercent: normalizeImageWidthPercent(payload),
+        inGallery: payload.inGallery !== false,
       },
     };
   }
@@ -259,7 +309,38 @@ function sanitizeBlock(block) {
       id: b.id ? String(b.id) : undefined,
       type: 'youtube',
       position: typeof b.position === 'number' ? b.position : 0,
-      payload: { videoId, embedId: videoId },
+      payload: {
+        videoId,
+        embedId: videoId,
+        widthPercent: normalizeImageWidthPercent(payload),
+      },
+    };
+  }
+
+  if (type === 'link') {
+    const label = String(payload.label || payload.text || '').trim();
+    const href = normalizeExternalHref(String(payload.href || payload.url || ''));
+    if (!label || !href) return null;
+    return {
+      id: b.id ? String(b.id) : undefined,
+      type: 'link',
+      position: typeof b.position === 'number' ? b.position : 0,
+      payload: {
+        label,
+        href,
+        openInNewTab: payload.openInNewTab !== false,
+      },
+    };
+  }
+
+  if (type === 'table') {
+    const table = normalizeTablePayload(payload);
+    if (!table.headers.length) return null;
+    return {
+      id: b.id ? String(b.id) : undefined,
+      type: 'table',
+      position: typeof b.position === 'number' ? b.position : 0,
+      payload: table,
     };
   }
 

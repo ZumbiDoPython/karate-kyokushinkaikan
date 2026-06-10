@@ -10,11 +10,27 @@ REACT_APP_CONTENT_USE_LOCAL_STORE=true
 REACT_APP_ADMIN_TOKEN=sua-senha
 ```
 
-### Armazenamento local (padrão)
+### Armazenamento local (desenvolvimento)
 
-Com `REACT_APP_CONTENT_USE_LOCAL_STORE=true`, o conteúdo fica no **localStorage** do navegador (não precisa de servidor em `localhost:3001`). A página **Kyokushinkaikan** já vem pré-carregada a partir do layout legado (`npm run seed:content` regenera `src/data/contentSeeds/kyokushinkaikan.json`).
+Com `REACT_APP_CONTENT_USE_LOCAL_STORE=true`, o conteúdo fica no **localStorage** do navegador. A página **Kyokushinkaikan** já vem pré-carregada a partir do layout legado (`npm run seed:content` regenera `src/data/contentSeeds/kyokushinkaikan.json`).
 
-No admin, use **Restaurar conteúdo original** se a página aparecer vazia.
+### Cloud Firestore (produção)
+
+```env
+REACT_APP_CONTENT_USE_FIRESTORE=true
+REACT_APP_CONTENT_USE_LOCAL_STORE=false
+REACT_APP_FIREBASE_API_KEY=...
+REACT_APP_FIREBASE_AUTH_DOMAIN=...
+REACT_APP_FIREBASE_PROJECT_ID=...
+# ... demais REACT_APP_FIREBASE_*
+```
+
+- Coleção `pages` (documento = slug)
+- Leitura pública; escrita com **Firebase Auth** (e-mail/senha) no `/admin/login`
+- Site público: só páginas `published` (fallback para seed embutido no build)
+- Primeira carga: admin → **Restaurar conteúdo original**
+
+Ver `DEPLOY.md` para deploy no domínio Firebase existente.
 
 ## Endpoints
 
@@ -30,7 +46,15 @@ No admin, use **Restaurar conteúdo original** se a página aparecer vazia.
 Normalização em `src/services/contentNormalizer.js`:
 
 - `page` → `sections[]` → `children[]` (subcategorias)
-- `block`: `text` | `image` | `youtube` (YouTube usa `videoId` / `embedId`)
+- `block`: `text` | `image` | `youtube` | `link` (YouTube usa `videoId` / `embedId`; link usa `label` + `href`)
+- `contentRevision` (número): incrementa a cada salvamento; o editor envia a revisão que carregou e bloqueia se outra pessoa salvou antes (conflito de edição)
+- Metadados de auditoria (opcionais): `lastEditedBy`, `lastEditedByEmail`, `lastEditedAt` — preenchidos ao salvar/publicar no admin
+
+## Admin
+
+- `/admin/conteudo` — listar e editar páginas
+- `/admin/usuarios` — como adicionar editores no Firebase Authentication
+- Mover blocos entre subseções: menu **Mover para seção** ou arrastar (⠿) para a árvore de seções
 
 Renderização: `PageContentRenderer` + `InstitutionalPage`.
 

@@ -1,19 +1,6 @@
 /**
- * Cliente HTTP para a API de conteúdo institucional.
- * Fonte única de conteúdo do site (páginas institucionais e notícias).
- *
- * Endpoints:
- *   GET    /content/pages
- *   GET    /content/pages/:slug
- *   POST   /content/pages
- *   PUT    /content/pages/:id
- *   DELETE /content/pages/:id
- *   POST   /content/sections
- *   PUT    /content/sections/:id
- *   DELETE /content/sections/:id
- *   POST   /content/blocks
- *   PUT    /content/blocks/:id
- *   DELETE /content/blocks/:id
+ * Cliente de conteúdo institucional.
+ * Backends: Firestore (produção) | localStorage (dev) | HTTP API (opcional).
  */
 
 import {
@@ -28,21 +15,23 @@ import {
   normalizeSection,
   sortByPosition,
 } from './contentNormalizer';
+import { getContentStorageMode } from '../config/contentStorage';
 import {
   ensureContentSeeded,
   listPagesLocal,
   getPageBySlugLocal,
   upsertPageLocal,
   deletePageLocal,
-  isLocalContentStoreEnabled,
 } from './contentLocalStore';
+import {
+  listPagesFirestore,
+  getPageBySlugFirestore,
+  upsertPageFirestore,
+  deletePageFirestore,
+} from './contentFirestoreStore';
 
 const CONTENT_API_BASE =
   (process.env.REACT_APP_CONTENT_API_URL || 'http://localhost:3001/api').replace(/\/$/, '');
-
-function preferLocalStore() {
-  return isLocalContentStoreEnabled();
-}
 
 /**
  * @param {Record<string, unknown>} payload
@@ -87,7 +76,13 @@ async function request(path, options = {}) {
  * @returns {Promise<import('./contentNormalizer').ContentPage[]>}
  */
 export async function listPages() {
-  if (preferLocalStore()) {
+  const mode = getContentStorageMode();
+
+  if (mode === 'firestore') {
+    return listPagesFirestore();
+  }
+
+  if (mode === 'local') {
     ensureContentSeeded();
     return listPagesLocal();
   }
@@ -104,54 +99,56 @@ export async function listPages() {
 }
 
 /**
- * GET /content/pages/:slug
+ * GET página por slug
  * @param {string} slug
- * @returns {Promise<import('./contentNormalizer').ContentPage|null>}
+ * @param {{ publicOnly?: boolean }} [options] — site público: só published
  */
-export async function getPageBySlug(slug) {
+export async function getPageBySlug(slug, options = {}) {
   if (!slug) return null;
 
-  if (preferLocalStore()) {
+  const mode = getContentStorageMode();
+
+  if (mode === 'firestore') {
+    const page = await getPageBySlugFirestore(slug, options);
+    return page || (options.publicOnly ? null : createEmptyPage(slug));
+  }
+
+  if (mode === 'local') {
     ensureContentSeeded();
     return getPageBySlugLocal(slug) || createEmptyPage(slug);
   }
 
-  const url = `${CONTENT_API_BASE}/content/pages/${encodeURIComponent(slug)}`;
-
   try {
-    const response = await fetch(url, {
-      headers: { 'Content-Type': 'application/json' },
-    });
+    const response = await fetch(
+      `${CONTENT_API_BASE}/content/pages/${encodeURIComponent(slug)}`,
+      { headers: { 'Content-Type': 'application/json' } }
+    );
 
     if (response.status === 404) {
-      const local = getPageBySlugLocal(slug);
-      return local || createEmptyPage(slug);
+      return getPageBySlugLocal(slug) || createEmptyPage(slug);
     }
 
     if (!response.ok) {
-      const body = await response.text().catch(() => '');
-      throw new Error(`Content API ${response.status}: ${body || response.statusText}`);
+      throw new Error(`Content API ${response.status}`);
     }
 
-    const data = await response.json();
-    return mapApiResponseToPage(data);
+    return mapApiResponseToPage(await response.json());
   } catch (error) {
     console.warn(`[contentApi] getPageBySlug("${slug}") fallback local:`, error);
     ensureContentSeeded();
-    const local = getPageBySlugLocal(slug);
-    if (local) return local;
-    throw error;
+    return getPageBySlugLocal(slug) || createEmptyPage(slug);
   }
 }
 
 /**
  * POST /content/pages
- * @param {Record<string, unknown>} payload
  */
 export async function createPage(payload) {
-  if (preferLocalStore()) {
-    return upsertPageLocal(payloadToPage(payload));
-  }
+  const mode = getContentStorageMode();
+  const page = payloadToPage(payload);
+
+  if (mode === 'firestore') return upsertPageFirestore(page);
+  if (mode === 'local') return upsertPageLocal(page);
 
   try {
     const data = await request('/content/pages', {
@@ -161,19 +158,24 @@ export async function createPage(payload) {
     return mapApiResponseToPage(data);
   } catch (error) {
     console.warn('[contentApi] createPage fallback local:', error);
-    return upsertPageLocal(payloadToPage(payload));
+    return upsertPageLocal(page);
   }
 }
 
 /**
  * PUT /content/pages/:id
+ */
+/**
  * @param {string} id
  * @param {Record<string, unknown>} payload
+ * @param {{ expectedRevision?: number, forceOverwrite?: boolean }} [saveOptions]
  */
-export async function updatePage(id, payload) {
-  if (preferLocalStore()) {
-    return upsertPageLocal(payloadToPage({ ...payload, id }));
-  }
+export async function updatePage(id, payload, saveOptions = {}) {
+  const mode = getContentStorageMode();
+  const page = payloadToPage({ ...payload, id });
+
+  if (mode === 'firestore') return upsertPageFirestore(page, saveOptions);
+  if (mode === 'local') return upsertPageLocal(page, saveOptions);
 
   try {
     const data = await request(`/content/pages/${encodeURIComponent(id)}`, {
@@ -183,16 +185,22 @@ export async function updatePage(id, payload) {
     return mapApiResponseToPage(data);
   } catch (error) {
     console.warn('[contentApi] updatePage fallback local:', error);
-    return upsertPageLocal(payloadToPage({ ...payload, id }));
+    return upsertPageLocal(page);
   }
 }
 
 /**
  * DELETE /content/pages/:id
- * @param {string} id
  */
 export async function deletePage(id) {
-  if (preferLocalStore()) {
+  const mode = getContentStorageMode();
+
+  if (mode === 'firestore') {
+    await deletePageFirestore(id);
+    return null;
+  }
+
+  if (mode === 'local') {
     deletePageLocal(id);
     return null;
   }
@@ -200,46 +208,26 @@ export async function deletePage(id) {
   try {
     return await request(`/content/pages/${encodeURIComponent(id)}`, { method: 'DELETE' });
   } catch (error) {
-    console.warn('[contentApi] deletePage fallback local:', error);
     deletePageLocal(id);
     return null;
   }
 }
 
-/**
- * Salvar rascunho (status: draft).
- * @param {string} id
- * @param {Record<string, unknown>} payload
- */
-export async function savePageDraft(id, payload) {
-  return updatePage(id, { ...payload, status: 'draft' });
+export async function savePageDraft(id, payload, saveOptions) {
+  return updatePage(id, { ...payload, status: 'draft' }, saveOptions);
 }
 
-/**
- * Publicar página (status: published).
- * @param {string} id
- * @param {Record<string, unknown>} payload
- */
-export async function publishPage(id, payload) {
-  return updatePage(id, { ...payload, status: 'published' });
+export async function publishPage(id, payload, saveOptions) {
+  return updatePage(id, { ...payload, status: 'published' }, saveOptions);
 }
 
-/**
- * Criar página em rascunho.
- * @param {Record<string, unknown>} payload
- */
+export { ContentConflictError, isContentConflictError } from './contentConflict';
+
 export async function createPageDraft(payload) {
   return createPage({ ...payload, status: 'draft' });
 }
 
-// ---------------------------------------------------------------------------
-// Seções
-// ---------------------------------------------------------------------------
-
-/**
- * POST /content/sections
- * @param {Record<string, unknown>} payload
- */
+// Seções/blocos HTTP (legado — só se usar API remota)
 export async function createSection(payload) {
   const data = await request('/content/sections', {
     method: 'POST',
@@ -248,11 +236,6 @@ export async function createSection(payload) {
   return normalizeSection(data?.section || data);
 }
 
-/**
- * PUT /content/sections/:id
- * @param {string} id
- * @param {Record<string, unknown>} payload
- */
 export async function updateSection(id, payload) {
   const data = await request(`/content/sections/${encodeURIComponent(id)}`, {
     method: 'PUT',
@@ -261,58 +244,30 @@ export async function updateSection(id, payload) {
   return normalizeSection(data?.section || data);
 }
 
-/**
- * DELETE /content/sections/:id
- * @param {string} id
- */
 export async function deleteSection(id) {
   return request(`/content/sections/${encodeURIComponent(id)}`, { method: 'DELETE' });
 }
 
-// ---------------------------------------------------------------------------
-// Blocos (text | image | youtube) com ordenação por position
-// ---------------------------------------------------------------------------
-
-/**
- * POST /content/blocks
- * @param {Record<string, unknown>} payload
- */
 export async function createBlock(payload) {
   const data = await request('/content/blocks', {
     method: 'POST',
     body: JSON.stringify(payload),
   });
-  const block = data?.block || data;
-  return normalizeBlock(block);
+  return normalizeBlock(data?.block || data);
 }
 
-/**
- * PUT /content/blocks/:id
- * @param {string} id
- * @param {Record<string, unknown>} payload
- */
 export async function updateBlock(id, payload) {
   const data = await request(`/content/blocks/${encodeURIComponent(id)}`, {
     method: 'PUT',
     body: JSON.stringify(payload),
   });
-  const block = data?.block || data;
-  return normalizeBlock(block);
+  return normalizeBlock(data?.block || data);
 }
 
-/**
- * DELETE /content/blocks/:id
- * @param {string} id
- */
 export async function deleteBlock(id) {
   return request(`/content/blocks/${encodeURIComponent(id)}`, { method: 'DELETE' });
 }
 
-/**
- * PUT /content/blocks/reorder — persiste ordenação por position
- * @param {string} sectionId
- * @param {{ id: string, position: number }[]} blocks
- */
 export async function reorderBlocks(sectionId, blocks) {
   const ordered = sortByPosition(blocks);
   const data = await request('/content/blocks/reorder', {
@@ -322,19 +277,10 @@ export async function reorderBlocks(sectionId, blocks) {
   return (data?.blocks || []).map((b, i) => normalizeBlock(b, i)).filter(Boolean);
 }
 
-// ---------------------------------------------------------------------------
-// Leitura para o front (hooks / páginas institucionais)
-// ---------------------------------------------------------------------------
-
-/** @deprecated Use getPageBySlug */
 export const fetchPageBySlug = getPageBySlug;
 
-/**
- * @param {string} route
- */
-export async function fetchPageByRoute(route) {
-  const slug = getSlugFromRoute(route);
-  return getPageBySlug(slug);
+export async function fetchPageByRoute(route, options) {
+  return getPageBySlug(getSlugFromRoute(route), options);
 }
 
 export {
@@ -350,7 +296,7 @@ export {
   sortByPosition,
 };
 
-const contentApi = {
+export default {
   listPages,
   getPageBySlug,
   fetchPageBySlug,
@@ -361,19 +307,4 @@ const contentApi = {
   savePageDraft,
   publishPage,
   deletePage,
-  createSection,
-  updateSection,
-  deleteSection,
-  createBlock,
-  updateBlock,
-  deleteBlock,
-  reorderBlocks,
-  mapApiResponseToPage,
-  normalizePage,
-  ROUTE_SLUG_MAP,
-  getSlugFromRoute,
-  slugify,
-  extractYoutubeId,
 };
-
-export default contentApi;

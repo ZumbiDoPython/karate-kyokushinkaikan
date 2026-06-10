@@ -8,11 +8,20 @@ import {
   createPageDraft,
   savePageDraft,
   publishPage,
+  isContentConflictError,
 } from '../../services/contentApi';
+import ContentConflictDialog from '../../components/admin/ContentConflictDialog';
 import { createEmptyPage, normalizePage } from '../../services/contentNormalizer';
-import { serializePageForApi, assignSectionPositions } from '../../utils/contentAdminHelpers';
+import {
+  serializePageForApi,
+  withEditorMetadata,
+  formatEditedAt,
+  assignSectionPositions,
+} from '../../utils/contentAdminHelpers';
 import { PAGE_STATUS } from '../../services/contentAdminConstants';
 import { slugify } from '../../services/contentNormalizer';
+import ImageUrlUploadField from '../../components/admin/ImageUrlUploadField';
+import { useAdminAuth } from '../../contexts/AdminAuthContext';
 
 const DRAFT_STORAGE_PREFIX = 'kk_content_draft_';
 
@@ -20,6 +29,7 @@ const ContentEditor = () => {
   const { slug: slugParam } = useParams();
   const isNew = slugParam === 'nova';
   const navigate = useNavigate();
+  const { userId, userEmail, useFirebaseAuth } = useAdminAuth();
 
   const [page, setPage] = useState(null);
   const [selectedSectionId, setSelectedSectionId] = useState(null);
@@ -27,6 +37,8 @@ const ContentEditor = () => {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  /** @type {[null|{ serverPage: import('../../services/contentNormalizer').ContentPage|null, action: 'draft'|'publish' }, import('react').Dispatch<import('react').SetStateAction<null|{ serverPage: import('../../services/contentNormalizer').ContentPage|null, action: 'draft'|'publish' }>>]} */
+  const [conflict, setConflict] = useState(null);
 
   const loadPage = useCallback(async () => {
     if (isNew) {
@@ -38,27 +50,43 @@ const ContentEditor = () => {
     try {
       setLoading(true);
       setError('');
-      const draftKey = `${DRAFT_STORAGE_PREFIX}${slugParam}`;
-      const localDraft = localStorage.getItem(draftKey);
 
       let data = await getPageBySlug(slugParam);
+      if (!data) {
+        data = createEmptyPage(slugParam);
+      }
 
+      const basePage = normalizePage({
+        ...data,
+        status: data.status || PAGE_STATUS.DRAFT,
+        contentRevision:
+          typeof data.contentRevision === 'number' ? data.contentRevision : 0,
+      });
+
+      setPage(basePage);
+      setLoading(false);
+
+      const draftKey = `${DRAFT_STORAGE_PREFIX}${slugParam}`;
+      const localDraft = localStorage.getItem(draftKey);
       if (localDraft) {
         try {
           const parsed = JSON.parse(localDraft);
           if (window.confirm('Existe um rascunho local. Deseja restaurá-lo?')) {
-            data = normalizePage({ ...data, ...parsed });
+            setPage(
+              normalizePage({
+                ...basePage,
+                ...parsed,
+                contentRevision: basePage.contentRevision,
+              })
+            );
           }
         } catch {
           /* ignore */
         }
       }
-
-      setPage(normalizePage({ ...data, status: data.status || PAGE_STATUS.DRAFT }));
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao carregar');
       setPage(normalizePage(createEmptyPage(slugParam)));
-    } finally {
       setLoading(false);
     }
   }, [isNew, slugParam]);
@@ -95,12 +123,31 @@ const ContentEditor = () => {
     return validateForAdmin(serializePageForApi(page));
   };
 
-  const handleSaveDraft = async () => {
+  const getSaveOptions = (forceOverwrite = false) => ({
+    expectedRevision:
+      typeof page.contentRevision === 'number' ? page.contentRevision : 0,
+    forceOverwrite,
+  });
+
+  const persistAfterSave = (saved, status) => {
+    setPage({
+      ...saved,
+      status,
+      contentRevision:
+        typeof saved.contentRevision === 'number' ? saved.contentRevision : 0,
+    });
+  };
+
+  const performSave = async (action, { forceOverwrite = false } = {}) => {
     if (!page) return;
 
     const check = runValidation();
     if (check && !check.valid) {
-      setError('Não foi possível salvar. Corrija os erros indicados abaixo.');
+      setError(
+        action === 'publish'
+          ? 'Não foi possível publicar. Corrija os erros indicados abaixo.'
+          : 'Não foi possível salvar. Corrija os erros indicados abaixo.'
+      );
       setMessage('');
       return;
     }
@@ -108,24 +155,52 @@ const ContentEditor = () => {
     setSaving(true);
     setMessage('');
     setError('');
+    setConflict(null);
 
-    const payload = serializePageForApi({ ...page, status: PAGE_STATUS.DRAFT });
+    const status =
+      action === 'publish' ? PAGE_STATUS.PUBLISHED : PAGE_STATUS.DRAFT;
+
+    const payload = serializePageForApi(
+      withEditorMetadata({ ...page, status }, {
+        userId,
+        userEmail,
+        useFirebaseAuth,
+      })
+    );
+
+    const saveOptions = getSaveOptions(forceOverwrite);
 
     try {
       let saved;
       if (page.id && !isNew) {
-        saved = await savePageDraft(page.id, payload);
+        if (action === 'publish') {
+          saved = await publishPage(page.id, payload, saveOptions);
+        } else {
+          saved = await savePageDraft(page.id, payload, saveOptions);
+        }
       } else {
         saved = await createPageDraft(payload);
-        if (saved?.id) {
+        if (saved?.slug) {
           navigate(`/admin/conteudo/${saved.slug}`, { replace: true });
         }
       }
-      setPage({ ...saved, status: PAGE_STATUS.DRAFT });
-      persistLocalDraft(saved);
-      setMessage('Rascunho salvo.');
+
+      persistAfterSave(saved, status);
+
+      if (action === 'publish') {
+        localStorage.removeItem(`${DRAFT_STORAGE_PREFIX}${saved.slug}`);
+        setMessage('Página publicada.');
+      } else {
+        persistLocalDraft(saved);
+        setMessage('Rascunho salvo.');
+      }
     } catch (err) {
       persistLocalDraft(page);
+      if (isContentConflictError(err)) {
+        setConflict({ serverPage: err.serverPage, action });
+        setError('');
+        return;
+      }
       setError(
         `${err instanceof Error ? err.message : 'Erro ao salvar'} — rascunho guardado localmente.`
       );
@@ -134,42 +209,37 @@ const ContentEditor = () => {
     }
   };
 
-  const handlePublish = async () => {
-    if (!page) return;
+  const handleSaveDraft = () => performSave('draft');
 
-    const check = runValidation();
-    if (check && !check.valid) {
-      setError('Não foi possível publicar. Corrija os erros indicados abaixo.');
-      setMessage('');
-      return;
-    }
+  const handlePublish = () => performSave('publish');
 
-    setSaving(true);
-    setMessage('');
+  const handleReloadServerVersion = () => {
+    if (!conflict?.serverPage) return;
+    const status =
+      conflict.action === 'publish' ? PAGE_STATUS.PUBLISHED : PAGE_STATUS.DRAFT;
+    setPage(
+      normalizePage({
+        ...conflict.serverPage,
+        status: conflict.serverPage.status || status,
+      })
+    );
+    setConflict(null);
+    setMessage('Versão do servidor carregada. Suas alterações locais foram descartadas da tela.');
     setError('');
+  };
 
-    const payload = serializePageForApi({ ...page, status: PAGE_STATUS.PUBLISHED });
-
-    try {
-      let saved;
-      if (page.id) {
-        saved = await publishPage(page.id, payload);
-      } else {
-        saved = await createPageDraft({ ...payload, status: PAGE_STATUS.PUBLISHED });
-        navigate(`/admin/conteudo/${saved.slug}`, { replace: true });
-      }
-      setPage({ ...saved, status: PAGE_STATUS.PUBLISHED });
-      localStorage.removeItem(`${DRAFT_STORAGE_PREFIX}${saved.slug}`);
-      setMessage('Página publicada.');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Erro ao publicar');
-    } finally {
-      setSaving(false);
-    }
+  const handleForceSave = () => {
+    if (!conflict) return;
+    performSave(conflict.action, { forceOverwrite: true });
   };
 
   if (loading || !page) {
-    return <p className="text-gray-600">Carregando editor...</p>;
+    return (
+      <div className="space-y-2">
+        <p className="text-gray-600">Carregando editor...</p>
+        {error && <p className="text-sm text-red-600">{error}</p>}
+      </div>
+    );
   }
 
   const normalizedPage = {
@@ -179,6 +249,15 @@ const ContentEditor = () => {
 
   return (
     <div className="space-y-6">
+      {conflict && (
+        <ContentConflictDialog
+          serverPage={conflict.serverPage}
+          saving={saving}
+          onReloadServer={handleReloadServerVersion}
+          onForceSave={handleForceSave}
+          onCancel={() => setConflict(null)}
+        />
+      )}
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <Link to="/admin/conteudo" className="text-sm text-blue-600 hover:underline">
@@ -187,6 +266,14 @@ const ContentEditor = () => {
           <h1 className="text-2xl font-bold text-gray-900 mt-1">
             {isNew ? 'Nova página' : `Editar: ${page.title}`}
           </h1>
+          {page.lastEditedByEmail && (
+            <p className="text-sm text-gray-500 mt-1">
+              Última edição: <span className="font-medium">{page.lastEditedByEmail}</span>
+              {page.lastEditedAt && (
+                <> em {formatEditedAt(page.lastEditedAt)}</>
+              )}
+            </p>
+          )}
         </div>
         <div className="flex flex-wrap gap-2">
           <button
@@ -256,12 +343,11 @@ const ContentEditor = () => {
             />
           </div>
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Imagem parallax</label>
-            <input
-              type="url"
+            <ImageUrlUploadField
+              label="Imagem parallax"
               value={page.parallaxImage || ''}
-              onChange={(e) => handlePageField('parallaxImage', e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+              onChange={(url) => handlePageField('parallaxImage', url)}
+              uploadFolder={page.slug ? `cms/${page.slug}/parallax` : 'cms/parallax'}
             />
           </div>
         </div>

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Kyokushinkaikan from './pages/Kyokushinkaikan';
 import Produtos from './pages/Produtos';
 import Noticias from './pages/Noticias';
+import ArticleDetail from './pages/ArticleDetail';
 import Contatos from './pages/Contatos';
 import Kickboxing from './pages/Kickboxing';
 import ThaiBoxing from './pages/ThaiBoxing';
@@ -17,6 +18,11 @@ import AdminLayout from './components/admin/AdminLayout';
 import AdminLogin from './pages/admin/AdminLogin';
 import ContentList from './pages/admin/ContentList';
 import ContentEditor from './pages/admin/ContentEditor';
+import AdminUsers from './pages/admin/AdminUsers';
+import ArticlesList from './pages/admin/ArticlesList';
+import ArticleEditor from './pages/admin/ArticleEditor';
+import AuthorsAdmin from './pages/admin/AuthorsAdmin';
+import TagsAdmin from './pages/admin/TagsAdmin';
 
 const AppRoutes = () => {
   return (
@@ -26,6 +32,7 @@ const AppRoutes = () => {
       <Route path="/kyokushinkaikan" element={<Kyokushinkaikan />} />
       <Route path="/produtos" element={<Produtos />} />
       <Route path="/noticias" element={<Noticias />} />
+      <Route path="/noticias/:slug" element={<ArticleDetail />} />
       <Route path="/contatos" element={<Contatos />} />
       <Route path="/kickboxing" element={<Kickboxing />} />
       <Route path="/thai-boxing" element={<ThaiBoxing />} />
@@ -50,6 +57,12 @@ const AppRoutes = () => {
         <Route path="conteudo" element={<ContentList />} />
         <Route path="conteudo/nova" element={<ContentEditor />} />
         <Route path="conteudo/:slug" element={<ContentEditor />} />
+        <Route path="usuarios" element={<AdminUsers />} />
+        <Route path="materias" element={<ArticlesList />} />
+        <Route path="materias/nova" element={<ArticleEditor />} />
+        <Route path="materias/:slug" element={<ArticleEditor />} />
+        <Route path="autores" element={<AuthorsAdmin />} />
+        <Route path="tags" element={<TagsAdmin />} />
       </Route>
     </Routes>
   );

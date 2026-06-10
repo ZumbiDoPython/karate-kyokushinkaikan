@@ -3,6 +3,8 @@ import { useContentPage } from '../hooks/useContentPage';
 import PageWithSidebar from './PageWithSidebar';
 import ParallaxBackground from './ParallaxBackground';
 import PageContentRenderer, { buildMenuFromPage } from './PageContentRenderer';
+import Seo from './Seo';
+import { slugToPublicPath, buildWebsiteJsonLd, buildOrganizationJsonLd, DEFAULT_OG_IMAGE } from '../config/seo';
 
 const DEFAULT_PARALLAX = 'https://i.imgur.com/vF5SgMB.png';
 
@@ -23,7 +25,7 @@ const InstitutionalPage = ({
   gallerySectionIds = ['galeria'],
   showPageHeader = true,
 }) => {
-  const { page: rawPage, loading, error } = useContentPage(slug);
+  const { page: rawPage, loading, error } = useContentPage(slug, { publicOnly: true });
 
   const page = useMemo(() => {
     if (!rawPage) return null;
@@ -31,6 +33,14 @@ const InstitutionalPage = ({
   }, [rawPage, transformPage]);
 
   const menuItems = useMemo(() => (page ? buildMenuFromPage(page) : []), [page]);
+  const publicPath = slugToPublicPath(slug);
+  const seoJsonLd = useMemo(
+    () =>
+      slug === 'home'
+        ? [buildOrganizationJsonLd(), buildWebsiteJsonLd()]
+        : null,
+    [slug]
+  );
 
   if (loading) {
     return (
@@ -70,6 +80,13 @@ const InstitutionalPage = ({
 
   return (
     <PageShell withSidebar={withSidebar} menuItems={menuItems}>
+      <Seo
+        title={page.title}
+        description={page.subtitle || page.title}
+        path={publicPath}
+        image={page.parallaxImage || DEFAULT_OG_IMAGE}
+        jsonLd={seoJsonLd}
+      />
       <ParallaxBackground imageUrl={parallaxImage || page.parallaxImage || DEFAULT_PARALLAX} />
       <PageContentRenderer
         page={page}

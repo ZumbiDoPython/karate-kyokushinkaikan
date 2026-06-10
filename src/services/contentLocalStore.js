@@ -3,6 +3,7 @@
  */
 import { CONTENT_SEEDS, CONTENT_SEEDS_BY_SLUG } from '../data/contentSeeds';
 import { normalizePage } from './contentNormalizer';
+import { ContentConflictError } from './contentConflict';
 import { INSTITUTIONAL_PAGE_SLUGS } from './contentAdminConstants';
 
 const STORAGE_KEY = 'kk_content_store_v1';
@@ -114,15 +115,35 @@ export function getPageBySlugLocal(slug) {
 
 /**
  * @param {import('./contentNormalizer').ContentPage} page
+ * @param {{ expectedRevision?: number, forceOverwrite?: boolean }} [options]
  */
-export function upsertPageLocal(page) {
+export function upsertPageLocal(page, options = {}) {
+  const { expectedRevision, forceOverwrite = false } = options;
   ensureContentSeeded();
   const store = readStore();
   const slug = page.slug;
   const existing = store.pages[slug];
-  const id = page.id || existing?.id || `local-${slug}-${Date.now()}`;
+  const currentRev =
+    existing && typeof existing.contentRevision === 'number'
+      ? existing.contentRevision
+      : 0;
 
-  const saved = normalizePage({ ...page, id, slug });
+  if (!forceOverwrite && expectedRevision !== undefined) {
+    const expected =
+      typeof expectedRevision === 'number' && !Number.isNaN(expectedRevision)
+        ? expectedRevision
+        : 0;
+    if (!existing && expected > 0) {
+      throw new ContentConflictError(null);
+    }
+    if (existing && currentRev !== expected) {
+      throw new ContentConflictError(normalizePage(existing));
+    }
+  }
+
+  const id = page.id || existing?.id || `local-${slug}-${Date.now()}`;
+  const newRev = existing ? currentRev + 1 : 1;
+  const saved = normalizePage({ ...page, id, slug, contentRevision: newRev });
   store.pages[slug] = saved;
   writeStore(store);
   return saved;

@@ -3,7 +3,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useAdminAuth } from '../../contexts/AdminAuthContext';
 
 const AdminLayout = () => {
-  const { logout } = useAdminAuth();
+  const { logout, userEmail } = useAdminAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -22,17 +22,26 @@ const AdminLayout = () => {
             <Link to="/admin/conteudo" className="text-sm text-gray-300 hover:text-white">
               Páginas
             </Link>
+            <Link to="/admin/materias" className="text-sm text-gray-300 hover:text-white">
+              Notícias
+            </Link>
+            <Link to="/admin/usuarios" className="text-sm text-gray-300 hover:text-white">
+              Usuários
+            </Link>
             <Link to="/" className="text-sm text-gray-300 hover:text-white" target="_blank" rel="noreferrer">
               Ver site
             </Link>
           </div>
-          <button
-            type="button"
-            onClick={handleLogout}
-            className="text-sm px-3 py-1 rounded border border-gray-600 hover:bg-gray-800"
-          >
-            Sair
-          </button>
+          <div className="flex items-center gap-3">
+            {userEmail && <span className="text-xs text-gray-400">{userEmail}</span>}
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="text-sm px-3 py-1 rounded border border-gray-600 hover:bg-gray-800"
+            >
+              Sair
+            </button>
+          </div>
         </div>
       </header>
       <div className="max-w-6xl mx-auto px-4 py-8">

@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { listPages } from '../../services/contentApi';
 import { resetSeedsToLocalStore } from '../../services/contentLocalStore';
+import { seedFirestoreFromSeeds } from '../../services/contentFirestoreStore';
 import { PAGE_STATUS } from '../../services/contentAdminConstants';
 import { isInstitutionalSlug } from '../../utils/contentSchema';
+import { isFirestoreStorage } from '../../config/contentStorage';
+import { formatEditedAt } from '../../utils/contentAdminHelpers';
 
 const statusBadge = (status) => {
   const published = status === PAGE_STATUS.PUBLISHED;
@@ -17,6 +20,7 @@ const statusBadge = (status) => {
 };
 
 const ContentList = () => {
+  const firestoreMode = isFirestoreStorage();
   const [pages, setPages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -34,18 +38,28 @@ const ContentList = () => {
     loadList();
   }, []);
 
-  const handleRestoreSeeds = () => {
-    if (
-      !window.confirm(
-        'Restaurar o conteúdo original de Kyokushinkaikan? Alterações locais nessa página serão substituídas.'
-      )
-    ) {
-      return;
-    }
+  const handleRestoreSeeds = async () => {
+    const message = firestoreMode
+      ? 'Publicar o conteúdo original (seeds) no Firestore? Páginas existentes com o mesmo slug serão atualizadas.'
+      : 'Restaurar o conteúdo original de Kyokushinkaikan? Alterações locais nessa página serão substituídas.';
+
+    if (!window.confirm(message)) return;
+
     setRestoring(true);
-    resetSeedsToLocalStore();
-    loadList();
-    setTimeout(() => setRestoring(false), 300);
+    setError('');
+
+    try {
+      if (firestoreMode) {
+        await seedFirestoreFromSeeds();
+      } else {
+        resetSeedsToLocalStore();
+      }
+      loadList();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Erro ao restaurar conteúdo');
+    } finally {
+      setRestoring(false);
+    }
   };
 
   if (loading) {
@@ -75,13 +89,14 @@ const ContentList = () => {
       </div>
 
       <p className="mb-4 text-sm text-gray-600">
-        O conteúdo do site (Kyokushinkaikan) é carregado automaticamente do layout legado no armazenamento
-        local do navegador. Use &quot;Restaurar&quot; se a página aparecer vazia no editor.
+        {firestoreMode
+          ? 'Conteúdo salvo no Cloud Firestore — alterações no admin aparecem para todos os visitantes.'
+          : 'Conteúdo no armazenamento local do navegador (desenvolvimento). Use Firestore em produção.'}
       </p>
 
       {error && (
         <p className="mb-4 text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded p-3">
-          API indisponível — exibindo slugs conhecidos. ({error})
+          {error}
         </p>
       )}
 
@@ -93,6 +108,7 @@ const ContentList = () => {
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Slug</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Seções</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Última edição</th>
               <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase">Ações</th>
             </tr>
           </thead>
@@ -103,6 +119,20 @@ const ContentList = () => {
                 <td className="px-4 py-3 text-sm text-gray-600 font-mono">{page.slug}</td>
                 <td className="px-4 py-3">{statusBadge(page.status)}</td>
                 <td className="px-4 py-3 text-sm text-gray-600">{page.sections?.length ?? 0}</td>
+                <td className="px-4 py-3 text-sm text-gray-600">
+                  {page.lastEditedByEmail ? (
+                    <>
+                      <span className="block">{page.lastEditedByEmail}</span>
+                      {page.lastEditedAt && (
+                        <span className="text-xs text-gray-400">
+                          {formatEditedAt(page.lastEditedAt)}
+                        </span>
+                      )}
+                    </>
+                  ) : (
+                    <span className="text-gray-400">—</span>
+                  )}
+                </td>
                 <td className="px-4 py-3 text-right">
                   <Link
                     to={`/admin/conteudo/${page.slug}`}

@@ -3,7 +3,10 @@ import YoutubeEmbed from './YoutubeEmbed';
 import Gallery from './Gallery';
 import ImageLightbox from './ImageLightbox';
 import ContentValidationNotice from './ContentValidationNotice';
+import ContentTable from './ContentTable';
 import { validateForRender } from '../utils/contentSchema';
+import { formatTextBlockHtml } from '../services/contentNormalizer';
+import { segmentBlocksForGallery, GALLERY_RUN_MIN } from '../utils/blockGallerySegments';
 
 const GALLERY_MIN_IMAGES = 3;
 
@@ -67,11 +70,29 @@ function collectImageBlocks(section) {
 
 /**
  * @param {import('../services/contentApi').ContentBlock[]} blocks
+ * @param {boolean} hideImages — seções tipo galeria: imagens vão para o grid da seção
  */
-function shouldUseGallery(blocks, forceGallery) {
-  if (forceGallery) return true;
-  const imageCount = blocks.filter((b) => b.type === 'image').length;
-  return imageCount >= GALLERY_MIN_IMAGES;
+function BlocksRenderer({ blocks, hideImages = false }) {
+  if (!blocks?.length) return null;
+
+  if (hideImages) {
+    return blocks
+      .filter((b) => b.type !== 'image')
+      .map((block, index) => <BlockSwitch key={`block-${index}`} block={block} />);
+  }
+
+  const segments = segmentBlocksForGallery(blocks, GALLERY_RUN_MIN);
+
+  return segments.map((segment, index) => {
+    if (segment.kind === 'gallery') {
+      const galleryImages = segment.blocks.map((b) => ({
+        src: b.payload.src,
+        alt: b.payload.alt || '',
+      }));
+      return <Gallery key={`gallery-${index}`} images={galleryImages} />;
+    }
+    return <BlockSwitch key={`block-${index}`} block={segment.block} />;
+  });
 }
 
 /**
@@ -80,9 +101,19 @@ function shouldUseGallery(blocks, forceGallery) {
 const TextBlock = ({ block }) => (
   <div
     className="content-text mb-4 text-gray-700 leading-relaxed prose prose-lg max-w-none"
-    dangerouslySetInnerHTML={{ __html: block.payload.html }}
+    dangerouslySetInnerHTML={{ __html: formatTextBlockHtml(block.payload.html) }}
   />
 );
+
+/**
+ * @param {{ block: import('../services/contentApi').ContentBlock }} props
+ */
+const SubtitleBlock = ({ block }) => {
+  if (!block.payload?.text) return null;
+  return (
+    <p className="text-lg text-gray-600 leading-snug mb-4 -mt-0.5">{block.payload.text}</p>
+  );
+};
 
 /**
  * @param {{ block: import('../services/contentApi').ContentBlock }} props
@@ -92,6 +123,7 @@ const ImageBlock = ({ block }) => (
     src={block.payload.src}
     alt={block.payload.alt || ''}
     caption={block.payload.caption}
+    widthPercent={block.payload.widthPercent ?? 100}
   />
 );
 
@@ -101,42 +133,38 @@ const ImageBlock = ({ block }) => (
 const YoutubeBlock = ({ block }) => {
   const embedId = block.payload.videoId || block.payload.embedId;
   if (!embedId) return null;
-  return <YoutubeEmbed embedId={embedId} />;
+  return (
+    <YoutubeEmbed
+      embedId={embedId}
+      widthPercent={block.payload.widthPercent ?? 100}
+    />
+  );
 };
 
 /**
- * @param {import('../services/contentApi').ContentBlock[]} blocks
- * @param {boolean} forceGallery
- * @param {boolean} hideImages
+ * @param {{ block: import('../services/contentApi').ContentBlock }} props
  */
-function BlocksRenderer({ blocks, forceGallery = false, hideImages = false }) {
-  if (!blocks?.length) return null;
+const LinkBlock = ({ block }) => {
+  const { label, href, openInNewTab } = block.payload || {};
+  if (!label?.trim() || !href?.trim()) return null;
+  const newTab = openInNewTab !== false;
+  return (
+    <p className="content-text mb-4 text-gray-700 leading-relaxed">
+      <a
+        href={href}
+        {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        className="text-blue-600 underline hover:text-blue-800"
+      >
+        {label}
+      </a>
+    </p>
+  );
+};
 
-  const imageBlocks = blocks.filter((b) => b.type === 'image');
-  const useGallery = !hideImages && shouldUseGallery(blocks, forceGallery);
-
-  if (useGallery && imageBlocks.length > 0) {
-    const galleryImages = imageBlocks.map((b) => ({
-      src: b.payload.src,
-      alt: b.payload.alt || '',
-    }));
-    const otherBlocks = blocks.filter((b) => b.type !== 'image');
-
-    return (
-      <>
-        {otherBlocks.map((block, index) => (
-          <BlockSwitch key={`other-${index}`} block={block} />
-        ))}
-        <Gallery images={galleryImages} />
-      </>
-    );
-  }
-
-  return blocks.map((block, index) => {
-    if (hideImages && block.type === 'image') return null;
-    return <BlockSwitch key={`block-${index}`} block={block} />;
-  });
-}
+/**
+ * @param {{ block: import('../services/contentApi').ContentBlock }} props
+ */
+const TableBlock = ({ block }) => <ContentTable payload={block.payload} />;
 
 /**
  * @param {{ block: import('../services/contentApi').ContentBlock }} props
@@ -145,10 +173,16 @@ function BlockSwitch({ block }) {
   switch (block.type) {
     case 'text':
       return <TextBlock block={block} />;
+    case 'subtitle':
+      return <SubtitleBlock block={block} />;
     case 'image':
       return <ImageBlock block={block} />;
     case 'youtube':
       return <YoutubeBlock block={block} />;
+    case 'link':
+      return <LinkBlock block={block} />;
+    case 'table':
+      return <TableBlock block={block} />;
     default:
       return null;
   }
@@ -226,11 +260,7 @@ const NestedSectionRenderer = ({ section, depth, gallerySectionIds }) => {
         </header>
       )}
 
-      <BlocksRenderer
-        blocks={section.blocks}
-        forceGallery={forceGallery}
-        hideImages={hideImages}
-      />
+      <BlocksRenderer blocks={section.blocks} hideImages={hideImages} />
       {depth === 0 && hideImages && galleryImages.length > 0 && (
         <Gallery images={galleryImages} />
       )}

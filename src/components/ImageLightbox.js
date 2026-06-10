@@ -2,8 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 /**
  * Imagem clicável que abre em modal (sem redirecionar para URL externa).
+ * @param {{ widthPercent?: number }} props
  */
-const ImageLightbox = ({ src, alt = '', caption, className = '' }) => {
+const ImageLightbox = ({
+  src,
+  alt = '',
+  caption,
+  className = '',
+  widthPercent = 100,
+}) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -19,13 +26,20 @@ const ImageLightbox = ({ src, alt = '', caption, className = '' }) => {
 
   if (!src) return null;
 
+  const pct = Math.min(100, Math.max(10, Math.round(widthPercent)));
+  const widthStyle =
+    pct >= 100
+      ? { maxWidth: '100%' }
+      : { width: `${pct}%`, maxWidth: `${pct}%` };
+
   return (
     <>
       <figure className="my-4 text-center">
         <img
           src={src}
           alt={alt}
-          className={`mx-auto cursor-pointer max-w-full rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105 ${className}`.trim()}
+          style={widthStyle}
+          className={`mx-auto h-auto cursor-pointer rounded shadow-md hover:opacity-75 transition-transform transform hover:scale-105 ${className}`.trim()}
           onClick={() => setOpen(true)}
           role="button"
           tabIndex={0}

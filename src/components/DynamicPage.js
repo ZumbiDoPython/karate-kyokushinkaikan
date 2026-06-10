@@ -17,7 +17,7 @@ const DynamicPage = ({
   withSidebar = true,
 }) => {
   const location = useLocation();
-  const { page, loading, error } = useContentPageByRoute(location.pathname);
+  const { page, loading, error } = useContentPageByRoute(location.pathname, { publicOnly: true });
 
   const menuItems = menuOverride?.length
     ? menuOverride

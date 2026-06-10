@@ -1,13 +1,40 @@
-import React, { useState } from 'react';
-import { BlockListEditor } from './BlockEditor';
+import React, { useState, useCallback } from 'react';
+import { BlockListEditor, getBlockDragData, BLOCK_DRAG_MIME } from './BlockEditor';
 import {
   createEmptySection,
   reorderByIndex,
   assignSectionPositions,
   assignBlockPositions,
   updateSectionInPage,
+  moveBlockInPage,
+  moveSectionInPage,
+  moveAllBlocksToSection,
+  flattenSectionsForPicker,
+  getSectionDescendantIds,
+  isSectionDescendant,
+  setSectionDragData,
+  getSectionDragData,
+  SECTION_DRAG_MIME,
 } from '../../utils/contentAdminHelpers';
 import { getSectionDepthLabel } from '../../utils/contentSchema';
+
+/**
+ * @param {import('../../services/contentNormalizer').ContentSection[]} sections
+ */
+function collectSectionIdsWithChildren(sections) {
+  /** @type {string[]} */
+  const ids = [];
+  const walk = (list) => {
+    (list || []).forEach((s) => {
+      if ((s.children || []).length > 0) {
+        ids.push(s.id);
+        walk(s.children);
+      }
+    });
+  };
+  walk(sections);
+  return ids;
+}
 
 /**
  * @param {import('../../services/contentNormalizer').ContentPage} page
@@ -27,6 +54,25 @@ function patchSectionInPage(page, sectionId, patch) {
  */
 const SectionTreeEditor = ({ page, onChange, selectedSectionId, onSelectSection }) => {
   const sections = page.sections || [];
+  const uploadFolder = page.slug ? `cms/${page.slug}` : 'cms';
+  const [collapsedIds, setCollapsedIds] = useState(() => new Set());
+
+  const toggleCollapse = useCallback((sectionId) => {
+    setCollapsedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(sectionId)) next.delete(sectionId);
+      else next.add(sectionId);
+      return next;
+    });
+  }, []);
+
+  const collapseAll = () => {
+    setCollapsedIds(new Set(collectSectionIdsWithChildren(sections)));
+  };
+
+  const expandAll = () => {
+    setCollapsedIds(new Set());
+  };
 
   const updateSections = (nextSections) => {
     onChange({ ...page, sections: assignSectionPositions(nextSections) });
@@ -85,26 +131,81 @@ const SectionTreeEditor = ({ page, onChange, selectedSectionId, onSelectSection 
     onChange({ ...page, sections: assignSectionPositions(patch(sections)) });
   };
 
+  const handleMoveBlock = (blockId, sourceSectionId, targetSectionId) => {
+    const next = moveBlockInPage(page, blockId, targetSectionId);
+    onChange(next);
+    onSelectSection(targetSectionId);
+  };
+
+  const handleMoveSection = (sectionId, targetParentId, targetIndex) => {
+    const next = moveSectionInPage(page, sectionId, targetParentId, targetIndex);
+    onChange(next);
+    onSelectSection(sectionId);
+  };
+
+  const handleMoveAllBlocks = (sourceSectionId, targetSectionId) => {
+    const source = (() => {
+      const walk = (list) => {
+        for (const s of list || []) {
+          if (s.id === sourceSectionId) return s;
+          const found = walk(s.children);
+          if (found) return found;
+        }
+        return null;
+      };
+      return walk(sections);
+    })();
+    const count = source?.blocks?.length || 0;
+    if (!count) return;
+    if (!window.confirm(`Mover ${count} bloco(s) desta seção para o destino escolhido?`)) return;
+    const next = moveAllBlocksToSection(page, sourceSectionId, targetSectionId);
+    onChange(next);
+    onSelectSection(targetSectionId);
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <div>
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-gray-900">Estrutura</h3>
-          <button
-            type="button"
-            onClick={addRootSection}
-            className="text-sm px-3 py-1.5 bg-yellow-500 hover:bg-yellow-600 rounded font-medium"
-          >
-            + Seção
-          </button>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={collapseAll}
+              className="text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50"
+              title="Recolher todas as subseções"
+            >
+              Recolher tudo
+            </button>
+            <button
+              type="button"
+              onClick={expandAll}
+              className="text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50"
+              title="Expandir todas as subseções"
+            >
+              Expandir tudo
+            </button>
+            <button
+              type="button"
+              onClick={addRootSection}
+              className="text-sm px-3 py-1.5 bg-yellow-500 hover:bg-yellow-600 rounded font-medium"
+            >
+              + Seção
+            </button>
+          </div>
         </div>
-        <p className="text-xs text-gray-500 mb-3">Arraste para reordenar (opcional) ou use ↑↓.</p>
+        <p className="text-xs text-gray-500 mb-3">
+          Use ▶/▼ para recolher subseções. Arraste seções para reordenar ou aninhar. Blocos (⠿) podem ir para
+          qualquer seção; no painel à direita você pode mover todos os blocos de uma vez.
+        </p>
+        <RootSectionDropZone onMoveSection={handleMoveSection} />
         {sections.length === 0 && (
           <p className="text-sm text-gray-500 italic">Nenhuma seção.</p>
         )}
         {sections.map((section, index) => (
           <SectionTreeNode
             key={section.id}
+            page={page}
             section={section}
             depth={0}
             selectedSectionId={selectedSectionId}
@@ -113,6 +214,10 @@ const SectionTreeEditor = ({ page, onChange, selectedSectionId, onSelectSection 
             onAddChild={addChildSection}
             onReorderSibling={(from, to) => reorderRoots(from, to)}
             onReorderChild={reorderChildren}
+            onDropBlock={handleMoveBlock}
+            onMoveSection={handleMoveSection}
+            collapsedIds={collapsedIds}
+            onToggleCollapse={toggleCollapse}
             siblingIndex={index}
             siblingTotal={sections.length}
             parentId={null}
@@ -125,6 +230,10 @@ const SectionTreeEditor = ({ page, onChange, selectedSectionId, onSelectSection 
           page={page}
           selectedSectionId={selectedSectionId}
           onUpdate={updateSection}
+          onMoveBlock={handleMoveBlock}
+          onMoveSection={handleMoveSection}
+          onMoveAllBlocks={handleMoveAllBlocks}
+          uploadFolder={uploadFolder}
         />
       </div>
     </div>
@@ -134,7 +243,7 @@ const SectionTreeEditor = ({ page, onChange, selectedSectionId, onSelectSection 
 /**
  * Painel de edição da seção selecionada.
  */
-const SectionDetailPanel = ({ page, selectedSectionId, onUpdate }) => {
+const SectionDetailPanel = ({ page, selectedSectionId, onUpdate, onMoveBlock, onMoveSection, onMoveAllBlocks, uploadFolder }) => {
   const find = (list, id) => {
     for (const s of list) {
       if (s.id === id) return s;
@@ -167,9 +276,66 @@ const SectionDetailPanel = ({ page, selectedSectionId, onUpdate }) => {
     return depth >= 0 ? getSectionDepthLabel(depth) : 'Seção';
   })();
 
+  const sectionDestinations = (() => {
+    const excluded = new Set([section.id, ...getSectionDescendantIds(section)]);
+    return flattenSectionsForPicker(page).filter((d) => !excluded.has(d.sectionId));
+  })();
+
   return (
     <div className="border border-yellow-400 rounded-lg p-4 bg-white space-y-4">
       <h4 className="font-semibold text-gray-900">{depthLabel}</h4>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Mover subseção para</label>
+        <select
+          className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+          value=""
+          onChange={(e) => {
+            const value = e.target.value;
+            if (!value) return;
+            if (value === '__root__') {
+              onMoveSection(section.id, null);
+            } else {
+              onMoveSection(section.id, value);
+            }
+            e.target.value = '';
+          }}
+        >
+          <option value="">— escolher destino —</option>
+          <option value="__root__">Nível principal (raiz da página)</option>
+          {sectionDestinations.map((d) => (
+            <option key={d.sectionId} value={d.sectionId}>
+              {'\u00A0'.repeat(d.depth * 2)}
+              {d.label}
+            </option>
+          ))}
+        </select>
+      </div>
+      {(section.blocks || []).length > 0 && (
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Mover todos os blocos para</label>
+          <select
+            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            value=""
+            onChange={(e) => {
+              const value = e.target.value;
+              if (!value) return;
+              onMoveAllBlocks(section.id, value);
+              e.target.value = '';
+            }}
+          >
+            <option value="">— escolher seção de destino —</option>
+            {sectionDestinations.map((d) => (
+              <option key={d.sectionId} value={d.sectionId}>
+                {'\u00A0'.repeat(d.depth * 2)}
+                {d.label}
+              </option>
+            ))}
+          </select>
+          <p className="text-xs text-gray-500 mt-1">
+            Move apenas o conteúdo (blocos) desta seção — subseções permanecem aqui.
+          </p>
+        </div>
+      )}
       <div className="grid gap-3">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Título</label>
@@ -203,6 +369,10 @@ const SectionDetailPanel = ({ page, selectedSectionId, onUpdate }) => {
         <h5 className="text-sm font-semibold text-gray-800 mb-2">Blocos</h5>
         <BlockListEditor
           blocks={section.blocks || []}
+          page={page}
+          currentSectionId={section.id}
+          uploadFolder={uploadFolder}
+          onMoveBlock={onMoveBlock}
           onChange={(blocks) => onUpdate(section.id, { blocks: assignBlockPositions(blocks) })}
         />
       </div>
@@ -210,7 +380,37 @@ const SectionDetailPanel = ({ page, selectedSectionId, onUpdate }) => {
   );
 };
 
+const RootSectionDropZone = ({ onMoveSection }) => {
+  const [dragOver, setDragOver] = useState(false);
+
+  const onDrop = (e) => {
+    e.preventDefault();
+    setDragOver(false);
+    const sectionData = getSectionDragData(e);
+    if (!sectionData) return;
+    onMoveSection(sectionData.sectionId, null);
+  };
+
+  return (
+    <div
+      onDragOver={(e) => {
+        if (!Array.from(e.dataTransfer.types || []).includes(SECTION_DRAG_MIME)) return;
+        e.preventDefault();
+        setDragOver(true);
+      }}
+      onDragLeave={() => setDragOver(false)}
+      onDrop={onDrop}
+      className={`mb-3 px-3 py-2 rounded border border-dashed text-xs text-center ${
+        dragOver ? 'border-yellow-500 bg-yellow-50 text-yellow-900' : 'border-gray-300 text-gray-500'
+      }`}
+    >
+      Nível principal — solte aqui para mover a seção para a raiz
+    </div>
+  );
+};
+
 const SectionTreeNode = ({
+  page,
   section,
   depth,
   selectedSectionId,
@@ -219,17 +419,27 @@ const SectionTreeNode = ({
   onAddChild,
   onReorderSibling,
   onReorderChild,
+  onDropBlock,
+  onMoveSection,
+  collapsedIds,
+  onToggleCollapse,
   siblingIndex,
   siblingTotal,
   parentId,
 }) => {
   const [dragOver, setDragOver] = useState(false);
+  const [blockDragOver, setBlockDragOver] = useState(false);
   const isSelected = selectedSectionId === section.id;
   const canAddChild = true;
+  const hasChildren = (section.children || []).length > 0;
+  const isCollapsed = collapsedIds.has(section.id);
 
   const onDragStart = (e) => {
-    e.dataTransfer.setData('text/section-index', String(siblingIndex));
-    e.dataTransfer.setData('text/parent-id', parentId || '');
+    setSectionDragData(e, {
+      sectionId: section.id,
+      parentId: parentId || null,
+      siblingIndex,
+    });
     e.stopPropagation();
   };
 
@@ -237,14 +447,42 @@ const SectionTreeNode = ({
     e.preventDefault();
     e.stopPropagation();
     setDragOver(false);
-    const from = parseInt(e.dataTransfer.getData('text/section-index'), 10);
-    const dropParent = e.dataTransfer.getData('text/parent-id') || '';
-    const myParent = parentId || '';
-    if (dropParent !== myParent || Number.isNaN(from) || from === siblingIndex) return;
-    if (parentId) {
-      onReorderChild(parentId, from, siblingIndex);
-    } else {
-      onReorderSibling(from, siblingIndex);
+    setBlockDragOver(false);
+
+    const blockData = getBlockDragData(e);
+    if (blockData && onDropBlock) {
+      if (blockData.sourceSectionId !== section.id) {
+        onDropBlock(blockData.blockId, blockData.sourceSectionId, section.id);
+      }
+      return;
+    }
+
+    const sectionData = getSectionDragData(e);
+    if (sectionData && onMoveSection) {
+      const { sectionId: draggedId, parentId: dragParentId, siblingIndex: fromIndex } = sectionData;
+      if (draggedId === section.id) return;
+      if (isSectionDescendant(page, draggedId, section.id)) return;
+
+      const dropParentId = parentId || null;
+      const dragParent = dragParentId || null;
+
+      if (dragParent === dropParentId) {
+        if (fromIndex === siblingIndex) return;
+        if (parentId) {
+          onReorderChild(parentId, fromIndex, siblingIndex);
+        } else {
+          onReorderSibling(fromIndex, siblingIndex);
+        }
+        return;
+      }
+
+      if (dropParentId === null && dragParent !== null) {
+        onMoveSection(draggedId, null, siblingIndex);
+        return;
+      }
+
+      onMoveSection(draggedId, section.id);
+      return;
     }
   };
 
@@ -255,16 +493,43 @@ const SectionTreeNode = ({
         onDragStart={onDragStart}
         onDragOver={(e) => {
           e.preventDefault();
-          setDragOver(true);
+          const types = Array.from(e.dataTransfer.types || []);
+          if (types.includes(BLOCK_DRAG_MIME)) {
+            setBlockDragOver(true);
+          } else if (types.includes(SECTION_DRAG_MIME)) {
+            setDragOver(true);
+          }
         }}
-        onDragLeave={() => setDragOver(false)}
+        onDragLeave={() => {
+          setDragOver(false);
+          setBlockDragOver(false);
+        }}
         onDrop={onDrop}
-        className={`flex items-center gap-2 p-2 rounded border text-sm cursor-pointer ${isSelected ? 'border-yellow-500 bg-yellow-50' : 'border-gray-200 bg-white hover:bg-gray-50'} ${dragOver ? 'ring-2 ring-yellow-300' : ''}`}
+        className={`flex items-center gap-2 p-2 rounded border text-sm cursor-pointer ${isSelected ? 'border-yellow-500 bg-yellow-50' : 'border-gray-200 bg-white hover:bg-gray-50'} ${blockDragOver ? 'ring-2 ring-blue-400 bg-blue-50' : ''} ${dragOver && !blockDragOver ? 'ring-2 ring-yellow-300' : ''}`}
         style={{ marginLeft: depth * 16 }}
         onClick={() => onSelectSection(section.id)}
       >
+        {hasChildren ? (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleCollapse(section.id);
+            }}
+            className="shrink-0 w-5 h-5 flex items-center justify-center text-gray-500 hover:text-gray-800 border border-gray-200 rounded text-xs"
+            title={isCollapsed ? 'Expandir subseções' : 'Recolher subseções'}
+            aria-expanded={!isCollapsed}
+          >
+            {isCollapsed ? '▶' : '▼'}
+          </button>
+        ) : (
+          <span className="w-5 shrink-0" aria-hidden />
+        )}
         <span className="flex-1 truncate font-medium">{section.title || '(sem título)'}</span>
-        <span className="text-xs text-gray-400">{section.blocks?.length || 0} blocos</span>
+        <span className="text-xs text-gray-400 shrink-0">
+          {section.blocks?.length || 0} blocos
+          {hasChildren ? ` · ${section.children.length} sub` : ''}
+        </span>
         <button
           type="button"
           disabled={siblingIndex === 0}
@@ -310,9 +575,11 @@ const SectionTreeNode = ({
           ×
         </button>
       </div>
-      {(section.children || []).map((child, childIndex) => (
+      {hasChildren && !isCollapsed &&
+        (section.children || []).map((child, childIndex) => (
         <SectionTreeNode
           key={child.id}
+          page={page}
           section={child}
           depth={depth + 1}
           selectedSectionId={selectedSectionId}
@@ -321,6 +588,10 @@ const SectionTreeNode = ({
           onAddChild={onAddChild}
           onReorderSibling={onReorderSibling}
           onReorderChild={onReorderChild}
+          onDropBlock={onDropBlock}
+          onMoveSection={onMoveSection}
+          collapsedIds={collapsedIds}
+          onToggleCollapse={onToggleCollapse}
           siblingIndex={childIndex}
           siblingTotal={(section.children || []).length}
           parentId={section.id}

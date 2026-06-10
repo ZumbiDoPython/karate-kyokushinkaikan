@@ -4,8 +4,10 @@ import { CONTENT_STORE_UPDATED_EVENT } from '../services/contentLocalStore';
 
 /**
  * @param {string} slug
+ * @param {{ publicOnly?: boolean }} [options]
  */
-export function useContentPage(slug) {
+export function useContentPage(slug, options = {}) {
+  const { publicOnly = false } = options;
   const [page, setPage] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -19,14 +21,14 @@ export function useContentPage(slug) {
     try {
       setLoading(true);
       setError(null);
-      const data = await getPageBySlug(slug);
+      const data = await getPageBySlug(slug, { publicOnly });
       setPage(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao carregar página');
     } finally {
       setLoading(false);
     }
-  }, [slug]);
+  }, [slug, publicOnly]);
 
   useEffect(() => {
     load();
@@ -38,13 +40,15 @@ export function useContentPage(slug) {
     return () => window.removeEventListener(CONTENT_STORE_UPDATED_EVENT, onStoreUpdated);
   }, [load]);
 
-  return { page, loading, error };
+  return { page, loading, error, reload: load };
 }
 
 /**
  * @param {string} route
+ * @param {{ publicOnly?: boolean }} [options]
  */
-export function useContentPageByRoute(route) {
+export function useContentPageByRoute(route, options = {}) {
+  const { publicOnly = false } = options;
   const [page, setPage] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -61,7 +65,7 @@ export function useContentPageByRoute(route) {
       try {
         setLoading(true);
         setError(null);
-        const data = await fetchPageByRoute(route);
+        const data = await fetchPageByRoute(route, { publicOnly });
         if (!cancelled) setPage(data);
       } catch (err) {
         if (!cancelled) {
@@ -76,7 +80,7 @@ export function useContentPageByRoute(route) {
     return () => {
       cancelled = true;
     };
-  }, [route]);
+  }, [route, publicOnly]);
 
   return { page, loading, error };
 }

@@ -1,7 +1,23 @@
-# Getting Started with Create React App
+# Karate Kyokushinkaikan — site institucional
+
+React (CRA) com CMS local, admin em `/admin/conteudo` e deploy via **Firebase Hosting** (gratuito).
+
+- Conteúdo e API: [CONTENT_API.md](./CONTENT_API.md)
+- **Deploy em produção (grátis):** [DEPLOY.md](./DEPLOY.md)
+
+## Deploy rápido
+
+```powershell
+copy .env.production.example .env.production
+# edite REACT_APP_ADMIN_TOKEN
+npm run deploy
+```
+
+---
+
+## Desenvolvimento (Create React App)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
