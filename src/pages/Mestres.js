@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
+import InstitutionalPage from '../components/InstitutionalPage';
 
-const Mestres = () => {
-  return <h1>Página Mestres</h1>;
-};
+const Mestres = () => <InstitutionalPage slug="mestres" />;
 
 export default Mestres;

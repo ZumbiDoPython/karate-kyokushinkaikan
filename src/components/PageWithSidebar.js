@@ -1,146 +1,199 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useHashScroll } from '../hooks/useHashScroll';
 
-// Função utilitária para buscar h2/h3 dentro de uma seção
-function getSectionHeadings(sectionId) {
+/**
+ * @typedef {Object} SidebarMenuItem
+ * @property {string} label
+ * @property {string} target
+ * @property {SidebarMenuItem[]} [children]
+ */
+
+/**
+ * Monta submenu a partir dos headings dentro de uma seção (fallback DOM).
+ * @param {string} sectionId
+ */
+function getSectionHeadingsFromDom(sectionId) {
   const section = document.getElementById(sectionId);
   if (!section) return [];
-  const nodes = Array.from(section.querySelectorAll('h2, h3'));
-  const result = [];
-  let lastH2 = null;
-  nodes.forEach(node => {
+
+  const nodes = Array.from(section.querySelectorAll('h2, h3, h4, h5, h6'));
+  /** @type {SidebarMenuItem[]} */
+  const stack = [];
+  /** @type {SidebarMenuItem[]} */
+  const roots = [];
+
+  nodes.forEach((node) => {
     const id = node.id || node.textContent.replace(/\s+/g, '-').toLowerCase();
     node.id = id;
-    if (node.tagName === 'H2') {
-      lastH2 = { id, text: node.textContent, children: [] };
-      result.push(lastH2);
-    } else if (node.tagName === 'H3' && lastH2) {
-      lastH2.children.push({ id, text: node.textContent });
+
+    const level = parseInt(node.tagName.charAt(1), 10);
+    const item = { label: node.textContent.trim(), target: id, children: [] };
+
+    while (stack.length > 0 && stack[stack.length - 1].level >= level) {
+      stack.pop();
     }
+
+    if (stack.length === 0) {
+      roots.push(item);
+    } else {
+      stack[stack.length - 1].item.children.push(item);
+    }
+
+    stack.push({ level, item });
   });
-  return result;
+
+  return filterSidebarMenuChildren(roots);
 }
 
-const PageWithSidebar = ({ 
-  children, 
-  menuItems = [],
-  sidebarContent = null 
-}) => {
-  useHashScroll();
-  // Estado para controlar dropdown aberto por nível: { main: 'fundadores', sub: 'fundadores-h2-oyama' }
-  const [openDropdown, setOpenDropdown] = useState({ main: null, sub: null });
-  const [sectionHeadings, setSectionHeadings] = useState({});
+/**
+ * No menu lateral, subseções só aparecem com 2 ou mais itens no mesmo nível.
+ * @param {SidebarMenuItem[]} items
+ * @returns {SidebarMenuItem[]}
+ */
+function filterSidebarMenuChildren(items) {
+  if (!items?.length) return [];
 
-  // Atualiza os headings de cada seção após render
-  useEffect(() => {
-    const map = {};
-    menuItems.forEach(item => {
-      map[item.target] = getSectionHeadings(item.target);
-    });
-    setSectionHeadings(map);
-  }, [children, menuItems]);
+  return items.map((item) => {
+    let children = filterSidebarMenuChildren(item.children || []);
+    if (children.length === 1) {
+      children = [];
+    }
+    return { ...item, children };
+  });
+}
+
+/**
+ * @param {SidebarMenuItem} item
+ * @param {(target: string) => void} onNavigate
+ * @param {number} depth
+ * @param {Set<string>} openMenus
+ * @param {(id: string) => void} onToggle
+ * @param {string} menuPath
+ */
+function SidebarMenuNode({
+  item,
+  onNavigate,
+  depth,
+  openMenus,
+  onToggle,
+  menuPath,
+}) {
+  const dropdownId = menuPath || item.target;
+  const subItems = item.children || [];
+  const hasChildren = subItems.length > 0;
+  const showDropdown = subItems.length > 1;
+  const isOpen = showDropdown && openMenus.has(dropdownId);
+
+  const linkClass =
+    depth === 0
+      ? 'cursor-pointer text-blue-600 hover:underline text-sm md:text-base flex-1 text-left'
+      : depth === 1
+        ? 'cursor-pointer text-blue-500 hover:underline text-xs text-left flex-1'
+        : 'cursor-pointer text-blue-400 hover:underline text-xs text-left flex-1';
+
+  return (
+    <li className={depth === 0 ? 'mb-2 md:mb-4' : 'mb-1'}>
+      <div className="flex items-center" style={{ paddingLeft: depth > 0 ? Math.min(depth * 8, 24) : 0 }}>
+        <button type="button" className={linkClass} onClick={() => onNavigate(item.target)}>
+          {item.label}
+        </button>
+        {showDropdown && (
+          <button
+            type="button"
+            className="ml-2 text-xs text-gray-600 shrink-0"
+            onClick={() => onToggle(dropdownId)}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Fechar submenu' : 'Abrir submenu'}
+          >
+            {isOpen ? '▲' : '▼'}
+          </button>
+        )}
+      </div>
+
+      {hasChildren && isOpen && (
+        <ul
+          className={
+            depth === 0
+              ? 'ml-4 mt-1 border-l border-gray-300 pl-2'
+              : 'ml-3 mt-1 border-l border-gray-200 pl-2'
+          }
+        >
+          {subItems.map((child) => (
+            <SidebarMenuNode
+              key={`${dropdownId}-${child.target}`}
+              item={child}
+              onNavigate={onNavigate}
+              depth={depth + 1}
+              openMenus={openMenus}
+              onToggle={onToggle}
+              menuPath={`${dropdownId}/${child.target}`}
+            />
+          ))}
+        </ul>
+      )}
+    </li>
+  );
+}
+
+const PageWithSidebar = ({ children, menuItems = [], sidebarContent = null }) => {
+  useHashScroll();
+  const [openMenus, setOpenMenus] = useState(() => new Set());
 
   const handleMenuClick = useCallback((target) => {
-    const section = document.getElementById(target);
-    if (section) {
+    const el = document.getElementById(target);
+    if (el) {
       window.history.pushState(null, '', `#${target}`);
-      section.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   }, []);
 
-  // Abre o dropdown do nível (main ou sub) e fecha os outros do mesmo nível
-  const handleDropdown = (level, id) => {
-    setOpenDropdown(prev => ({
-      ...prev,
-      [level]: prev[level] === id ? null : id
-    }));
+  const handleToggle = useCallback((id) => {
+    setOpenMenus((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  }, []);
+
+  const resolveSubmenu = (item) => {
+    if (item.children?.length) return item.children;
+    return getSectionHeadingsFromDom(item.target);
   };
+
+  const menuWithChildren = filterSidebarMenuChildren(
+    menuItems.map((item) => ({
+      ...item,
+      children: resolveSubmenu(item),
+    }))
+  );
 
   return (
     <div className="flex flex-col md:flex-row">
-      {/* Menu lateral/topo */}
-      <aside className="w-full md:w-64 bg-gray-100 p-4 shadow-md md:h-screen sticky top-0 z-10">
+      <aside className="w-full md:w-64 bg-gray-100 p-4 shadow-md md:h-screen sticky top-0 z-10 md:overflow-y-auto">
         <nav>
-          <ul className="flex md:flex-col justify-around">
-            {menuItems.map((item) => {
-              const headings = sectionHeadings[item.target] || [];
-              return (
-                <li key={item.target} className="mb-2 md:mb-4">
-                  <div className="flex items-center">
-                    <button
-                      className="cursor-pointer text-blue-600 hover:underline text-sm md:text-base flex-1 text-left"
-                      onClick={() => handleMenuClick(item.target)}
-                    >
-                      {item.label}
-                    </button>
-                    {headings.length > 0 && (
-                      <button
-                        className="ml-2 text-xs text-gray-600"
-                        onClick={() => handleDropdown('main', item.target)}
-                        aria-label="Abrir submenu"
-                      >
-                        {openDropdown.main === item.target ? '▲' : '▼'}
-                      </button>
-                    )}
-                  </div>
-                  {headings.length > 0 && openDropdown.main === item.target && (
-                    <ul className="ml-4 mt-1 border-l border-gray-300 pl-2">
-                      {headings.map((h2) => {
-                        const h2DropdownId = `${item.target}-h2-${h2.id}`;
-                        return (
-                          <li key={h2.id} className="mb-1">
-                            <div className="flex items-center">
-                              <button
-                                className="cursor-pointer text-blue-500 hover:underline text-xs text-left flex-1"
-                                onClick={() => handleMenuClick(h2.id)}
-                              >
-                                {h2.text}
-                              </button>
-                              {h2.children.length > 0 && (
-                                <button
-                                  className="ml-1 text-xs text-gray-600"
-                                  onClick={() => handleDropdown('sub', h2DropdownId)}
-                                  aria-label="Abrir subsubmenu"
-                                >
-                                  {openDropdown.sub === h2DropdownId ? '▲' : '▼'}
-                                </button>
-                              )}
-                            </div>
-                            {h2.children.length > 0 && openDropdown.sub === h2DropdownId && (
-                              <ul className="ml-4 border-l border-gray-200 pl-2">
-                                {h2.children.map((h3) => (
-                                  <li key={h3.id} className="mb-1">
-                                    <button
-                                      className="cursor-pointer text-blue-400 hover:underline text-xs text-left"
-                                      onClick={() => handleMenuClick(h3.id)}
-                                    >
-                                      {h3.text}
-                                    </button>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </li>
-              );
-            })}
+          <ul className="flex flex-col md:flex-col gap-1">
+            {menuWithChildren.map((item) => (
+              <SidebarMenuNode
+                key={item.target}
+                item={item}
+                onNavigate={handleMenuClick}
+                depth={0}
+                openMenus={openMenus}
+                onToggle={handleToggle}
+                menuPath={item.target}
+              />
+            ))}
           </ul>
         </nav>
-        {sidebarContent && (
-          <div className="mt-8">
-            {sidebarContent}
-          </div>
-        )}
+        {sidebarContent && <div className="mt-8">{sidebarContent}</div>}
       </aside>
-      <div className="flex-1 relative">
-        {children}
-      </div>
+      <div className="flex-1 relative">{children}</div>
     </div>
   );
 };
 
-export default PageWithSidebar; 
+export default PageWithSidebar;

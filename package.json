@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1054.0",
     "@supabase/supabase-js": "^2.80.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "firebase": "^11.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0",
@@ -16,9 +18,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node scripts/generate-sitemap.js && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "seed:content": "node scripts/build-content-seeds.js",
+    "seed:firestore": "node scripts/seed-firestore-admin.js",
+    "build:prod": "react-scripts build",
+    "deploy": "npm run build && firebase deploy --only hosting,firestore:rules"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +46,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.x.x",
+    "firebase-admin": "^13.10.0",
+    "firebase-tools": "^15.18.0",
     "postcss": "^8.x.x",
     "tailwindcss": "^3.x.x"
   }

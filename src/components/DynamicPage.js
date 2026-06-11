@@ -1,26 +1,35 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { usePageByRoute } from '../hooks/useWordPress';
-import WordPressContent from './WordPressContent';
+import { useContentPageByRoute } from '../hooks/useContentPage';
+import PageContentRenderer from './PageContentRenderer';
 import PageWithSidebar from './PageWithSidebar';
 import ParallaxBackground from './ParallaxBackground';
+import { buildMenuFromPage } from './PageContentRenderer';
+
+const DEFAULT_PARALLAX = 'https://i.imgur.com/vF5SgMB.png';
 
 /**
- * Componente genérico para renderizar páginas dinâmicas do WordPress
+ * Página dinâmica baseada no contrato contentApi (por rota).
  */
-const DynamicPage = ({ 
-  menuItems = [], 
-  parallaxImage = "https://i.imgur.com/vF5SgMB.png",
-  defaultContent = null 
+const DynamicPage = ({
+  menuItems: menuOverride,
+  parallaxImage = DEFAULT_PARALLAX,
+  withSidebar = true,
 }) => {
   const location = useLocation();
-  const { page, loading, error } = usePageByRoute(location.pathname);
+  const { page, loading, error } = useContentPageByRoute(location.pathname, { publicOnly: true });
+
+  const menuItems = menuOverride?.length
+    ? menuOverride
+    : page
+      ? buildMenuFromPage(page)
+      : [];
 
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto mb-4" />
           <p className="text-gray-600">Carregando conteúdo...</p>
         </div>
       </div>
@@ -29,42 +38,28 @@ const DynamicPage = ({
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center text-red-600">
-          <p className="mb-4">Erro ao carregar conteúdo: {error}</p>
-          {defaultContent && <div>{defaultContent}</div>}
-        </div>
+      <div className="flex items-center justify-center min-h-screen p-8">
+        <p className="text-red-600">Erro ao carregar conteúdo: {error}</p>
       </div>
     );
   }
 
-  if (!page && !defaultContent) {
+  if (!page) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center text-gray-500">
-          <p>Conteúdo não encontrado</p>
-        </div>
+      <div className="flex items-center justify-center min-h-screen p-8">
+        <p className="text-gray-500">Conteúdo não encontrado</p>
       </div>
     );
   }
 
-  // Se tiver menuItems, usar PageWithSidebar, senão renderizar direto
   const content = (
-    <ParallaxBackground imageUrl={parallaxImage}>
-      <main className="flex-1 p-8 space-y-16 bg-white bg-opacity-90">
-        {page ? (
-          <div className="space-y-4">
-            <h1 className="text-3xl font-bold mb-4">{page.title?.rendered || 'Sem título'}</h1>
-            <WordPressContent content={page.content?.rendered} />
-          </div>
-        ) : (
-          defaultContent
-        )}
-      </main>
-    </ParallaxBackground>
+    <>
+      <ParallaxBackground imageUrl={parallaxImage || page.parallaxImage || DEFAULT_PARALLAX} />
+      <PageContentRenderer page={page} />
+    </>
   );
 
-  if (menuItems.length > 0) {
+  if (withSidebar && menuItems.length > 0) {
     return <PageWithSidebar menuItems={menuItems}>{content}</PageWithSidebar>;
   }
 
@@ -72,4 +67,3 @@ const DynamicPage = ({
 };
 
 export default DynamicPage;
-
